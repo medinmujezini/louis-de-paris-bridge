@@ -1,0 +1,234 @@
+{
+  "instructions": "Use the 720p dark cinematic template we created together. Apply it to all 15 slides. This prompt only defines the content for each slide — do not override the template's design, colors, fonts, or layout rules.",
+
+  "slides": [
+    {
+      "slide": 1,
+      "title": "Title Slide",
+      "headline": "Urban Solutions",
+      "subheadline": "\"Real Solutions. Real-Time Results.\"",
+      "footer": "3D Real Estate Software",
+      "speaker_notes": "Introduce Urban Solutions as a cutting-edge 3D real estate software company that transforms property exploration from static brochures to fully immersive, interactive digital environments.",
+      "image_refs": ["https://realtimeurban.solutions/wp-content/uploads/2025/09/d9.png"]
+    },
+    {
+      "slide": 2,
+      "title": "The Problem",
+      "left_label": "Traditional Approach",
+      "left_points": ["Static floor plans", "Flat photo galleries", "No interactivity", "No real-time exploration"],
+      "right_label": "Urban Solutions",
+      "right_points": ["Immersive 3D visualization", "Interactive filtering", "Real-time weather & lighting", "Interior walkthroughs"],
+      "speaker_notes": "The real estate industry still relies on 2D floor plans, static renders, and PDF brochures. Buyers can't truly experience a property before it's built. Urban Solutions bridges this gap with real-time 3D powered by Unreal Engine."
+    },
+    {
+      "slide": 3,
+      "title": "The Solution",
+      "headline": "One Platform. Complete Property Experience.",
+      "subtext": "From exterior visualization to interior walkthroughs, apartment filtering to AI-powered assistance — all in real-time 3D.",
+      "speaker_notes": "Our platform combines React for the UI with Unreal Engine 5 for photorealistic rendering. Buyers can explore buildings as if physically present. Every interaction happens in real-time with no loading screens.",
+      "screenshot_instructions": "Capture the home page at sunset with cloudy weather, showing sidebar navigation, camera controls, and time/weather controls."
+    },
+    {
+      "slide": 4,
+      "title": "3D Building Visualization",
+      "headline": "Real-Time Atmosphere Control",
+      "features": [
+        "5 times of day: Dawn · Morning · Noon · Sunset · Night",
+        "4 weather modes: Clear · Cloudy · Rainy · Foggy",
+        "3 camera presets: Exterior · Aerial · Street Level",
+        "Auto-rotate cinematic mode",
+        "Reset camera to default position"
+      ],
+      "speaker_notes": "The building is rendered in Unreal Engine 5 with full dynamic lighting and weather. Users switch between 5 times of day and 4 weather conditions in real-time. Camera presets provide instant exterior, aerial, or street-level perspectives. Auto-rotate creates a cinematic showcase.",
+      "screenshot_instructions": "4 screenshots in a 2×2 grid: dawn+clear, noon+cloudy, sunset+rainy, night+foggy.",
+      "image_refs": ["https://realtimeurban.solutions/wp-content/uploads/2025/09/d3.png"]
+    },
+    {
+      "slide": 5,
+      "title": "Apartment Filtering & Browser",
+      "headline": "Find the Perfect Unit in Seconds",
+      "features": [
+        "Filter by: bedrooms, bathrooms, price, surface, floor, orientation, building, type",
+        "Real-time search across all unit properties",
+        "Availability status with visual indicators",
+        "Click a unit → camera flies to it in 3D",
+        "Hover a unit → it highlights in the 3D building",
+        "Building section navigation with tabs",
+        "Detail drawer with full specs and actions"
+      ],
+      "speaker_notes": "The apartment browser is the core of the Advanced Package. Units are fetched from a live database. Every filter change updates both the list and the 3D model — selected units highlight in the building, clicking triggers a cinematic camera fly-to.",
+      "screenshot_instructions": "Capture: (1) Units browser with unit cards visible, (2) Unit detail drawer open with full specs.",
+      "image_refs": ["https://realtimeurban.solutions/wp-content/uploads/2025/09/d6.png"]
+    },
+    {
+      "slide": 6,
+      "title": "3D Interior Walkthroughs",
+      "headline": "Step Inside Before It's Built",
+      "features": [
+        "Cinematic loading transition with progress bar",
+        "Interactive floor plan overlay",
+        "Edit Interior mode — customize furnishings in real-time",
+        "Time of day & weather controls inside the apartment",
+        "Print brochure with unit specs and floor plan",
+        "Request a quote directly from interior view",
+        "Smooth exit transition back to exterior"
+      ],
+      "speaker_notes": "The Premium Package enables full interior walkthroughs. A cinematic transition plays while the interior loads. Inside, users explore freely with WASD/mouse controls, see their position on a floor plan overlay, customize furnishings, change lighting, print brochures, or request quotes.",
+      "screenshot_instructions": "Capture interior mode with furnished apartment, floor plan overlay visible, and action buttons panel.",
+      "image_refs": ["https://realtimeurban.solutions/wp-content/uploads/2025/09/d8.png"]
+    },
+    {
+      "slide": 7,
+      "title": "Unit Comparison",
+      "headline": "Compare Units Side-by-Side",
+      "features": [
+        "Select up to 6 units for comparison",
+        "Floating compare bar at bottom of screen",
+        "Side-by-side specs: surface, rooms, floor, price, features",
+        "Add/remove units with one click",
+        "Compare from unit cards or detail drawer"
+      ],
+      "speaker_notes": "Our comparison tool lets buyers select up to 6 units and view all specs side-by-side. The floating compare bar provides persistent access while browsing. This dramatically reduces decision-making time.",
+      "screenshot_instructions": "Capture: (1) Compare floating bar with 3 units selected, (2) Full compare panel open with side-by-side specs."
+    },
+    {
+      "slide": 8,
+      "title": "Surroundings & Map Integration",
+      "headline": "Explore the Neighborhood",
+      "features": [
+        "Mapbox-powered interactive map",
+        "POI categories: Dining, Shopping, Education, Healthcare, Transport, Entertainment",
+        "Category filter toggles with result counts",
+        "POI cards with name, rating, address, description",
+        "Fullscreen map mode",
+        "POI data sent to Unreal Engine for 3D marker spawning",
+        "Real POI data fetched from Google Places API and cached"
+      ],
+      "speaker_notes": "The Surroundings feature lets buyers explore the neighborhood. POI data is fetched from Google Places API, cached for performance, and displayed on both a 2D Mapbox map and as 3D markers in the Unreal Engine scene.",
+      "screenshot_instructions": "Capture Surroundings page with map visible and several POI categories active.",
+      "image_refs": ["https://realtimeurban.solutions/wp-content/uploads/2025/09/d4.png"]
+    },
+    {
+      "slide": 9,
+      "title": "Parking & Commercial Spaces",
+      "headline": "Beyond Apartments",
+      "features": [
+        "Dedicated Parking Browser with spot filtering",
+        "Commercial spaces (Lokale) browser",
+        "Same powerful filtering as apartment browser",
+        "Click-to-focus in 3D model",
+        "Availability tracking for all space types"
+      ],
+      "speaker_notes": "Our platform handles parking spots and commercial spaces with the same powerful browsing and filtering. Each space type gets its own browser panel, and clicking any item focuses the 3D camera on its location."
+    },
+    {
+      "slide": 10,
+      "title": "AI Chatbot — DinoBot",
+      "headline": "Your AI Real Estate Assistant",
+      "features": [
+        "Streaming AI responses via backend functions",
+        "Voice input with speech recognition",
+        "Smart actions: 'Show me 2-bedroom apartments under €200k' → auto-filters",
+        "Markdown-formatted responses with rich text",
+        "Multilingual support",
+        "Glassmorphic chat UI with typing indicators"
+      ],
+      "speaker_notes": "DinoBot understands natural language and takes actions — asking 'Show me 3-bedroom apartments' auto-navigates to Units and applies filters. Voice input makes it hands-free. Streaming responses feel natural."
+    },
+    {
+      "slide": 11,
+      "title": "Accessibility & Internationalization",
+      "headline": "Built for Everyone",
+      "features": [
+        "Adjustable font size with live preview",
+        "UI mode toggle for visual preferences",
+        "Voice recognition for hands-free navigation",
+        "Voice helper with text-to-speech",
+        "4 languages: English, Deutsch, Français, Shqip",
+        "Full accessibility panel with all controls"
+      ],
+      "speaker_notes": "Accessibility includes font size controls, voice recognition, text-to-speech, and UI mode toggle. The entire interface is available in 4 languages with every UI element translated."
+    },
+    {
+      "slide": 12,
+      "title": "Interactive Tutorial & Onboarding",
+      "headline": "Guided First Experience",
+      "features": [
+        "Welcome modal on first visit",
+        "Step-by-step interactive tutorial with 12+ steps",
+        "Highlighted UI elements with descriptive tooltips",
+        "Covers: sidebar, camera, units, filters, compare, surroundings, parking, weather, time",
+        "Restartable anytime via tutorial button",
+        "Screenshot-based visual guides"
+      ],
+      "speaker_notes": "First-time users get an interactive tutorial highlighting each UI element. Covers all major features across 12+ steps. Restartable anytime via the sidebar button."
+    },
+    {
+      "slide": 13,
+      "title": "Technical Architecture",
+      "headline": "React + Unreal Engine 5",
+      "architecture": {
+        "frontend": "React 18 + TypeScript + Tailwind CSS + Framer Motion",
+        "3d_engine": "Unreal Engine 5 with WebUI Plugin",
+        "bridge": "Custom bidirectional event system (sendToUnreal / registerHandler)",
+        "backend": "Cloud backend with edge functions",
+        "database": "PostgreSQL with RLS policies",
+        "ai": "Streaming AI chatbot via edge functions",
+        "maps": "Mapbox GL JS for 2D maps",
+        "design_system": "Custom glassmorphism component library"
+      },
+      "bridge_events": [
+        "TO UE: focusUnit, focusSection, highlightUnit, setTimeOfDay, setWeather, setCameraView, enterInterior, exitInterior, sendPOIData, filterPOIs",
+        "FROM UE: unitSelected, unitHovered, sectionChanged, cameraReady, interiorReady, timeChanged, weatherChanged"
+      ],
+      "speaker_notes": "Hybrid architecture: React UI communicates with Unreal Engine 5 through a custom JavaScript bridge. Events flow bidirectionally. Mock mode enables full browser testing without UE running."
+    },
+    {
+      "slide": 14,
+      "title": "Packages & Pricing",
+      "packages": [
+        {
+          "name": "Base Package",
+          "subtitle": "3D Building View",
+          "description": "Immersive 3D visualization of the building, home, or villa complex.",
+          "features": ["Rotate, zoom, explore from all angles", "Time of day controls", "Weather effects", "Camera presets", "Auto-rotate mode"],
+          "perfect_for": "High-quality property overview"
+        },
+        {
+          "name": "Standard Package",
+          "subtitle": "Surroundings & Details",
+          "description": "Everything in Base, plus neighborhood exploration.",
+          "features": ["Interactive surroundings view", "Technical details & specs", "Interactive map with amenities", "POI categories with real data", "Fullscreen map mode"],
+          "perfect_for": "Complete property and location overview"
+        },
+        {
+          "name": "Advanced Package",
+          "subtitle": "Apartment Filtering",
+          "description": "Everything in Standard, plus smart unit browsing.",
+          "features": ["Filter by size, price, floor, orientation", "Highlighted apartments on 3D model", "Unit comparison (up to 6)", "Detail drawer with full specs", "Search & AI chatbot"],
+          "perfect_for": "Helping buyers decide quickly"
+        },
+        {
+          "name": "Premium Package",
+          "subtitle": "3D Interior Walkthroughs",
+          "description": "Everything in Advanced, plus full interior experiences.",
+          "features": ["Full 3D interior tours", "Customizable furnishings", "Lighting effects inside", "Floor plan overlay", "Print brochures & request quotes"],
+          "perfect_for": "High-end immersive buying experience"
+        }
+      ],
+      "speaker_notes": "Four tiers matching different needs. Each builds on the previous. All include multilingual support, accessibility, and tutorial. Pricing based on building count, complexity, and custom requirements."
+    },
+    {
+      "slide": 15,
+      "title": "Get Started",
+      "headline": "Ready to Transform Your Property Marketing?",
+      "cta_button": "Get Your Estimate",
+      "cta_url": "https://realtimeurban.solutions/price",
+      "contact": {
+        "website": "realtimeurban.solutions"
+      },
+      "closing": "Real Solutions. Real-Time Results.",
+      "speaker_notes": "Visit our website to fill out the estimate form. Tell us about your project, select a package, and we'll send a tailored proposal."
+    }
+  ]
+}

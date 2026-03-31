@@ -1,0 +1,35 @@
+# Tutorial Videos Folder (20 Steps)
+
+Place your tutorial video files here. Each video corresponds to a tutorial step.
+
+## Home Page Steps (1-11)
+- tutorial-welcome.mp4 (Step 1: Welcome/Project intro)
+- tutorial-sidebar.mp4 (Step 2: Opening/closing sidebar)
+- tutorial-nav.mp4 (Step 3: Navigating between sections)
+- tutorial-camera.mp4 (Step 4: Switching camera views)
+- tutorial-time.mp4 (Step 5: Changing time of day)
+- tutorial-weather.mp4 (Step 6: Changing weather conditions)
+- tutorial-rotate.mp4 (Step 7: Toggling auto-rotate)
+- tutorial-reset.mp4 (Step 8: Resetting camera view)
+- tutorial-language.mp4 (Step 9: Switching languages)
+- tutorial-accessibility.mp4 (Step 10: Accessibility options)
+- tutorial-help.mp4 (Step 11: Help/tutorial button)
+
+## Units Page Steps (12-16)
+- tutorial-sections.mp4 (Step 12: Building section tabs)
+- tutorial-filters.mp4 (Step 13: Using unit filters)
+- tutorial-available.mp4 (Step 14: Available only toggle)
+- tutorial-unitcard.mp4 (Step 15: Interacting with unit cards)
+- tutorial-compare.mp4 (Step 16: Comparing units)
+
+## Surroundings Page Steps (17-20)
+- tutorial-mapstyles.mp4 (Step 17: Changing map styles)
+- tutorial-search.mp4 (Step 18: Searching for places)
+- tutorial-categories.mp4 (Step 19: Filtering POI categories)
+- tutorial-poibrowser.mp4 (Step 20: Browsing POI list)
+
+## Recommended Specs
+- Resolution: 320x180 or 640x360
+- Duration: 3-8 seconds each
+- Format: MP4 (H.264)
+- Loop-friendly (end state similar to start)
