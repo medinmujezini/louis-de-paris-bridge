@@ -21,6 +21,7 @@ const mapDbUnit = (unit: any): Unit => ({
   unitType: (unit.unit_type as UnitType) || "apartment",
   terrace: unit.terrace ? Number(unit.terrace) : undefined,
   duplexTotal: unit.duplex_total ? Number(unit.duplex_total) : undefined,
+  isDemo: unit.is_demo || false,
 });
 
 // Fetch all units from database or mock data
