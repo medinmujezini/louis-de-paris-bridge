@@ -155,7 +155,7 @@ export const MaterialProvider = ({ children }: { children: ReactNode }) => {
         material.height ? uploadTexture(material.height, 'height', material.name) : null,
       ]);
 
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('materials')
         .insert({
           name: material.name,
