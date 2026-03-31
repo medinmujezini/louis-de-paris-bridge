@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect, useCallback } from "react";
 import { Unit, UnitFilters, defaultFilters } from "@/types/units";
+import { useAppFlow } from "@/contexts/AppFlowContext";
 import { useUnits } from "@/hooks/useUnits";
 import { buildingSections, getSectionById } from "@/data/building-sections";
 import { UnitCard } from "./UnitCard";
