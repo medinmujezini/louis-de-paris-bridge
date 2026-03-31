@@ -50,7 +50,7 @@ export function useFurnitureTemplates() {
   return useQuery({
     queryKey: ['furniture-templates'],
     queryFn: async (): Promise<FurnitureTemplate[]> => {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('furniture_templates')
         .select('*')
         .eq('is_active', true)
@@ -152,7 +152,7 @@ export function useFixtureTemplates() {
   return useQuery({
     queryKey: ['fixture-templates'],
     queryFn: async (): Promise<FixtureTemplate[]> => {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('fixture_templates')
         .select('*')
         .eq('is_active', true)
@@ -208,7 +208,7 @@ export function useGroutColors() {
   return useQuery({
     queryKey: ['grout-colors'],
     queryFn: async (): Promise<GroutColor[]> => {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('grout_colors')
         .select('*')
         .eq('is_active', true)
@@ -246,7 +246,7 @@ export function useColumnTemplates() {
   return useQuery({
     queryKey: ['column-templates'],
     queryFn: async (): Promise<ColumnTemplate[]> => {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('column_templates')
         .select('*')
         .eq('is_active', true)
@@ -292,7 +292,7 @@ export function useTileTemplates() {
   return useQuery({
     queryKey: ['tile-templates'],
     queryFn: async (): Promise<TileTemplate[]> => {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('tile_templates')
         .select('*')
         .eq('is_active', true)

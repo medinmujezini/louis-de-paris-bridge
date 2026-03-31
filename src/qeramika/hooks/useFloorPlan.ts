@@ -1132,7 +1132,7 @@ export const useFloorPlan = () => {
   }, [saveToHistory]);
 
   // Camera views
-  const addCameraView = useCallback((view: import('@/types/floorPlan').SavedCameraView) => {
+  const addCameraView = useCallback((view: import('@/qeramika/types/floorPlan').SavedCameraView) => {
     setFloorPlan(prev => {
       const updated = { ...prev, savedCameraViews: [...(prev.savedCameraViews ?? []), view] };
       saveToHistory(updated);

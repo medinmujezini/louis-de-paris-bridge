@@ -44,7 +44,7 @@ export const ProjectsTab: React.FC = () => {
     if (!user) return;
     setLoading(true);
     
-    const { data, error } = await supabase
+    const { data, error } = await (supabase as any)
       .from('projects')
       .select('*')
       .order('updated_at', { ascending: false });
@@ -70,13 +70,13 @@ export const ProjectsTab: React.FC = () => {
     let error;
     
     if (currentProjectId) {
-      const result = await supabase
+      const result = await (supabase as any)
         .from('projects')
         .update({ name: projectName, floor_plan_json: floorPlanData })
         .eq('id', currentProjectId);
       error = result.error;
     } else {
-      const result = await supabase
+      const result = await (supabase as any)
         .from('projects')
         .insert({ name: projectName, floor_plan_json: floorPlanData, user_id: user.id })
         .select()
@@ -105,7 +105,7 @@ export const ProjectsTab: React.FC = () => {
   };
 
   const deleteProject = async (projectId: string) => {
-    const { error } = await supabase
+    const { error } = await (supabase as any)
       .from('projects')
       .delete()
       .eq('id', projectId);
