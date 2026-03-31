@@ -13,8 +13,8 @@ export const en = {
   
   // Home page
   home: {
-    title: "Dino Residence",
-    subtitle: "Interactive 3D Building Visualization",
+    title: "Louis de Paris",
+    subtitle: "Interactive 3D Residence Visualization",
     residenceVisualization: "Residence Visualization",
     mockMode: "Mock Mode",
     unrealViewport: "Unreal Engine viewport will render here",
