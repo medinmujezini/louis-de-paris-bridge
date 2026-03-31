@@ -288,7 +288,7 @@ export function DinoBot({ open, onClose }: DinoBotProps) {
             disabled={isLoading}
             className={cn(
               "p-2 rounded-xl transition-all",
-              isListening ? "bg-red-500/30 border border-red-500/50" : ""
+              isListening ? "bg-primary/30 border border-primary/50" : ""
             )}
             style={!isListening ? {
               background: "hsl(var(--primary) / 0.15)",
