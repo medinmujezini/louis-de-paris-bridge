@@ -417,7 +417,7 @@
 
   .print-brochure__accent-line {
     height: 3px;
-    background: linear-gradient(90deg, #a91b0b 0%, #d4442e 40%, transparent 100%);
+    background: linear-gradient(90deg, #C9A84C 0%, #e0c06a 40%, transparent 100%);
     margin: 12px 0 20px;
     border-radius: 2px;
   }
