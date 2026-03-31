@@ -9,7 +9,7 @@ import { Slider } from '@/components/ui/slider';
 import { Badge } from '@/components/ui/badge';
 import { TrendingDown, Compass, Info } from 'lucide-react';
 
-import { getDirectionLabel, getDirectionFromCompass, formatCeilingPlaneInfo } from '@/utils/ceilingUtils';
+import { getDirectionLabel, getDirectionFromCompass, formatCeilingPlaneInfo } from '@/qeramika/utils/ceilingUtils';
 
 const COMPASS_DIRECTIONS = [
   'North', 'Northeast', 'East', 'Southeast', 

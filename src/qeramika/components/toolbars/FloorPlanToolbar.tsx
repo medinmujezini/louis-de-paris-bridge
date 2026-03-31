@@ -20,7 +20,7 @@ import {
   LayoutTemplate,
   ImagePlus,
 } from 'lucide-react';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
 import {
   AlertDialog,
   AlertDialogAction,
