@@ -116,7 +116,7 @@ export function ViewerControls({ timeOfDay, weather, onTimeChange, onWeatherChan
 
   // Default: stacked layout for home page
   return (
-    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col gap-3">
+    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3">
       {/* Time of Day Slider */}
       <div className="p-3 min-w-[280px] rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20" data-tutorial="time-controls">
         <div className="space-y-3">
@@ -144,7 +144,7 @@ export function ViewerControls({ timeOfDay, weather, onTimeChange, onWeatherChan
       </div>
 
       {/* Weather Controls */}
-      <div className="p-2 rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20" data-tutorial="weather-controls">
+      <div className="p-2 rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20 self-center" data-tutorial="weather-controls">
         <div className="flex items-center justify-center gap-1">
           <span className="text-xs text-muted-foreground px-2 hidden sm:block">{t.home.weather.title}</span>
           <div className="flex gap-1">
