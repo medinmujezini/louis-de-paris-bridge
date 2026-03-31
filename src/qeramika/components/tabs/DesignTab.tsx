@@ -253,7 +253,7 @@ interface DesignSceneProps {
   // Tile lookup function
   findTile: (tileId: string, wallFinish?: WallFinish) => Tile | null;
   // Floor plan data passed as props (required for R3F Canvas context isolation)
-  floorPlan: import('@/types/floorPlan').FloorPlan;
+  floorPlan: import('@/qeramika/types/floorPlan').FloorPlan;
 }
 
 const Wall3D = ({
