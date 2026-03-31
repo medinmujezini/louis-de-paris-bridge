@@ -23,7 +23,7 @@ export function AppLayout() {
   const threeDMode = useThreeDMode();
   const { phase } = useAppFlow();
   const prevPathRef = useRef(location.pathname);
-  const hideChrome = phase === "intro" || phase === "section-select";
+  const hideChrome = phase === "intro" || phase === "section-select" || phase === "section-video";
 
   // Map routes to UE category identifiers
   const routeToCategoryMap: Record<string, string> = {

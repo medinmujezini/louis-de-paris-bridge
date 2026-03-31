@@ -66,6 +66,11 @@ export default function HomePage() {
     return <SectionSelector />;
   }
 
+  // Section video phase
+  if (phase === "section-video") {
+    return <SectionVideoOverlay />;
+  }
+
   // Browsing phase — show camera/weather controls
   return (
     <div className="relative w-full h-[calc(100vh-6rem)]">
