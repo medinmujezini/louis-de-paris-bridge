@@ -29,6 +29,11 @@ export function UnitCard({
     onToggleCompare?.(unit);
   };
 
+  const handleExploreInterior = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    sendToUnreal(UEEvents.ENTER_INTERIOR_EDIT, { unitId: unit.id });
+  };
+
   const formatPrice = (price: number) =>
     new Intl.NumberFormat("en-US", {
       style: "currency",
