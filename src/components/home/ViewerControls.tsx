@@ -110,7 +110,7 @@ export function ViewerControls({ timeOfDay, weather, onTimeChange, onWeatherChan
             })}
           </div>
         </div>
-      </GlassCard>
+      </div>
     );
   }
 
