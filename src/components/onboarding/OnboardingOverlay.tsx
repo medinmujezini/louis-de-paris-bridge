@@ -21,6 +21,7 @@ const sidebarItems = [
 export function OnboardingOverlay() {
   const { t } = useLanguage();
   const location = useLocation();
+  const { phase: flowPhase } = useAppFlow();
 
   const [phase, setPhase] = useState<Phase>(() => {
     // TODO: remove this bypass after testing — always show onboarding on reload
