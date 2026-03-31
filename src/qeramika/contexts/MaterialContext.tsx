@@ -226,7 +226,7 @@ export const MaterialProvider = ({ children }: { children: ReactNode }) => {
 
   const removeMaterial = useCallback(async (id: string) => {
     try {
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('materials')
         .delete()
         .eq('id', id);
