@@ -30,6 +30,7 @@ import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useAuth } from "@/hooks/useAuth";
+import { useAppFlow } from "@/contexts/AppFlowContext";
 
 interface NavItem {
   id: string;
