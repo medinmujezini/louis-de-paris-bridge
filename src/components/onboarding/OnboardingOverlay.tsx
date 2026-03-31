@@ -104,7 +104,7 @@ export function OnboardingOverlay() {
 
   // Don't show main onboarding on interior edit route (has its own onboarding)
   if (location.pathname === "/interioredit") return null;
-
+  if (flowPhase !== "browsing") return null;
   if (phase === "complete") return null;
 
   const isLastTab = sidebarIndex >= sidebarItems.length - 1;
