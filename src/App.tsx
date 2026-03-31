@@ -22,6 +22,7 @@ import ParkingPage from "./pages/ParkingPage";
 import LokalePage from "./pages/LokalePage";
 import BuildingInfoPage from "./pages/BuildingInfoPage";
 import InteriorEditPage from "./pages/InteriorEditPage";
+import UnitInteriorPage from "./pages/UnitInteriorPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
