@@ -77,14 +77,10 @@ function UnitsPageContent() {
 
   return (
     <div className="relative w-full h-[calc(100vh-6rem)]">
-      {/* View Details CTA - hidden in interior */}
-      {!isInterior && <ViewDetailsButton />}
-      {/* Floating strip on the right - hidden in interior */}
-      {!isInterior && (
-        <div className="absolute right-3 top-0 bottom-3 w-[340px] max-w-[85vw] z-10">
-          <UnitsBrowser />
-        </div>
-      )}
+      <ViewDetailsButton />
+      <div className="absolute right-3 top-0 bottom-3 w-[340px] max-w-[85vw] z-10">
+        <UnitsBrowser />
+      </div>
     </div>
   );
 }
