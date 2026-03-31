@@ -449,8 +449,7 @@ const DefaultFloorTexture: React.FC<{
   return (
     <meshStandardMaterial
       color="#b8a088"
-      normalMap={normalTex}
-      roughnessMap={roughTex}
+      roughness={0.7}
       metalness={0.0}
     />
   );
