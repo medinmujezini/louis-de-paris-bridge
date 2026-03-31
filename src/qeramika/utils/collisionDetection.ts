@@ -3,10 +3,11 @@ import type { Fixture } from '@/qeramika/types/floorPlan';
 export const FIXTURE_CLEARANCES: Record<string, number> = {};
 
 export function checkFixtureCollisions(
-  _fixture: Fixture,
-  _allFixtures: Fixture[]
-): { colliding: boolean; collidingWith: string[] } {
-  return { colliding: false, collidingWith: [] };
+  fixture: Fixture,
+  allFixtures: Fixture[],
+  _excludeId?: string
+): { fixtureId: string; overlap: number }[] {
+  return [];
 }
 
 export function getClearanceZone(

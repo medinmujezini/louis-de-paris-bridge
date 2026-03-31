@@ -9,14 +9,15 @@ export interface WallElevationShape {
 export interface SlopePreset {
   label: string;
   angle: number;
+  description: string;
 }
 
 export const SLOPE_PRESETS: SlopePreset[] = [
-  { label: 'Flat', angle: 0 },
-  { label: 'Low (5°)', angle: 5 },
-  { label: 'Medium (15°)', angle: 15 },
-  { label: 'Steep (30°)', angle: 30 },
-  { label: 'Mansard (45°)', angle: 45 },
+  { label: 'Flat', angle: 0, description: 'No slope' },
+  { label: 'Low', angle: 5, description: 'Gentle 5° slope' },
+  { label: 'Medium', angle: 15, description: 'Moderate 15° slope' },
+  { label: 'Steep', angle: 30, description: 'Steep 30° slope' },
+  { label: 'Mansard', angle: 45, description: 'Mansard 45° slope' },
 ];
 
 export const calculateWallElevationShape = (wall: Wall, ..._args: any[]): WallElevationShape => {
@@ -29,10 +30,12 @@ export const calculateWallElevationShape = (wall: Wall, ..._args: any[]): WallEl
 
 export function calculateHeightFromAngle(
   baseHeight: number,
+  wallLength: number,
   angle: number,
-  wallLength: number
+  direction: string = 'descending'
 ): number {
-  return baseHeight + Math.tan((angle * Math.PI) / 180) * wallLength;
+  const delta = Math.tan((angle * Math.PI) / 180) * wallLength;
+  return direction === 'ascending' ? baseHeight + delta : baseHeight - delta;
 }
 
 export function calculateAngleFromHeights(
@@ -41,13 +44,19 @@ export function calculateAngleFromHeights(
   wallLength: number
 ): number {
   if (wallLength === 0) return 0;
-  return (Math.atan((endHeight - startHeight) / wallLength) * 180) / Math.PI;
+  return (Math.atan(Math.abs(endHeight - startHeight) / wallLength) * 180) / Math.PI;
+}
+
+export interface HeightMismatch {
+  wallId: string;
+  message: string;
+  walls: { wallId: string }[];
 }
 
 export function detectHeightMismatches(
   _walls: Wall[],
   _points: Point[]
-): { wallId: string; message: string }[] {
+): HeightMismatch[] {
   return [];
 }
 
