@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useCallback, ReactNode } from "react";
 
-export type FlowPhase = "intro" | "section-select" | "browsing";
+export type FlowPhase = "intro" | "section-select" | "section-video" | "browsing";
 export type SectionType = "apartment" | "villa" | null;
 
 interface AppFlowContextType {
@@ -8,6 +8,7 @@ interface AppFlowContextType {
   selectedSection: SectionType;
   skipIntro: () => void;
   selectSection: (section: "apartment" | "villa") => void;
+  finishSectionVideo: () => void;
   backToSections: () => void;
 }
 
@@ -21,6 +22,10 @@ export function AppFlowProvider({ children }: { children: ReactNode }) {
 
   const selectSection = useCallback((section: "apartment" | "villa") => {
     setSelectedSection(section);
+    setPhase("section-video");
+  }, []);
+
+  const finishSectionVideo = useCallback(() => {
     setPhase("browsing");
   }, []);
 
@@ -30,7 +35,7 @@ export function AppFlowProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <AppFlowContext.Provider value={{ phase, selectedSection, skipIntro, selectSection, backToSections }}>
+    <AppFlowContext.Provider value={{ phase, selectedSection, skipIntro, selectSection, finishSectionVideo, backToSections }}>
       {children}
     </AppFlowContext.Provider>
   );

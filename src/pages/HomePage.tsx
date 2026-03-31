@@ -5,6 +5,7 @@ import { sendToUnreal, registerHandler, UEEvents } from "@/lib/ue-bridge";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useAppFlow } from "@/contexts/AppFlowContext";
 import { IntroVideoOverlay } from "@/components/intro/IntroVideoOverlay";
+import { SectionVideoOverlay } from "@/components/intro/SectionVideoOverlay";
 import { SectionSelector } from "@/components/home/SectionSelector";
 import { cn } from "@/lib/utils";
 
@@ -63,6 +64,11 @@ export default function HomePage() {
   // Section selector phase
   if (phase === "section-select") {
     return <SectionSelector />;
+  }
+
+  // Section video phase
+  if (phase === "section-video") {
+    return <SectionVideoOverlay />;
   }
 
   // Browsing phase — show camera/weather controls
