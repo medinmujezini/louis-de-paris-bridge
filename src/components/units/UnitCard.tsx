@@ -2,6 +2,7 @@ import { Unit } from "@/types/units";
 import { Bed, Bath, Maximize, Save, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
+import { useNavigate } from "react-router-dom";
 
 interface UnitCardProps {
   unit: Unit;
@@ -24,6 +25,8 @@ export function UnitCard({
   onHover,
   onToggleCompare,
 }: UnitCardProps) {
+  const navigate = useNavigate();
+
   const handleCompareToggle = (e: React.MouseEvent) => {
     e.stopPropagation();
     onToggleCompare?.(unit);
@@ -32,6 +35,7 @@ export function UnitCard({
   const handleExploreInterior = (e: React.MouseEvent) => {
     e.stopPropagation();
     sendToUnreal(UEEvents.ENTER_INTERIOR_EDIT, { unitId: unit.id });
+    navigate('/unit/' + unit.id + '/interior');
   };
 
   return (
