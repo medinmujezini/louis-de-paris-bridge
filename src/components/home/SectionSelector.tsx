@@ -57,6 +57,8 @@ export function SectionSelector() {
               >
                 {/* Top gold accent bar */}
                 <div className="absolute top-0 left-[20%] w-[60%] h-[2px] bg-primary/60 group-hover:bg-primary transition-colors" />
+                {/* Downward glow from gold strip on hover */}
+                <div className="absolute top-0 left-[10%] w-[80%] h-0 group-hover:h-32 bg-gradient-to-b from-primary/30 via-primary/10 to-transparent blur-xl transition-all duration-500 pointer-events-none" />
 
                 <div className="p-8 space-y-5">
                   <div className="w-14 h-14 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center group-hover:bg-primary/25 transition-colors">
