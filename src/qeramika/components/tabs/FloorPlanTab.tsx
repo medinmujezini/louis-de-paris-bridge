@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
-import { BlueprintImportWizard } from '@/qeramika/components/blueprint/BlueprintImportWizard';
+import { BlueprintImportWizard, type FloorPlanAnalysis } from '@/qeramika/components/blueprint/BlueprintImportWizard';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toast } from 'sonner';
