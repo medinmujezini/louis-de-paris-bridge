@@ -5,3 +5,8 @@ export const BlueprintImportWizard: React.FC<any> = ({ onClose }: { onClose?: ()
     {onClose && <button onClick={onClose} className="ml-2 underline">Close</button>}
   </div>
 );
+
+export interface FloorPlanAnalysis {
+  walls: Array<{ start: { x: number; y: number }; end: { x: number; y: number } }>;
+  rooms: Array<{ points: Array<{ x: number; y: number }> }>;
+}

@@ -140,7 +140,7 @@ export const ProjectsTab: React.FC = () => {
   if (!user) {
     return (
       <div className="h-full flex items-center justify-center p-8 relative">
-        <GlassCard className="max-w-md w-full" variant="premium">
+        <GlassCard className="max-w-md w-full" variant="strong">
           <GlassCardContent className="pt-6">
             <AuthForm />
           </GlassCardContent>
