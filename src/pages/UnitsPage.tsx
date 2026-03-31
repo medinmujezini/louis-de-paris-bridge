@@ -14,8 +14,8 @@ function ViewDetailsButton() {
 
   const handleEnter3D = () => {
     if (isSold) return;
-    enter(selectedUnit);
-    navigate("/interioredit");
+    sendToUnreal(UEEvents.ENTER_INTERIOR_EDIT, { unitId: selectedUnit.id });
+    navigate(`/unit/${selectedUnit.id}/interior`);
   };
 
   const ctaButtonClass = "group relative px-8 py-3 rounded-xl overflow-visible flex items-center gap-3 text-base font-bold text-foreground transition-all duration-300 border border-white/10 hover:border-white/20 hover:scale-105";

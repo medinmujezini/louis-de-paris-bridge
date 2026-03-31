@@ -89,16 +89,6 @@ export function UnitCard({
           )}
         </div>
 
-        {/* Explore Interior CTA — shown when unit is selected & available */}
-        {isSelected && unit.available && (
-          <button
-            onClick={handleExploreInterior}
-            className="mt-2 w-full flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md bg-primary/15 text-primary text-xs font-medium hover:bg-primary/25 transition-colors border border-primary/20"
-          >
-            <Sparkles className="w-3 h-3" />
-            Explore Interior
-          </button>
-        )}
       </div>
     </div>
   );
