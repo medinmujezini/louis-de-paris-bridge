@@ -1,8 +1,6 @@
 import { Unit } from "@/types/units";
-import { Bed, Bath, Maximize, Save, Sparkles } from "lucide-react";
+import { Bed, Bath, Maximize, Save } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
-import { useNavigate } from "react-router-dom";
 
 interface UnitCardProps {
   unit: Unit;
