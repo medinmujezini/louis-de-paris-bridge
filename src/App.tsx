@@ -7,6 +7,7 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import { AccessibilityProvider } from "@/contexts/AccessibilityContext";
 import { TutorialProvider } from "@/contexts/TutorialContext";
 import { ThreeDModeProvider } from "@/contexts/ThreeDModeContext";
+import { AppFlowProvider } from "@/contexts/AppFlowContext";
 import { TutorialOverlay } from "@/components/tutorial/TutorialOverlay";
 import { OnboardingOverlay } from "@/components/onboarding/OnboardingOverlay";
 import { CommercialOverlay } from "@/components/commercial/CommercialOverlay";
