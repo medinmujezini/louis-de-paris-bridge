@@ -74,8 +74,6 @@ function ViewDetailsButton() {
 }
 
 function UnitsPageContent() {
-  const threeDMode = useThreeDMode();
-  const isInterior = threeDMode.active;
 
   return (
     <div className="relative w-full h-[calc(100vh-6rem)]">
