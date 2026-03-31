@@ -66,7 +66,7 @@ export function ViewerControls({ timeOfDay, weather, onTimeChange, onWeatherChan
   // Compact: single-row layout for interior HUD
   if (compact) {
     return (
-      <GlassCard variant="strong" className="p-3" data-tutorial="viewer-controls-compact">
+      <div className="p-3 rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20" data-tutorial="viewer-controls-compact">
         <div className="flex items-center gap-4">
           {/* Time slider */}
           <div className="flex items-center gap-3 min-w-[200px]">
@@ -110,7 +110,7 @@ export function ViewerControls({ timeOfDay, weather, onTimeChange, onWeatherChan
             })}
           </div>
         </div>
-      </GlassCard>
+      </div>
     );
   }
 
@@ -118,7 +118,7 @@ export function ViewerControls({ timeOfDay, weather, onTimeChange, onWeatherChan
   return (
     <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col gap-3">
       {/* Time of Day Slider */}
-      <GlassCard variant="strong" className="p-3 min-w-[280px]" data-tutorial="time-controls">
+      <div className="p-3 min-w-[280px] rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20" data-tutorial="time-controls">
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-xs text-muted-foreground">{t.home.time.title}</span>
@@ -141,10 +141,10 @@ export function ViewerControls({ timeOfDay, weather, onTimeChange, onWeatherChan
             <span>{t.home.time.night}</span>
           </div>
         </div>
-      </GlassCard>
+      </div>
 
       {/* Weather Controls */}
-      <GlassCard variant="strong" className="p-2" data-tutorial="weather-controls">
+      <div className="p-2 rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20" data-tutorial="weather-controls">
         <div className="flex items-center gap-1">
           <span className="text-xs text-muted-foreground px-2 hidden sm:block">{t.home.weather.title}</span>
           <div className="flex gap-1">
@@ -170,7 +170,7 @@ export function ViewerControls({ timeOfDay, weather, onTimeChange, onWeatherChan
             })}
           </div>
         </div>
-      </GlassCard>
+      </div>
     </div>
   );
 }

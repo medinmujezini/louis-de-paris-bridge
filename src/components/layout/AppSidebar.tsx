@@ -199,11 +199,12 @@ export function AppSidebar({ onNavigate, onDinoBotToggle, dinoBotActive }: AppSi
   return (
     <div
       className={cn(
-        "glass-card glass-card--strong h-[calc(100%-2rem)] my-4 ml-4 flex flex-col transition-all duration-300",
+        "h-[calc(100%-2rem)] my-4 ml-4 flex flex-col transition-all duration-300 rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20 overflow-hidden",
         collapsed ? "w-[70px]" : "w-64"
       )}
     >
-      <div className="glass-card__light-bar glass-card__light-bar--strong" />
+      {/* Gold accent bar */}
+      <div className="h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-60" aria-hidden="true" />
       {/* Header */}
       <div className="p-4 border-b border-white/10">
         <div className="flex items-center justify-between">

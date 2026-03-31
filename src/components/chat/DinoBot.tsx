@@ -189,9 +189,9 @@ export function DinoBot({ open, onClose }: DinoBotProps) {
   if (!open) return null;
 
   return (
-    <div className="fixed bottom-6 left-24 z-50 w-80 h-[28rem] flex flex-col rounded-2xl overflow-hidden glass-card glass-card--strong">
-      {/* Top light bar */}
-      <div className="glass-card__light-bar glass-card__light-bar--strong" />
+    <div className="fixed bottom-6 left-24 z-50 w-80 h-[28rem] flex flex-col rounded-2xl overflow-hidden bg-[hsl(0,0%,4%)] border border-primary/20">
+      {/* Gold accent bar */}
+      <div className="h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-60" />
 
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.06]">
