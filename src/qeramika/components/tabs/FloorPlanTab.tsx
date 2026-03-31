@@ -150,11 +150,11 @@ export const FloorPlanTab: React.FC = () => {
     if (roomTab === 'rectangle') {
       if (rectErrors.length > 0) return;
       const plan = generateRectangleRoom(parseFloat(rectWidth), parseFloat(rectHeight));
-      loadFloorPlan(plan);
+      loadFloorPlan(plan as any);
     } else {
       if (lErrors.length > 0) return;
-      const plan = generateLShapeRoom(parseFloat(lWidth), parseFloat(lHeight), parseFloat(lNotchW), parseFloat(lNotchH));
-      loadFloorPlan(plan);
+      const plan = generateLShapeRoom(parseFloat(lWidth), parseFloat(lHeight));
+      loadFloorPlan(plan as any);
     }
     setShowNewRoomDialog(false);
     toast.success('Room generated!');

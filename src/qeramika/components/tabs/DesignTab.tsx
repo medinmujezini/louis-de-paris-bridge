@@ -1184,9 +1184,9 @@ export const DesignTab: React.FC<DesignTabProps> = ({
       if (!leftZone || !rightZone) return;
       const left = nipplejs.create({ zone: leftZone, mode: 'static', position: { left: '50%', bottom: '50%' }, color: 'white', size: 100 });
       const right = nipplejs.create({ zone: rightZone, mode: 'static', position: { left: '50%', bottom: '50%' }, color: 'white', size: 100 });
-      left.on('move', (_, data) => { moveStickRef.current = { x: data.vector.x, y: data.vector.y }; });
+      (left as any).on('move', (_: any, data: any) => { moveStickRef.current = { x: data.vector.x, y: data.vector.y }; });
       left.on('end', () => { moveStickRef.current = { x: 0, y: 0 }; });
-      right.on('move', (_, data) => { lookStickRef.current = { x: data.vector.x, y: data.vector.y }; });
+      (right as any).on('move', (_: any, data: any) => { lookStickRef.current = { x: data.vector.x, y: data.vector.y }; });
       right.on('end', () => { lookStickRef.current = { x: 0, y: 0 }; });
       nippleManagersRef.current = { left, right };
     });

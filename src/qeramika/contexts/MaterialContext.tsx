@@ -258,7 +258,7 @@ export const MaterialProvider = ({ children }: { children: ReactNode }) => {
       if (updates.arm !== undefined) dbUpdates.arm_url = updates.arm || null;
       if (updates.height !== undefined) dbUpdates.height_url = updates.height || null;
 
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('materials')
         .update(dbUpdates)
         .eq('id', id);
