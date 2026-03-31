@@ -98,8 +98,8 @@ export function LokaleBrowser({
 
   return (
     <>
-      <div className="glass-card glass-card--strong h-full rounded-xl flex flex-col overflow-hidden">
-        <div className="glass-card__light-bar glass-card__light-bar--strong" aria-hidden="true" />
+      <div className="h-full rounded-xl flex flex-col overflow-hidden bg-[hsl(0,0%,4%)] border border-primary/20">
+        <div className="h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-60" aria-hidden="true" />
 
         <div className="relative z-10 flex flex-col h-full overflow-hidden">
           {/* Header */}
