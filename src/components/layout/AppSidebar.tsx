@@ -54,6 +54,7 @@ export function AppSidebar({ onNavigate, onDinoBotToggle, dinoBotActive }: AppSi
   const location = useLocation();
   const { t } = useLanguage();
   const { user, isAdmin, signOut } = useAuth();
+  const { phase, backToSections } = useAppFlow();
   const [collapsed, setCollapsed] = useState(true);
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(["units"]));
 
