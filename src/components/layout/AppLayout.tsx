@@ -11,6 +11,7 @@ import { AccessibilityToggle } from "@/components/accessibility/AccessibilityTog
 import { TutorialButton } from "@/components/tutorial/TutorialButton";
 import { DinoBot } from "@/components/chat/DinoBot";
 import { useThreeDMode } from "@/contexts/ThreeDModeContext";
+import { useAppFlow } from "@/contexts/AppFlowContext";
 
 import uePreviewBg from "@/assets/ue-preview-bg.png";
 
