@@ -141,7 +141,7 @@ export function ViewerControls({ timeOfDay, weather, onTimeChange, onWeatherChan
             <span>{t.home.time.night}</span>
           </div>
         </div>
-      </GlassCard>
+      </div>
 
       {/* Weather Controls */}
       <GlassCard variant="strong" className="p-2" data-tutorial="weather-controls">
