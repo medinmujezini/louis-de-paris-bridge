@@ -278,8 +278,8 @@ const Wall3D = ({
   onWallClick?: (wall: Wall, start: Point, end: Point) => void;
   previewColor?: string | null;
   previewWallpaperId?: string | null;
-  doors?: import('@/types/floorPlan').Door[];
-  windows?: import('@/types/floorPlan').Window[];
+  doors?: import('@/qeramika/types/floorPlan').Door[];
+  windows?: import('@/qeramika/types/floorPlan').Window[];
 }) => {
   const [texture, setTexture] = useState<THREE.CanvasTexture | null>(null);
   
