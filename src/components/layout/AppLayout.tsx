@@ -72,7 +72,7 @@ export function AppLayout() {
   }, [location.pathname]);
 
   const isInteriorEdit = location.pathname === "/interioredit";
-  const effectiveSidebarOpen = (threeDMode.active || isInteriorEdit) ? false : sidebarOpen;
+  const effectiveSidebarOpen = (threeDMode.active || isInteriorEdit || hideChrome) ? false : sidebarOpen;
 
   const handleNavigate = (itemId: string) => {
     console.log("Navigate to:", itemId);
