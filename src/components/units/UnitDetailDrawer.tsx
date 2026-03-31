@@ -346,17 +346,17 @@ export function UnitDetailDrawer({
                 onClick={() => setQuoteOpen(true)}
                 className="group relative w-full h-14 rounded-xl overflow-visible flex items-center justify-center gap-2 text-lg font-bold text-foreground transition-all duration-300 border border-white/10 hover:border-white/15"
                 style={{
-                  background: "linear-gradient(180deg, hsl(var(--destructive) / 0.25) 0%, hsl(var(--destructive) / 0.05) 100%)",
-                  boxShadow: "0 0 16px hsl(var(--destructive) / 0.2), 0 0 4px hsl(var(--destructive) / 0.1)",
+                  background: "linear-gradient(180deg, hsl(var(--primary) / 0.25) 0%, hsl(var(--primary) / 0.05) 100%)",
+                  boxShadow: "0 0 16px hsl(var(--primary) / 0.2), 0 0 4px hsl(var(--primary) / 0.1)",
                 }}
               >
                 {/* Hover glow intensifier */}
                 <div className="absolute -inset-[1px] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{
-                  boxShadow: "0 0 32px hsl(var(--destructive) / 0.45), 0 0 12px hsl(var(--destructive) / 0.25)",
+                  boxShadow: "0 0 32px hsl(var(--primary) / 0.45), 0 0 12px hsl(var(--primary) / 0.25)",
                 }} />
                 {/* Top light bar */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-gradient-to-r from-transparent via-destructive to-transparent transition-all duration-300 group-hover:w-full group-hover:h-[3px]" aria-hidden="true" />
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[4px] blur-[4px] bg-gradient-to-r from-transparent via-destructive to-transparent transition-all duration-300 group-hover:w-3/4 group-hover:blur-[6px]" aria-hidden="true" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent transition-all duration-300 group-hover:w-full group-hover:h-[3px]" aria-hidden="true" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[4px] blur-[4px] bg-gradient-to-r from-transparent via-primary to-transparent transition-all duration-300 group-hover:w-3/4 group-hover:blur-[6px]" aria-hidden="true" />
                 <MessageSquare className="w-5 h-5" />
                 Ask for Quote
               </button>
