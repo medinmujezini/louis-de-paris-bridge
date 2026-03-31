@@ -1,17 +1,17 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
-import { Canvas2D } from '@/components/floor-plan/Canvas2D';
-import { FloorPlanToolbar } from '@/components/toolbars/FloorPlanToolbar';
-import { PropertiesPanel } from '@/components/floor-plan/PropertiesPanel';
+import { Canvas2D } from '@/qeramika/components/floor-plan/Canvas2D';
+import { FloorPlanToolbar } from '@/qeramika/components/toolbars/FloorPlanToolbar';
+import { PropertiesPanel } from '@/qeramika/components/floor-plan/PropertiesPanel';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
-import { BlueprintImportWizard, FloorPlanAnalysis } from '@/components/blueprint/BlueprintImportWizard';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
+import { BlueprintImportWizard, type FloorPlanAnalysis } from '@/qeramika/components/blueprint/BlueprintImportWizard';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toast } from 'sonner';
-import { generateRectangleRoom, generateLShapeRoom } from '@/utils/roomTemplates';
+import { generateRectangleRoom, generateLShapeRoom } from '@/qeramika/utils/roomTemplates';
 
 type Tool = 'select' | 'wall' | 'door' | 'window' | 'pan' | 'column';
 
@@ -150,11 +150,11 @@ export const FloorPlanTab: React.FC = () => {
     if (roomTab === 'rectangle') {
       if (rectErrors.length > 0) return;
       const plan = generateRectangleRoom(parseFloat(rectWidth), parseFloat(rectHeight));
-      loadFloorPlan(plan);
+      loadFloorPlan(plan as any);
     } else {
       if (lErrors.length > 0) return;
-      const plan = generateLShapeRoom(parseFloat(lWidth), parseFloat(lHeight), parseFloat(lNotchW), parseFloat(lNotchH));
-      loadFloorPlan(plan);
+      const plan = generateLShapeRoom(parseFloat(lWidth), parseFloat(lHeight));
+      loadFloorPlan(plan as any);
     }
     setShowNewRoomDialog(false);
     toast.success('Room generated!');

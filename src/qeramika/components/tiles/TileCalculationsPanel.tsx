@@ -25,11 +25,11 @@ import {
 } from 'lucide-react';
 import { LeftoverReusePanel } from './LeftoverReusePanel';
 import { LeftoverFlowDiagram } from './LeftoverFlowDiagram';
-import { Wall, Point } from '@/types/floorPlan';
+import { Wall, Point } from '@/qeramika/types/floorPlan';
 import { 
   ProjectCalculationResult, 
   CutOptimizationResult 
-} from '@/utils/tileCalculator';
+} from '@/qeramika/utils/tileCalculator';
 
 interface WallBreakdownItem {
   wallId: string;

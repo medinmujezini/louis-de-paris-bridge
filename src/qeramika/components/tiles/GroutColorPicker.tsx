@@ -10,7 +10,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Label } from '@/components/ui/label';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Paintbrush, Check } from 'lucide-react';
-import { useGroutColors } from '@/hooks/useTemplatesFromDB';
+import { useGroutColors } from '@/qeramika/hooks/useTemplatesFromDB';
 import { cn } from '@/lib/utils';
 
 // Fallback grout colors if none in database

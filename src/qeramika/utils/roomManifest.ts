@@ -5,8 +5,8 @@
  * Used by Unreal Engine to configure scene loading and player spawn.
  */
 
-import type { FloorPlan, Point } from '@/types/floorPlan';
-import { CM_TO_METERS } from '@/constants/units';
+import type { FloorPlan, Point } from '@/qeramika/types/floorPlan';
+import { CM_TO_METERS } from '@/qeramika/constants/units';
 
 export interface ManifestLight {
   id: string;

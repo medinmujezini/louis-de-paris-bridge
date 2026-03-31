@@ -16,8 +16,8 @@ import React, { useRef, useMemo } from 'react';
 import { useFrame, ThreeEvent } from '@react-three/fiber';
 import { Text } from '@react-three/drei';
 import * as THREE from 'three';
-import type { UnifiedFixture } from '@/types/fixture';
-import { CM_TO_METERS } from '@/constants/units';
+import type { UnifiedFixture } from '@/qeramika/types/fixture';
+import { CM_TO_METERS } from '@/qeramika/constants/units';
 
 interface BlueprintBoxFixtureProps {
   fixture: UnifiedFixture;

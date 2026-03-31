@@ -18,10 +18,10 @@ import { Label } from '@/components/ui/label';
 import { Grid3X3, Check, Square } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
-import { TileLibraryPanel } from '@/components/tiles/TileLibraryPanel';
-import { GroutColorPicker } from '@/components/tiles/GroutColorPicker';
-import { useMaterialContext } from '@/contexts/MaterialContext';
-import type { Tile, TilePattern, FloorSurfaceType } from '@/types/floorPlan';
+import { TileLibraryPanel } from '@/qeramika/components/tiles/TileLibraryPanel';
+import { GroutColorPicker } from '@/qeramika/components/tiles/GroutColorPicker';
+import { useMaterialContext } from '@/qeramika/contexts/MaterialContext';
+import type { Tile, TilePattern, FloorSurfaceType } from '@/qeramika/types/floorPlan';
 import { cn } from '@/lib/utils';
 
 // Hardwood/Carpet presets

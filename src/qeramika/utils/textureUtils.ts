@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import type { TileTextureUrls } from '@/types/floorPlan';
+import type { TileTextureUrls } from '@/qeramika/types/floorPlan';
 
 export type PBRMapKey = 'map' | 'normalMap' | 'roughnessMap' | 'aoMap' | 'displacementMap' | 'metalnessMap';
 export type PBRTextureProps = Partial<Record<PBRMapKey, THREE.Texture>>;

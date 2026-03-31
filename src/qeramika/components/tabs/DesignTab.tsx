@@ -7,26 +7,26 @@
  */
 
 import React, { Suspense, useState, useCallback, useMemo, useRef, useEffect } from 'react';
-import { SpawnPointMarker, type SpawnPoint } from '@/components/3d/SpawnPointMarker';
-import { WalkthroughOverlay } from '@/components/3d/WalkthroughOverlay';
+import { SpawnPointMarker, type SpawnPoint } from '@/qeramika/components/3d/SpawnPointMarker';
+import { WalkthroughOverlay } from '@/qeramika/components/3d/WalkthroughOverlay';
 import { Canvas, useThree, useFrame, useLoader, ThreeEvent } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, PointerLockControls } from '@react-three/drei';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
-import { useFurnitureContext } from '@/contexts/FurnitureContext';
-import { useMEPContext } from '@/contexts/MEPContext';
-import { useMaterialContext } from '@/contexts/MaterialContext';
-import { FurnitureScene } from '@/components/3d/FurnitureScene';
-import { FixtureScene } from '@/components/3d/FixtureScene';
-import { RenderPipelineController } from '@/components/3d/RenderPipelineController';
-import { UnifiedLibrary } from '@/components/design/UnifiedLibrary';
-import { DesignPropertiesPanel } from '@/components/design/DesignPropertiesPanel';
-import { QualitySettingsPanel, QualitySettings, DEFAULT_QUALITY_SETTINGS } from '@/components/design/QualitySettingsPanel';
-import { WallSurfaceDialog } from '@/components/3d/WallSurfaceDialog';
-import { FloorSurfaceDialog } from '@/components/3d/FloorSurfaceDialog';
-import { TiledWall3D } from '@/components/3d/TiledWall3D';
-import { Ceiling3D } from '@/components/3d/Ceiling3D';
-import { RoomLightMarker } from '@/components/3d/RoomLightMarker';
-import { GIQualityTier } from '@/gi/GIConfig';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
+import { useFurnitureContext } from '@/qeramika/contexts/FurnitureContext';
+import { useMEPContext } from '@/qeramika/contexts/MEPContext';
+import { useMaterialContext } from '@/qeramika/contexts/MaterialContext';
+import { FurnitureScene } from '@/qeramika/components/3d/FurnitureScene';
+import { FixtureScene } from '@/qeramika/components/3d/FixtureScene';
+import { RenderPipelineController } from '@/qeramika/components/3d/RenderPipelineController';
+import { UnifiedLibrary } from '@/qeramika/components/design/UnifiedLibrary';
+import { DesignPropertiesPanel } from '@/qeramika/components/design/DesignPropertiesPanel';
+import { QualitySettingsPanel, QualitySettings, DEFAULT_QUALITY_SETTINGS } from '@/qeramika/components/design/QualitySettingsPanel';
+import { WallSurfaceDialog } from '@/qeramika/components/3d/WallSurfaceDialog';
+import { FloorSurfaceDialog } from '@/qeramika/components/3d/FloorSurfaceDialog';
+import { TiledWall3D } from '@/qeramika/components/3d/TiledWall3D';
+import { Ceiling3D } from '@/qeramika/components/3d/Ceiling3D';
+import { RoomLightMarker } from '@/qeramika/components/3d/RoomLightMarker';
+import { GIQualityTier } from '@/qeramika/gi/GIConfig';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
@@ -39,20 +39,20 @@ import { Sparkles, Eye, EyeOff, Grid3X3, Droplets, RotateCcw, Move3D, Settings2,
 
 import { supabase } from '@/integrations/supabase/client';
 import * as THREE from 'three';
-import { TILE_LIBRARY } from '@/types/floorPlan';
-import type { Wall, Point, TilePattern, WallFinish, FloorSurfaceType, Tile, TileTextureUrls } from '@/types/floorPlan';
-import { useTileTemplates } from '@/hooks/useTemplatesFromDB';
-import { PAINT_COLORS, WALLPAPER_PATTERNS } from '@/types/floorPlan';
-import { createTilePatternCanvas } from '@/utils/tileRenderer';
-import { isFixturePositionValid } from '@/utils/fixtureCollision';
-import { createWallShapeWithOpenings } from '@/utils/wallOpeningGeometry';
-import { exportSceneToGLBBlob } from '@/utils/glbExporter';
-import { generateRoomManifest } from '@/utils/roomManifest';
-import { isInsideUnreal, startUnrealWalkthrough, onExitWalkthrough, arrayBufferToBase64 } from '@/utils/unrealBridge';
+import { TILE_LIBRARY } from '@/qeramika/types/floorPlan';
+import type { Wall, Point, TilePattern, WallFinish, FloorSurfaceType, Tile, TileTextureUrls } from '@/qeramika/types/floorPlan';
+import { useTileTemplates } from '@/qeramika/hooks/useTemplatesFromDB';
+import { PAINT_COLORS, WALLPAPER_PATTERNS } from '@/qeramika/types/floorPlan';
+import { createTilePatternCanvas } from '@/qeramika/utils/tileRenderer';
+import { isFixturePositionValid } from '@/qeramika/utils/fixtureCollision';
+import { createWallShapeWithOpenings } from '@/qeramika/utils/wallOpeningGeometry';
+import { exportSceneToGLBBlob } from '@/qeramika/utils/glbExporter';
+import { generateRoomManifest } from '@/qeramika/utils/roomManifest';
+import { isInsideUnreal, startUnrealWalkthrough, onExitWalkthrough, arrayBufferToBase64 } from '@/qeramika/utils/unrealBridge';
 import { toast } from 'sonner';
-import type { FurnitureTemplate } from '@/data/furnitureLibrary';
-import type { FixtureTemplate } from '@/data/fixtureLibrary';
-import type { MEPFixture } from '@/types/mep';
+import type { FurnitureTemplate } from '@/qeramika/data/furnitureLibrary';
+import type { FixtureTemplate } from '@/qeramika/data/fixtureLibrary';
+import type { MEPFixture } from '@/qeramika/types/mep';
 
 // Track walls with active tile animations
 type TileAnimationState = Record<string, 'idle' | 'animating' | 'complete'>;
@@ -253,7 +253,7 @@ interface DesignSceneProps {
   // Tile lookup function
   findTile: (tileId: string, wallFinish?: WallFinish) => Tile | null;
   // Floor plan data passed as props (required for R3F Canvas context isolation)
-  floorPlan: import('@/types/floorPlan').FloorPlan;
+  floorPlan: import('@/qeramika/types/floorPlan').FloorPlan;
 }
 
 const Wall3D = ({
@@ -278,8 +278,8 @@ const Wall3D = ({
   onWallClick?: (wall: Wall, start: Point, end: Point) => void;
   previewColor?: string | null;
   previewWallpaperId?: string | null;
-  doors?: import('@/types/floorPlan').Door[];
-  windows?: import('@/types/floorPlan').Window[];
+  doors?: import('@/qeramika/types/floorPlan').Door[];
+  windows?: import('@/qeramika/types/floorPlan').Window[];
 }) => {
   const [texture, setTexture] = useState<THREE.CanvasTexture | null>(null);
   
@@ -1184,9 +1184,9 @@ export const DesignTab: React.FC<DesignTabProps> = ({
       if (!leftZone || !rightZone) return;
       const left = nipplejs.create({ zone: leftZone, mode: 'static', position: { left: '50%', bottom: '50%' }, color: 'white', size: 100 });
       const right = nipplejs.create({ zone: rightZone, mode: 'static', position: { left: '50%', bottom: '50%' }, color: 'white', size: 100 });
-      left.on('move', (_, data) => { moveStickRef.current = { x: data.vector.x, y: data.vector.y }; });
+      (left as any).on('move', (_: any, data: any) => { moveStickRef.current = { x: data.vector.x, y: data.vector.y }; });
       left.on('end', () => { moveStickRef.current = { x: 0, y: 0 }; });
-      right.on('move', (_, data) => { lookStickRef.current = { x: data.vector.x, y: data.vector.y }; });
+      (right as any).on('move', (_: any, data: any) => { lookStickRef.current = { x: data.vector.x, y: data.vector.y }; });
       right.on('end', () => { lookStickRef.current = { x: 0, y: 0 }; });
       nippleManagersRef.current = { left, right };
     });

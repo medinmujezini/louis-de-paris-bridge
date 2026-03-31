@@ -8,7 +8,7 @@ import { ThreeEvent } from '@react-three/fiber';
 import { Html } from '@react-three/drei';
 import * as THREE from 'three';
 import { RotateCcw, Trash2 } from 'lucide-react';
-import type { RoomLight } from '@/types/floorPlan';
+import type { RoomLight } from '@/qeramika/types/floorPlan';
 
 const SCALE = 0.01;
 

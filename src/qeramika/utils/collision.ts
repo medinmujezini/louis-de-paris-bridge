@@ -5,10 +5,10 @@
  * Single source of truth for fixture, furniture, and clearance zone checks.
  */
 
-import type { Point2D, Dimensions, SimpleClearance, BoundingBox2D, FloorPlanPoint } from '@/types/geometry';
+import type { Point2D, Dimensions, SimpleClearance, BoundingBox2D, FloorPlanPoint } from '@/qeramika/types/geometry';
 import { calculateBoundingBox, degreesToRadians } from './dimensions';
 import { calculateWallLength, getWallStartPoint, getWallEndPoint } from './wallGeometry';
-import type { Wall } from '@/types/floorPlan';
+import type { Wall } from '@/qeramika/types/floorPlan';
 
 // =============================================================================
 // BOUNDING BOX COLLISION

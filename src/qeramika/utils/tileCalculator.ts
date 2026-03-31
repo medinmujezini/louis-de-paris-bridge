@@ -1,8 +1,8 @@
 // Advanced Tile Calculator with Cut Tile Identification and Pattern Support
 // Supports curved walls, sloped walls, and advanced cut optimization
 
-import type { Tile, Wall, Point, WallTileSection, CutTile, TileCalculation, TilePattern } from '@/types/floorPlan';
-import { isWallCurved, isWallSloped, getWallSlopeAngle } from '@/types/floorPlan';
+import type { Tile, Wall, Point, WallTileSection, CutTile, TileCalculation, TilePattern } from '@/qeramika/types/floorPlan';
+import { isWallCurved, isWallSloped, getWallSlopeAngle } from '@/qeramika/types/floorPlan';
 import { arcLength, calculateArcInfo } from './arcUtils';
 
 export interface WallDimension {

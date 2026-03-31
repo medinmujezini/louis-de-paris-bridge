@@ -13,10 +13,10 @@ import { useNavigate } from 'react-router-dom';
 import { Palette, RotateCw, MoreHorizontal, Trash2, X, Box } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-import { useFurnitureContext } from '@/contexts/FurnitureContext';
-import type { FurnitureItem } from '@/data/furnitureLibrary';
-import type { FloorPlan } from '@/types/floorPlan';
-import { CM_TO_METERS } from '@/utils/modelLoader';
+import { useFurnitureContext } from '@/qeramika/contexts/FurnitureContext';
+import type { FurnitureItem } from '@/qeramika/data/furnitureLibrary';
+import type { FloorPlan } from '@/qeramika/types/floorPlan';
+import { CM_TO_METERS } from '@/qeramika/utils/modelLoader';
 import { FurnitureColorPopup } from './FurnitureColorPopup';
 import { FurnitureDetailsDialog } from './FurnitureDetailsDialog';
 import { toast } from 'sonner';

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Loader2, RotateCcw, Box } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { initProductView } from '@/product-view/main';
+import { initProductView } from '@/qeramika/product-view/main';
 
 interface ProductViewState {
   id?: string;

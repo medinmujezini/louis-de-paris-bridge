@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Recycle, ChevronDown, ChevronUp, ArrowRight, Info } from 'lucide-react';
-import { CutOptimizationResult } from '@/utils/tileCalculator';
+import { CutOptimizationResult } from '@/qeramika/utils/tileCalculator';
 
 interface LeftoverReusePanelProps {
   optimization: CutOptimizationResult;

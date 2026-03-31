@@ -18,8 +18,8 @@ import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import { Paintbrush, Grid3X3, Check, Wallpaper, ArrowRight } from 'lucide-react';
-import { PAINT_COLORS, WALLPAPER_PATTERNS, WallSurfaceType } from '@/types/floorPlan';
-import type { Wall, Point } from '@/types/floorPlan';
+import { PAINT_COLORS, WALLPAPER_PATTERNS, WallSurfaceType } from '@/qeramika/types/floorPlan';
+import type { Wall, Point } from '@/qeramika/types/floorPlan';
 import { cn } from '@/lib/utils';
 
 interface WallSurfaceDialogProps {

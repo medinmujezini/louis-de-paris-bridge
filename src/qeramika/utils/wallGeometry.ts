@@ -5,8 +5,8 @@
  * Single source of truth - other files should import from here.
  */
 
-import type { Point2D, FloorPlanPoint } from '@/types/geometry';
-import type { Wall } from '@/types/floorPlan';
+import type { Point2D, FloorPlanPoint } from '@/qeramika/types/geometry';
+import type { Wall } from '@/qeramika/types/floorPlan';
 
 // =============================================================================
 // POINT LOOKUP

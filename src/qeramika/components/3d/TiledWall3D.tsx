@@ -10,10 +10,10 @@ import { useFrame } from '@react-three/fiber';
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 import { Tile3D } from './Tile3D';
-import type { Wall, Point, Tile, TilePattern, TileOrientation, Door, Window as WindowType, TileTextureUrls } from '@/types/floorPlan';
-import type { PBRTextureProps } from '@/utils/textureUtils';
-import { CM_TO_METERS, MM_TO_CM } from '@/constants/units';
-import { createOpeningZones, createWallShapeWithOpenings, type OpeningZone } from '@/utils/wallOpeningGeometry';
+import type { Wall, Point, Tile, TilePattern, TileOrientation, Door, Window as WindowType, TileTextureUrls } from '@/qeramika/types/floorPlan';
+import type { PBRTextureProps } from '@/qeramika/utils/textureUtils';
+import { CM_TO_METERS, MM_TO_CM } from '@/qeramika/constants/units';
+import { createOpeningZones, createWallShapeWithOpenings, type OpeningZone } from '@/qeramika/utils/wallOpeningGeometry';
 
 // Tile config passed from WallFinish
 interface TileConfig {

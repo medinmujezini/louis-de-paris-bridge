@@ -22,6 +22,7 @@ import ParkingPage from "./pages/ParkingPage";
 import LokalePage from "./pages/LokalePage";
 import BuildingInfoPage from "./pages/BuildingInfoPage";
 import InteriorEditPage from "./pages/InteriorEditPage";
+import UnitInteriorPage from "./pages/UnitInteriorPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -47,6 +48,7 @@ const App = () => (
                   <Route path="/building-info" element={<BuildingInfoPage />} />
                   <Route path="/interioredit" element={<InteriorEditPage />} />
                   <Route path="/debug" element={<Index />} />
+                  <Route path="/unit/:id/interior" element={<UnitInteriorPage />} />
                 </Route>
                 <Route path="/admin" element={<AdminPage />} />
                 <Route path="*" element={<NotFound />} />

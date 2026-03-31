@@ -4,8 +4,8 @@
 import { useThree, useFrame } from '@react-three/fiber';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import * as THREE from 'three';
-import { HDRPPipeline, HDRPPipelineConfig } from '@/webgpu/HDRPPipeline';
-import { GIQualityTier, QUALITY_PRESETS } from '@/gi/GIConfig';
+import { HDRPPipeline, HDRPPipelineConfig } from '@/qeramika/webgpu/HDRPPipeline';
+import { GIQualityTier, QUALITY_PRESETS } from '@/qeramika/gi/GIConfig';
 
 export interface RuntimeQualitySettings {
   // SSAO

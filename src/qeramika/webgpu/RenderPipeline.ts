@@ -17,7 +17,7 @@ import { ColorGradingEffect, ColorGradingParams } from './effects/ColorGradingEf
 import { FilmEffectsEffect, FilmEffectsParams } from './effects/FilmEffectsEffect';
 import { ProbeVolumeManager } from './ProbeVolumeManager';
 import { JitterManager } from './utils/JitterSequence';
-import { GIConfig, TAAConfig } from '@/gi/GIConfig';
+import { GIConfig, TAAConfig } from '@/qeramika/gi/GIConfig';
 
 export interface RenderPipelineConfig {
   enabled: boolean;

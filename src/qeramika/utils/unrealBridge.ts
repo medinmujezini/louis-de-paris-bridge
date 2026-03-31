@@ -6,16 +6,7 @@
  * running standalone in a browser.
  */
 
-declare global {
-  interface Window {
-    ue5?: (event: string, data: string) => void;
-    ue?: {
-      interface: {
-        broadcast: (event: string, data: string) => void;
-      };
-    };
-  }
-}
+// Window types declared in src/lib/ue-bridge.ts
 
 /**
  * Check if the app is running inside Unreal Engine's WebUI plugin.

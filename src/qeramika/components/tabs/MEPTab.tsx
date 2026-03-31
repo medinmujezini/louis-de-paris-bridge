@@ -25,16 +25,16 @@ import {
   Settings2,
   Library
 } from 'lucide-react';
-import { getFixturesByCategory, type FixtureTemplate } from '@/data/fixtureLibrary';
-import { SYSTEM_COLORS, type MEPRoute } from '@/types/mep';
-import { MEPCanvas } from '@/components/mep/MEPCanvas';
-import { FixturePropertiesPanel } from '@/components/mep/FixturePropertiesPanel';
-import { AutoRoutingPanel } from '@/components/mep/AutoRoutingPanel';
-import { RiserDiagramView } from '@/components/mep/RiserDiagramView';
-import { BillOfMaterialsPanel } from '@/components/mep/BillOfMaterialsPanel';
-import { IsometricMEPView } from '@/components/mep/IsometricMEPView';
-import { useMEPState } from '@/hooks/useMEPState';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
+import { getFixturesByCategory, type FixtureTemplate } from '@/qeramika/data/fixtureLibrary';
+import { SYSTEM_COLORS, type MEPRoute } from '@/qeramika/types/mep';
+import { MEPCanvas } from '@/qeramika/components/mep/MEPCanvas';
+import { FixturePropertiesPanel } from '@/qeramika/components/mep/FixturePropertiesPanel';
+import { AutoRoutingPanel } from '@/qeramika/components/mep/AutoRoutingPanel';
+import { RiserDiagramView } from '@/qeramika/components/mep/RiserDiagramView';
+import { BillOfMaterialsPanel } from '@/qeramika/components/mep/BillOfMaterialsPanel';
+import { IsometricMEPView } from '@/qeramika/components/mep/IsometricMEPView';
+import { useMEPState } from '@/qeramika/hooks/useMEPState';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
 
 // =============================================================================
 // FIXTURE LIBRARY PANEL

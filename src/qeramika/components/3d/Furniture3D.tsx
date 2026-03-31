@@ -13,9 +13,9 @@ import React, { useRef, useMemo, useState, useEffect } from 'react';
 import { useFrame, ThreeEvent } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
-import type { FurnitureItem } from '@/data/furnitureLibrary';
-import { CM_TO_METERS } from '@/constants/units';
-import { dimensionsCmToMeters, position2Dto3D } from '@/utils/dimensions';
+import type { FurnitureItem } from '@/qeramika/data/furnitureLibrary';
+import { CM_TO_METERS } from '@/qeramika/constants/units';
+import { dimensionsCmToMeters, position2Dto3D } from '@/qeramika/utils/dimensions';
 import { ModelErrorBoundary } from './ModelErrorBoundary';
 import { BlueprintBox } from './BlueprintBox';
 

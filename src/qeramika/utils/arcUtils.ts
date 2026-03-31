@@ -1,4 +1,4 @@
-import type { Point } from '@/types/floorPlan';
+import type { Point } from '@/qeramika/types/floorPlan';
 
 /**
  * Arc utilities for curved wall calculations

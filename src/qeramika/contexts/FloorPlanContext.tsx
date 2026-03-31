@@ -1,8 +1,8 @@
 import React, { createContext, useContext, ReactNode, useState, useMemo } from 'react';
-import { useFloorPlan } from '@/hooks/useFloorPlan';
-import type { CeilingPlane } from '@/types/floorPlan';
-import { DEFAULT_CEILING_PLANE } from '@/types/floorPlan';
-import { DEFAULT_WALL_HEIGHT } from '@/constants/units';
+import { useFloorPlan } from '@/qeramika/hooks/useFloorPlan';
+import type { CeilingPlane } from '@/qeramika/types/floorPlan';
+import { DEFAULT_CEILING_PLANE } from '@/qeramika/types/floorPlan';
+import { DEFAULT_WALL_HEIGHT } from '@/qeramika/constants/units';
 
 // Layer visibility state for canvas rendering
 export interface LayerVisibility {

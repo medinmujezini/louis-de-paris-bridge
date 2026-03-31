@@ -5,7 +5,7 @@
  */
 
 import React, { createContext, useContext, ReactNode } from 'react';
-import { useFurnitureState, type FurnitureStateHook } from '@/hooks/useFurnitureState';
+import { useFurnitureState, type FurnitureStateHook } from '@/qeramika/hooks/useFurnitureState';
 
 const FurnitureContext = createContext<FurnitureStateHook | null>(null);
 

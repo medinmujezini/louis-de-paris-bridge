@@ -14,7 +14,7 @@ import type {
   ValidationError,
   ValidationWarning,
   MEPSystemType,
-} from '@/types/mep';
+} from '@/qeramika/types/mep';
 import { 
   getDrainPipeSize, 
   getVentPipeSize, 
@@ -22,7 +22,7 @@ import {
   validateSlope,
   getTrapRequirements,
   getClearanceRequirements,
-} from '@/data/plumbingCodes';
+} from '@/qeramika/data/plumbingCodes';
 import { detectClashes } from './mepClashDetection';
 
 // =============================================================================

@@ -13,8 +13,8 @@ import type {
   MEPClash,
   MEPSystemType,
   Point3D,
-} from '@/types/mep';
-import { MIN_CLEARANCES } from '@/types/mep';
+} from '@/qeramika/types/mep';
+import { MIN_CLEARANCES } from '@/qeramika/types/mep';
 
 // =============================================================================
 // TYPES

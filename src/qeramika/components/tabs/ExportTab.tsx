@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { GlassCard, GlassCardContent, GlassCardHeader, GlassCardTitle } from '@/components/ui/glass-card';
 import { FileDown, FileText, Image } from 'lucide-react';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
 
 export const ExportTab: React.FC = () => {
   const { floorPlan } = useFloorPlanContext();

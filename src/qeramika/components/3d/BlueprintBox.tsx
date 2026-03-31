@@ -14,8 +14,8 @@ import React, { useRef, useMemo } from 'react';
 import { useFrame, ThreeEvent } from '@react-three/fiber';
 import { Text, Line } from '@react-three/drei';
 import * as THREE from 'three';
-import type { FurnitureItem } from '@/data/furnitureLibrary';
-import { CM_TO_METERS } from '@/utils/modelLoader';
+import type { FurnitureItem } from '@/qeramika/data/furnitureLibrary';
+import { CM_TO_METERS } from '@/qeramika/utils/modelLoader';
 
 interface BlueprintBoxProps {
   item: FurnitureItem;

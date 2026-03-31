@@ -5,7 +5,7 @@
  */
 
 import React, { createContext, useContext, ReactNode } from 'react';
-import { useMEPState, type MEPStateHook } from '@/hooks/useMEPState';
+import { useMEPState, type MEPStateHook } from '@/qeramika/hooks/useMEPState';
 
 const MEPContext = createContext<MEPStateHook | undefined>(undefined);
 

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
+import { useAuth } from '@/qeramika/contexts/AuthContext';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
 import { supabase } from '@/integrations/supabase/client';
-import { AuthForm } from '@/components/auth/AuthForm';
+import { AuthForm } from '@/qeramika/components/auth/AuthForm';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -14,7 +14,7 @@ import {
   Save, FolderOpen, Plus, Trash2, LogOut, 
   User, Clock, FileJson, Loader2 
 } from 'lucide-react';
-import type { FloorPlan } from '@/types/floorPlan';
+import type { FloorPlan } from '@/qeramika/types/floorPlan';
 
 interface Project {
   id: string;
@@ -44,7 +44,7 @@ export const ProjectsTab: React.FC = () => {
     if (!user) return;
     setLoading(true);
     
-    const { data, error } = await supabase
+    const { data, error } = await (supabase as any)
       .from('projects')
       .select('*')
       .order('updated_at', { ascending: false });
@@ -70,13 +70,13 @@ export const ProjectsTab: React.FC = () => {
     let error;
     
     if (currentProjectId) {
-      const result = await supabase
+      const result = await (supabase as any)
         .from('projects')
         .update({ name: projectName, floor_plan_json: floorPlanData })
         .eq('id', currentProjectId);
       error = result.error;
     } else {
-      const result = await supabase
+      const result = await (supabase as any)
         .from('projects')
         .insert({ name: projectName, floor_plan_json: floorPlanData, user_id: user.id })
         .select()
@@ -105,7 +105,7 @@ export const ProjectsTab: React.FC = () => {
   };
 
   const deleteProject = async (projectId: string) => {
-    const { error } = await supabase
+    const { error } = await (supabase as any)
       .from('projects')
       .delete()
       .eq('id', projectId);
@@ -140,7 +140,7 @@ export const ProjectsTab: React.FC = () => {
   if (!user) {
     return (
       <div className="h-full flex items-center justify-center p-8 relative">
-        <GlassCard className="max-w-md w-full" variant="premium">
+        <GlassCard className="max-w-md w-full" variant="strong">
           <GlassCardContent className="pt-6">
             <AuthForm />
           </GlassCardContent>
