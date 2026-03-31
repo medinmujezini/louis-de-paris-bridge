@@ -1,13 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { UnitsBrowser } from "@/components/units/UnitsBrowser";
 import { useSelectedUnit, SelectedUnitProvider } from "@/contexts/SelectedUnitContext";
-import { useThreeDMode } from "@/contexts/ThreeDModeContext";
 import { Eye, Box } from "lucide-react";
 import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
 
 function ViewDetailsButton() {
   const { selectedUnit, openDetail } = useSelectedUnit();
-  const { enter } = useThreeDMode();
   const navigate = useNavigate();
 
   if (!selectedUnit) return null;
