@@ -441,45 +441,15 @@ const TiledWall3DWithMaterial: React.FC<
   );
 };
 
-/** Default floor with laminate texture */
+/** Default floor with procedural color (no external textures needed) */
 const DefaultFloorTexture: React.FC<{
   floorWidth: number;
   floorDepth: number;
 }> = ({ floorWidth, floorDepth }) => {
-  const [albedo, normal, rough] = useLoader(THREE.TextureLoader, [
-    '/textures/default-floor.jpg',
-    '/textures/default-floor-normal.jpg',
-    '/textures/default-floor-roughness.jpg',
-  ]);
-
-  const [albedoTex, normalTex, roughTex] = useMemo(() => {
-    const repeatX = (floorWidth * 100) / 100;
-    const repeatY = (floorDepth * 100) / 100;
-
-    const a = albedo.clone();
-    a.wrapS = THREE.RepeatWrapping;
-    a.wrapT = THREE.RepeatWrapping;
-    a.colorSpace = THREE.SRGBColorSpace;
-    a.repeat.set(repeatX, repeatY);
-
-    const n = normal.clone();
-    n.wrapS = THREE.RepeatWrapping;
-    n.wrapT = THREE.RepeatWrapping;
-    n.repeat.set(repeatX, repeatY);
-
-    const r = rough.clone();
-    r.wrapS = THREE.RepeatWrapping;
-    r.wrapT = THREE.RepeatWrapping;
-    r.repeat.set(repeatX, repeatY);
-
-    return [a, n, r];
-  }, [albedo, normal, rough, floorWidth, floorDepth]);
-
   return (
     <meshStandardMaterial
-      map={albedoTex}
-      normalMap={normalTex}
-      roughnessMap={roughTex}
+      color="#b8a088"
+      roughness={0.7}
       metalness={0.0}
     />
   );
