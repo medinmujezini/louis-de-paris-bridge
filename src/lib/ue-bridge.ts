@@ -411,6 +411,7 @@ export const UEEvents = {
   ENTER_INTERIOR: 'enterInterior',
   EXIT_INTERIOR: 'exitInterior',
   INTERIOR_READY: 'interiorReady',
+  ENTER_INTERIOR_EDIT: 'enterInteriorEdit',
 
   EDIT_INTERIOR: 'editInterior',
   SET_OBJECT_MATERIAL: 'setObjectMaterial',

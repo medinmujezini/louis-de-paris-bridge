@@ -18,6 +18,7 @@ export interface Unit {
   unitType?: UnitType;
   terrace?: number; // terrace area in m2
   duplexTotal?: number; // total duplex area
+  isDemo?: boolean; // demo unit with full interior decoration
 }
 
 export interface UnitFilters {
