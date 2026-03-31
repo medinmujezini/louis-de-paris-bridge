@@ -1,61 +1,55 @@
-## Plan: Update InteriorMaterialEditor Variant Data & Event Payload
-
-### What changes
-
-The `editInterior` event currently sends `{ name: label }` (display name like "Azuara"). It needs to send `{ name: variantId }` using the exact UE blueprint names provided. The variant data also needs to be restructured to match the 28 items provided.
-
-### Changes to `src/components/interior/InteriorMaterialEditor.tsx`
-
-**1. Update the event payload** (line 122):
-
-- Change `sendToUnreal(UEEvents.EDIT_INTERIOR, { name: label })` → `sendToUnreal(UEEvents.EDIT_INTERIOR, { name: variantId })`
-
-**2. Replace VARIANT_DATA** with the corrected 28 entries mapped to categories:
 
 
-| Category               | variantId (sent to UE) | Label (displayed) |
-| ---------------------- | ---------------------- | ----------------- |
-| **Dritaret**           | `DritareWhite`         | White             |
-| &nbsp;                 | `DritareZI`            | Black             |
-| **Parketi**            | `ParketAzuara`         | Azuara            |
-| &nbsp;                 | `ParketCodos`          | Codos             |
-| &nbsp;                 | `ParketTarragona`      | Tarragona         |
-| &nbsp;                 | `ParketJuneda`         | Juneda            |
-| **Pllakat**            | `Pllaka1`              | Pllaka 1          |
-| &nbsp;                 | `Pllaka2`              | Pllaka 2          |
-| &nbsp;                 | `Pllaka3`              | Pllaka 3          |
-| &nbsp;                 | `Pllaka4`              | Pllaka 4          |
-| &nbsp;                 | `Pllaka5`              | Pllaka 5          |
-| &nbsp;                 | `Pllaka6`              | Pllaka 6          |
-| &nbsp;                 | `Pllaka7`              | Pllaka 7          |
-| &nbsp;                 | &nbsp;                 | &nbsp;            |
-| &nbsp;                 | &nbsp;                 | &nbsp;            |
-| **Panelet & Dollapet** | `ClosetPineWood`       | Pine Wood         |
-| &nbsp;                 | `ClosetOakWood`        | Oak Wood          |
-| &nbsp;                 | `ClosetWhitePanels`    | White Panels      |
-| **Baza e Sofas**       | `BazaSofaVariant`      | Variant 1         |
-| &nbsp;                 | `BazaSofaVariant1`     | Variant 2         |
-| &nbsp;                 | `BazaSofaVariant2`     | Variant 3         |
-| **Tryezat**            | `Tryezari1`            | Tryezari 1        |
-| &nbsp;                 | `Tryezari2`            | Tryezari 2        |
-| &nbsp;                 | `Tryezari3`            | Tryezari 3        |
-| &nbsp;                 | `Tryezari4`            | Tryezari 4        |
-| **Krevatet**           | `Dyshat1`              | Dyshat 1          |
-| &nbsp;                 | `Dyshat2`              | Dyshat 2          |
-| &nbsp;                 | `Dyshat3``Dyshat4`    | Dyshat 3Dyshat 4 |
+# Louis de Paris — Simplified UI Plan (Revised)
 
+## Flow
 
-**3. Remove old categories** that are no longer in the data:
+1. **Intro Video** → fullscreen MP4 player with skip button
+2. **Section Selector** → two elegant glassmorphic cards: "Apartments" and "Villas"
+3. **Browsing** → sidebar + filters scoped to selected section; demo units (1 apt, 1 villa) get an "Explore Interior" button
 
-- Master Bed, Children Bed, Kitchen Table, Ndrysho Dritat — all removed
-- Parketi loses "Ebony Parquet", gains "Juneda"
+## Plan
 
-**4. Add new category icons**:
+### 1. Create `AppFlowContext`
+- Tracks phase: `intro` → `section-select` → `browsing`
+- Stores selected section (`apartment | villa | null`)
+- Actions: `skipIntro()`, `selectSection()`, `backToSections()`
 
-- Baza e Sofas → `Sofa` or similar icon
-- Tryezat → `UtensilsCrossed` (reused from old Kitchen Table)
-- Dyshat → `BedDouble` (reused from old Master Bed)
+### 2. Create `IntroVideoOverlay`
+- Fullscreen fixed overlay, plays `/videos/intro.mp4`, autoplay
+- Skip button bottom-right, advances to `section-select` on end/skip
+- Fade-out transition
 
-### File modified
+### 3. Create `SectionSelector`
+- Two large glassmorphic cards side by side: "Residential Apartments" and "Luxury Villas"
+- Each with an icon, short description, and hover glow effect
+- On click: sends `UEEvents.FOCUS_SECTION` with `{ section }` to UE, sets phase to `browsing`
 
-- `src/components/interior/InteriorMaterialEditor.tsx`
+### 4. Update `HomePage`
+- Renders flow phases: intro → section selector → existing camera/weather controls
+- Sidebar and HUD hidden until `browsing` phase
+
+### 5. Update `AppLayout`
+- Read flow phase from context; hide sidebar + header during `intro` and `section-select`
+
+### 6. Update types and data
+- Add `"villa"` to `UnitType` in `types/units.ts`
+- Add villa placeholder units to `mock-units.ts`, mark 1 apartment + 1 villa as demo
+- Add `FOCUS_SECTION` and `ENTER_INTERIOR_EDIT` events to `ue-bridge.ts`
+
+### 7. Scoped browsing
+- `UnitsBrowser` filters by selected section type
+- Demo units show "Explore Interior" CTA → **only** sends `ENTER_INTERIOR_EDIT` event to UE with the unit ID. No interior UI is built — Unreal Engine and Qeramika ShowRoom handle everything after this event.
+
+### 8. Rebrand
+- Update `index.html` title to "Louis de Paris"
+- Update sidebar header, translation files (project name refs)
+- **Color palette: strictly black (#0A0A0A) and gold (#C9A84C) only.** Replace the current dark red accent (`--primary`, `--accent`, `--ring`, etc.) with gold. Background stays black. No navy, no cream, no other colors.
+- Update `mem://project/name`
+
+## Files
+
+**Create:** `AppFlowContext.tsx`, `IntroVideoOverlay.tsx`, `SectionSelector.tsx`
+
+**Modify:** `HomePage.tsx`, `AppLayout.tsx`, `types/units.ts`, `mock-units.ts`, `ue-bridge.ts`, `AppSidebar.tsx`, `index.html`, translation files, `index.css`
+
