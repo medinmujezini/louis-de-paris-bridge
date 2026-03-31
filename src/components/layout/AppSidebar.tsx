@@ -10,10 +10,11 @@ import {
   UserPlus,
   LogOut,
   User,
-   Car,
-   Store,
-   Bot,
-   Info
+  Car,
+  Store,
+  Bot,
+  Info,
+  ArrowLeft
 } from "lucide-react";
 import {
   DropdownMenu,
