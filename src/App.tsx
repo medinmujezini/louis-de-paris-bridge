@@ -55,6 +55,7 @@ const App = () => (
               <OnboardingOverlay />
               <CommercialOverlay />
             </TutorialProvider>
+            </AppFlowProvider>
             </ThreeDModeProvider>
           </BrowserRouter>
         </TooltipProvider>

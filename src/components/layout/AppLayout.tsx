@@ -135,7 +135,7 @@ export function AppLayout() {
         )}
       >
         {/* Top bar with toggle */}
-        {!isInteriorEdit && (
+        {!isInteriorEdit && !hideChrome && (
           <header className={cn(
             "fixed top-0 left-0 right-0 z-20 p-4 transition-opacity duration-300",
             (threeDMode.phase === "interior" || threeDMode.phase === "exiting-loading" || threeDMode.phase === "exiting-video") && "opacity-0 pointer-events-none"
