@@ -1,10 +1,10 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
-import type { Point, Wall, Door, Window as WindowType, Fixture, Column } from '@/types/floorPlan';
-import { TILE_LIBRARY } from '@/types/floorPlan';
-import { checkFixtureCollisions, getClearanceZone, FIXTURE_CLEARANCES } from '@/utils/collisionDetection';
-import { useConnectionStatus, getOverallStatus, getConnectionStatusColor } from '@/hooks/useConnectionStatus';
-import { getArcPoints, getBulgeHandlePosition, arcLength } from '@/utils/arcUtils';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
+import type { Point, Wall, Door, Window as WindowType, Fixture, Column } from '@/qeramika/types/floorPlan';
+import { TILE_LIBRARY } from '@/qeramika/types/floorPlan';
+import { checkFixtureCollisions, getClearanceZone, FIXTURE_CLEARANCES } from '@/qeramika/utils/collisionDetection';
+import { useConnectionStatus, getOverallStatus, getConnectionStatusColor } from '@/qeramika/hooks/useConnectionStatus';
+import { getArcPoints, getBulgeHandlePosition, arcLength } from '@/qeramika/utils/arcUtils';
 import {
   ContextMenu,
   ContextMenuContent,

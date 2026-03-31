@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { GlassCard, GlassCardContent, GlassCardHeader, GlassCardTitle } from '@/components/ui/glass-card';
 import { Label } from '@/components/ui/label';
@@ -13,15 +13,15 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 
-import type { WallMaterial, DoorType, WindowType, ColumnShape } from '@/types/floorPlan';
+import type { WallMaterial, DoorType, WindowType, ColumnShape } from '@/qeramika/types/floorPlan';
 import { 
   SLOPE_PRESETS, 
   calculateHeightFromAngle, 
   calculateAngleFromHeights,
   detectHeightMismatches,
   getConnectedWalls
-} from '@/utils/wallHeightUtils';
-import { getEffectiveWallHeights, getWallSlopeRelation } from '@/utils/ceilingUtils';
+} from '@/qeramika/utils/wallHeightUtils';
+import { getEffectiveWallHeights, getWallSlopeRelation } from '@/qeramika/utils/ceilingUtils';
 
 const WALL_MATERIALS: { value: WallMaterial; label: string }[] = [
   { value: 'concrete', label: 'Concrete' },

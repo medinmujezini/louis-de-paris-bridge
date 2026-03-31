@@ -9,8 +9,8 @@ import { Badge } from '@/components/ui/badge';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
-import type { AIFloorPlanAnalysis, AIDetectedWall, AIDetectedDoor, AIDetectedWindow, ScaleCalibration } from '@/types/floorPlanDigitizer';
-import { pixelsToCm } from '@/utils/scaleCalibration';
+import type { AIFloorPlanAnalysis, AIDetectedWall, AIDetectedDoor, AIDetectedWindow, ScaleCalibration } from '@/qeramika/types/floorPlanDigitizer';
+import { pixelsToCm } from '@/qeramika/utils/scaleCalibration';
 
 interface DigitizedPlanEditorProps {
   imageDataUrl: string;

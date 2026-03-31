@@ -10,7 +10,7 @@ import {
   Loader2, Box, LayoutGrid, Mountain, Eye, Bookmark, Trash2,
   Play, PersonStanding, Move3D, Lightbulb,
 } from 'lucide-react';
-import { QualitySettingsPanel, QualitySettings } from '@/components/design/QualitySettingsPanel';
+import { QualitySettingsPanel, QualitySettings } from '@/qeramika/components/design/QualitySettingsPanel';
 
 interface SavedCameraView {
   id: string;
