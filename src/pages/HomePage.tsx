@@ -73,22 +73,22 @@ export default function HomePage() {
 
       {/* Top-right: Camera presets */}
       <div className="absolute top-4 right-4 z-10" data-tutorial="camera-views">
-        <GlassCard variant="strong" className="p-3">
+        <div className="p-3 rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20">
           <div className="flex flex-col gap-2">
             <span className="text-xs text-muted-foreground">{t.home.cameraViews.title}</span>
             <div className="flex gap-2">
-              <GlassButton size="sm" onClick={() => handleCameraView("exterior")} title={t.home.cameraViews.exterior}>
+              <button onClick={() => handleCameraView("exterior")} title={t.home.cameraViews.exterior} className="h-9 w-9 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center text-primary hover:bg-primary/25 transition-colors">
                 <Building2 className="w-4 h-4" />
-              </GlassButton>
-              <GlassButton size="sm" onClick={() => handleCameraView("aerial")} title={t.home.cameraViews.aerial}>
+              </button>
+              <button onClick={() => handleCameraView("aerial")} title={t.home.cameraViews.aerial} className="h-9 w-9 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center text-primary hover:bg-primary/25 transition-colors">
                 <Plane className="w-4 h-4" />
-              </GlassButton>
-              <GlassButton size="sm" onClick={() => handleCameraView("street")} title={t.home.cameraViews.street}>
+              </button>
+              <button onClick={() => handleCameraView("street")} title={t.home.cameraViews.street} className="h-9 w-9 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center text-primary hover:bg-primary/25 transition-colors">
                 <Eye className="w-4 h-4" />
-              </GlassButton>
+              </button>
             </div>
           </div>
-        </GlassCard>
+        </div>
       </div>
 
       {/* Bottom: Time & Weather Controls */}
