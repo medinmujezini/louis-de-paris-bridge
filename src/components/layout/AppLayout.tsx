@@ -11,6 +11,7 @@ import { AccessibilityToggle } from "@/components/accessibility/AccessibilityTog
 import { TutorialButton } from "@/components/tutorial/TutorialButton";
 import { DinoBot } from "@/components/chat/DinoBot";
 import { useThreeDMode } from "@/contexts/ThreeDModeContext";
+import { useAppFlow } from "@/contexts/AppFlowContext";
 
 import uePreviewBg from "@/assets/ue-preview-bg.png";
 
@@ -20,7 +21,9 @@ export function AppLayout() {
   const [showDebug, setShowDebug] = useState(false);
   const [dinoBotOpen, setDinoBotOpen] = useState(false);
   const threeDMode = useThreeDMode();
+  const { phase } = useAppFlow();
   const prevPathRef = useRef(location.pathname);
+  const hideChrome = phase === "intro" || phase === "section-select";
 
   // Map routes to UE category identifiers
   const routeToCategoryMap: Record<string, string> = {
@@ -69,7 +72,7 @@ export function AppLayout() {
   }, [location.pathname]);
 
   const isInteriorEdit = location.pathname === "/interioredit";
-  const effectiveSidebarOpen = (threeDMode.active || isInteriorEdit) ? false : sidebarOpen;
+  const effectiveSidebarOpen = (threeDMode.active || isInteriorEdit || hideChrome) ? false : sidebarOpen;
 
   const handleNavigate = (itemId: string) => {
     console.log("Navigate to:", itemId);
@@ -132,7 +135,7 @@ export function AppLayout() {
         )}
       >
         {/* Top bar with toggle */}
-        {!isInteriorEdit && (
+        {!isInteriorEdit && !hideChrome && (
           <header className={cn(
             "fixed top-0 left-0 right-0 z-20 p-4 transition-opacity duration-300",
             (threeDMode.phase === "interior" || threeDMode.phase === "exiting-loading" || threeDMode.phase === "exiting-video") && "opacity-0 pointer-events-none"

@@ -13,8 +13,8 @@ export const en = {
   
   // Home page
   home: {
-    title: "Dino Residence",
-    subtitle: "Interactive 3D Building Visualization",
+    title: "Louis de Paris",
+    subtitle: "Interactive 3D Residence Visualization",
     residenceVisualization: "Residence Visualization",
     mockMode: "Mock Mode",
     unrealViewport: "Unreal Engine viewport will render here",
@@ -231,7 +231,7 @@ export const en = {
 
   // Tutorial - 20 steps
   tutorial: {
-    welcome: "Welcome to Dino Residence!",
+    welcome: "Welcome to Louis de Paris!",
     welcomeDesc: "Let me show you around! This quick tour will help you discover all the features.",
     startTour: "Start Tour",
     letsGo: "Let's Explore!",

@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect, useCallback } from "react";
 import { Unit, UnitFilters, defaultFilters } from "@/types/units";
+import { useAppFlow } from "@/contexts/AppFlowContext";
 import { useUnits } from "@/hooks/useUnits";
 import { buildingSections, getSectionById } from "@/data/building-sections";
 import { UnitCard } from "./UnitCard";
@@ -27,6 +28,7 @@ const MAX_COMPARE_UNITS = 6;
 export function UnitsBrowser({ onClose }: UnitsBrowserProps) {
   const { t } = useLanguage();
   const { data: dbUnits = [] } = useUnits();
+  const { selectedSection } = useAppFlow();
   const { selectedUnit, setSelectedUnit, detailOpen, setDetailOpen } = useSelectedUnit();
   const [units, setUnits] = useState<Unit[]>([]);
   const [filters, setFilters] = useState<UnitFilters>(defaultFilters);
@@ -37,12 +39,13 @@ export function UnitsBrowser({ onClose }: UnitsBrowserProps) {
   const [showFilters, setShowFilters] = useState(false);
   const [filtersForceExpanded, setFiltersForceExpanded] = useState(false);
 
-  // Initialize units from database — only apartments
+  // Initialize units from database — filter by selected section type
   useEffect(() => {
     if (dbUnits.length > 0) {
-      setUnits(dbUnits.filter((u) => u.unitType === "apartment" || !u.unitType));
+      const sectionFilter = selectedSection || "apartment";
+      setUnits(dbUnits.filter((u) => u.unitType === sectionFilter || (!u.unitType && sectionFilter === "apartment")));
     }
-  }, [dbUnits]);
+  }, [dbUnits, selectedSection]);
 
   const floors = useMemo(() => [...new Set(units.map((u) => u.floor))].sort((a, b) => a - b), [units]);
   const priceRange = useMemo(() => {

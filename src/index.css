@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Dino Residence Design System
+/* Louis de Paris Design System
    - Space Grotesk typography
-   - Dark theme with dark red accents
+   - Black & Gold luxury theme
    - Glassmorphism effects
    - All colors in HSL
 */
@@ -21,9 +21,9 @@
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 100%;
 
-    /* Dark red accent */
-    --primary: 7 85% 36%; /* #A91B0B */
-    --primary-foreground: 0 0% 100%;
+    /* Gold accent — #C9A84C */
+    --primary: 43 50% 54%;
+    --primary-foreground: 0 0% 4%;
 
     --secondary: 0 0% 14%;
     --secondary-foreground: 0 0% 100%;
@@ -31,15 +31,15 @@
     --muted: 0 0% 18%;
     --muted-foreground: 0 0% 63%; /* #A0A0A0 */
 
-    --accent: 7 85% 36%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 43 50% 54%;
+    --accent-foreground: 0 0% 4%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 7 85% 36%;
+    --ring: 43 50% 54%;
 
     --radius: 0.75rem;
 
@@ -51,12 +51,12 @@
     /* Sidebar */
     --sidebar-background: 0 0% 6%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 7 85% 36%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: 43 50% 54%;
+    --sidebar-primary-foreground: 0 0% 4%;
     --sidebar-accent: 0 0% 12%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 7 85% 36%;
+    --sidebar-ring: 43 50% 54%;
   }
 
   /* Light mode override (optional - mainly dark for UE overlay) */
@@ -67,19 +67,19 @@
     --card-foreground: 0 0% 4%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 4%;
-    --primary: 7 85% 36%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 43 50% 54%;
+    --primary-foreground: 0 0% 4%;
     --secondary: 0 0% 96%;
     --secondary-foreground: 0 0% 4%;
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
-    --accent: 7 85% 36%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 43 50% 54%;
+    --accent-foreground: 0 0% 4%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 7 85% 36%;
+    --ring: 43 50% 54%;
   }
 }
 
@@ -417,7 +417,7 @@
 
   .print-brochure__accent-line {
     height: 3px;
-    background: linear-gradient(90deg, #a91b0b 0%, #d4442e 40%, transparent 100%);
+    background: linear-gradient(90deg, #C9A84C 0%, #e0c06a 40%, transparent 100%);
     margin: 12px 0 20px;
     border-radius: 2px;
   }
@@ -465,7 +465,7 @@
   .print-brochure__price {
     font-size: 26px;
     font-weight: 700;
-    color: #a91b0b;
+    color: #C9A84C;
   }
 
   .print-brochure__price-sqm {
@@ -482,7 +482,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #a91b0b;
+    color: #C9A84C;
     border-bottom: 1px solid #e8e8e8;
     padding-bottom: 6px;
     margin: 0 0 14px;
@@ -507,7 +507,7 @@
   }
 
   .print-brochure__spec-icon {
-    color: #a91b0b;
+    color: #C9A84C;
     margin-bottom: 4px;
   }
 

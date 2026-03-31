@@ -12,7 +12,7 @@ export const sq: TranslationKeys = {
     buildingInfo: "Info Ndërtesa",
   },
   home: {
-    title: "Dino Residence",
+    title: "Louis de Paris",
     subtitle: "Vizualizim Ndërtimi 3D Interaktiv",
     residenceVisualization: "Vizualizim Rezidence",
     mockMode: "Modaliteti Test",
@@ -219,7 +219,7 @@ export const sq: TranslationKeys = {
 
   // Tutorial - 20 hapa
   tutorial: {
-    welcome: "Mirë se vini në Dino Residence!",
+    welcome: "Mirë se vini në Louis de Paris!",
     welcomeDesc: "Më lejoni t'ju tregoj rreth aplikacionit! Ky tur i shkurtër do t'ju ndihmojë të zbuloni të gjitha veçoritë.",
     startTour: "Fillo Turin",
     letsGo: "Le të fillojmë!",

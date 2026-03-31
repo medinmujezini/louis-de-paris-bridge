@@ -1,6 +1,7 @@
 import { Unit } from "@/types/units";
-import { Bed, Bath, Maximize, Save } from "lucide-react";
+import { Bed, Bath, Maximize, Save, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
 
 interface UnitCardProps {
   unit: Unit;
@@ -26,6 +27,11 @@ export function UnitCard({
   const handleCompareToggle = (e: React.MouseEvent) => {
     e.stopPropagation();
     onToggleCompare?.(unit);
+  };
+
+  const handleExploreInterior = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    sendToUnreal(UEEvents.ENTER_INTERIOR_EDIT, { unitId: unit.id });
   };
 
   const formatPrice = (price: number) =>
@@ -95,6 +101,17 @@ export function UnitCard({
             <span className="text-destructive/70 font-medium ml-auto">Sold</span>
           )}
         </div>
+
+        {/* Demo unit: Explore Interior CTA */}
+        {unit.isDemo && unit.available && (
+          <button
+            onClick={handleExploreInterior}
+            className="mt-2 w-full flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md bg-primary/15 text-primary text-xs font-medium hover:bg-primary/25 transition-colors"
+          >
+            <Sparkles className="w-3 h-3" />
+            Explore Interior
+          </button>
+        )}
       </div>
     </div>
   );
