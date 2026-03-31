@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useAppFlow } from "@/contexts/AppFlowContext";
 import { Home, Building2, Car, Store, Trees, Info, X, Mouse, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -20,6 +21,7 @@ const sidebarItems = [
 export function OnboardingOverlay() {
   const { t } = useLanguage();
   const location = useLocation();
+  const { phase: flowPhase } = useAppFlow();
 
   const [phase, setPhase] = useState<Phase>(() => {
     // TODO: remove this bypass after testing — always show onboarding on reload
@@ -102,7 +104,7 @@ export function OnboardingOverlay() {
 
   // Don't show main onboarding on interior edit route (has its own onboarding)
   if (location.pathname === "/interioredit") return null;
-
+  if (flowPhase !== "browsing") return null;
   if (phase === "complete") return null;
 
   const isLastTab = sidebarIndex >= sidebarItems.length - 1;
