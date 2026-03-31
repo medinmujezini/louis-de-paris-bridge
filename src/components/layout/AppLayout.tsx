@@ -21,7 +21,9 @@ export function AppLayout() {
   const [showDebug, setShowDebug] = useState(false);
   const [dinoBotOpen, setDinoBotOpen] = useState(false);
   const threeDMode = useThreeDMode();
+  const { phase } = useAppFlow();
   const prevPathRef = useRef(location.pathname);
+  const hideChrome = phase === "intro" || phase === "section-select";
 
   // Map routes to UE category identifiers
   const routeToCategoryMap: Record<string, string> = {
