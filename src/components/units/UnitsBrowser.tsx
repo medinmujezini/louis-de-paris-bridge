@@ -255,11 +255,11 @@ export function UnitsBrowser({ onClose }: UnitsBrowserProps) {
 
             <div className="relative">
               <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground" />
-              <GlassInput
+              <input
                 placeholder={t.units.filters.searchPlaceholder}
                 value={filters.search}
                 onChange={(e) => setFilters({ ...filters, search: e.target.value })}
-                className="pl-8 h-7 text-xs"
+                className="w-full pl-8 h-7 text-xs rounded-lg bg-[hsl(0,0%,8%)] border border-primary/15 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/40 transition-colors"
               />
             </div>
 
