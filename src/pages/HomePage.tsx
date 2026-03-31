@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { ViewerControls } from "@/components/home/ViewerControls";
-import { GlassCard } from "@/components/ui/glass-card";
-import { GlassButton } from "@/components/ui/glass-button";
-import { Building2, Plane, Eye, RotateCcw, RotateCw, ArrowLeft } from "lucide-react";
+import { Building2, Plane, Eye, RotateCcw, RotateCw } from "lucide-react";
 import { sendToUnreal, registerHandler, UEEvents } from "@/lib/ue-bridge";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useAppFlow } from "@/contexts/AppFlowContext";
 import { IntroVideoOverlay } from "@/components/intro/IntroVideoOverlay";
 import { SectionSelector } from "@/components/home/SectionSelector";
+import { cn } from "@/lib/utils";
 
 type TimeOfDay = "dawn" | "morning" | "noon" | "sunset" | "night";
 type Weather = "clear" | "cloudy" | "rainy" | "foggy";
