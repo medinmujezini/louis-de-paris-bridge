@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
-import { Canvas2D } from '@/components/floor-plan/Canvas2D';
-import { FloorPlanToolbar } from '@/components/toolbars/FloorPlanToolbar';
-import { PropertiesPanel } from '@/components/floor-plan/PropertiesPanel';
+import { Canvas2D } from '@/qeramika/components/floor-plan/Canvas2D';
+import { FloorPlanToolbar } from '@/qeramika/components/toolbars/FloorPlanToolbar';
+import { PropertiesPanel } from '@/qeramika/components/floor-plan/PropertiesPanel';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
