@@ -145,7 +145,7 @@ export function ViewerControls({ timeOfDay, weather, onTimeChange, onWeatherChan
 
       {/* Weather Controls */}
       <div className="p-2 rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20" data-tutorial="weather-controls">
-        <div className="flex items-center gap-1">
+        <div className="flex items-center justify-center gap-1">
           <span className="text-xs text-muted-foreground px-2 hidden sm:block">{t.home.weather.title}</span>
           <div className="flex gap-1">
             {weatherOptions.map((option) => {
