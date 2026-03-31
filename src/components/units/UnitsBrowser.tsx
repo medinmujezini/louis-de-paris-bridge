@@ -219,8 +219,9 @@ export function UnitsBrowser({ onClose }: UnitsBrowserProps) {
 
   return (
     <>
-      <div className="glass-card glass-card--strong h-full rounded-xl flex flex-col overflow-hidden">
-        <div className="glass-card__light-bar glass-card__light-bar--strong" aria-hidden="true" />
+      <div className="h-full rounded-xl flex flex-col overflow-hidden bg-[hsl(0,0%,4%)] border border-primary/20">
+        {/* Gold accent bar at top */}
+        <div className="h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-60" aria-hidden="true" />
 
         <div className="relative z-10 flex flex-col h-full overflow-hidden">
           {/* ── Header: count + search ── */}
@@ -254,11 +255,11 @@ export function UnitsBrowser({ onClose }: UnitsBrowserProps) {
 
             <div className="relative">
               <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground" />
-              <GlassInput
+              <input
                 placeholder={t.units.filters.searchPlaceholder}
                 value={filters.search}
                 onChange={(e) => setFilters({ ...filters, search: e.target.value })}
-                className="pl-8 h-7 text-xs"
+                className="w-full pl-8 h-7 text-xs rounded-lg bg-[hsl(0,0%,8%)] border border-primary/15 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/40 transition-colors"
               />
             </div>
 
@@ -277,7 +278,7 @@ export function UnitsBrowser({ onClose }: UnitsBrowserProps) {
           </div>
 
           {/* ── Divider ── */}
-          <div className="h-px bg-white/[0.08] mx-3" />
+          <div className="h-px bg-primary/10 mx-3" />
 
           {/* ── Scrollable unit list ── */}
           <ScrollArea className="flex-1 min-h-0">
