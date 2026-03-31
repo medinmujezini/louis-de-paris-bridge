@@ -201,7 +201,7 @@ export const MaterialProvider = ({ children }: { children: ReactNode }) => {
 
       const [albedo, normal, roughness, metallic, ao, arm, height] = results;
 
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('materials')
         .insert({
           name: material.name,
