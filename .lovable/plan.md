@@ -1,16 +1,16 @@
 
 
-# Wire Up "Explore Interior" Navigation
+# Rewire 3D VIEW to Qeramika Interior Editor
 
-## What
-Update `src/components/units/UnitCard.tsx` to navigate to `/unit/${unit.id}/interior` after the existing UE event.
+## Changes
 
-## Changes (single file)
+### 1. `src/pages/UnitsPage.tsx` — Update `handleEnter3D`
+- Change navigation from `/interioredit` to `/unit/${selectedUnit.id}/interior`
+- Send `ENTER_INTERIOR_EDIT` UE event instead of calling `enter(selectedUnit)` from ThreeDMode
+- Remove the `useThreeDMode` import (no longer needed)
 
-**`src/components/units/UnitCard.tsx`**:
-1. Add `import { useNavigate } from "react-router-dom"` at top
-2. Add `const navigate = useNavigate()` inside the component body
-3. In `handleExploreInterior`, add `navigate('/unit/' + unit.id + '/interior')` after the `sendToUnreal` call
-
-No other files affected.
+### 2. `src/components/units/UnitCard.tsx` — Remove "Explore Interior" button
+- Delete the `handleExploreInterior` function
+- Remove the "Explore Interior" button block (the conditional `isSelected && unit.available` section)
+- Remove unused imports (`useNavigate`, `Sparkles`, `sendToUnreal`, `UEEvents`)
 
