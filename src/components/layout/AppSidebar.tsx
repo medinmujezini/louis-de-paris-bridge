@@ -10,10 +10,11 @@ import {
   UserPlus,
   LogOut,
   User,
-   Car,
-   Store,
-   Bot,
-   Info
+  Car,
+  Store,
+  Bot,
+  Info,
+  ArrowLeft
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -29,6 +30,7 @@ import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useAuth } from "@/hooks/useAuth";
+import { useAppFlow } from "@/contexts/AppFlowContext";
 
 interface NavItem {
   id: string;
@@ -52,6 +54,7 @@ export function AppSidebar({ onNavigate, onDinoBotToggle, dinoBotActive }: AppSi
   const location = useLocation();
   const { t } = useLanguage();
   const { user, isAdmin, signOut } = useAuth();
+  const { phase, backToSections } = useAppFlow();
   const [collapsed, setCollapsed] = useState(true);
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(["units"]));
 
@@ -316,6 +319,22 @@ export function AppSidebar({ onNavigate, onDinoBotToggle, dinoBotActive }: AppSi
           </button>
         </div>
 
+        {/* Back to sections */}
+        {phase === "browsing" && (
+          <div className="flex justify-center">
+            <button
+              onClick={backToSections}
+              className={cn(
+                "flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium text-primary border border-primary/20 hover:bg-primary/15 transition-colors",
+                collapsed && "w-10 h-10 p-0"
+              )}
+              title="Back to Sections"
+            >
+              <ArrowLeft className="w-4 h-4 shrink-0" />
+              {!collapsed && <span>Back</span>}
+            </button>
+          </div>
+        )}
         <div className={cn(
           "flex items-center gap-2 px-3 py-2 rounded-md bg-white/5",
           collapsed && "justify-center"
