@@ -383,11 +383,11 @@ export function UnitDetailDrawer({
             }}
           >
             {/* Light bar */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[2px] bg-gradient-to-r from-transparent via-destructive to-transparent" />
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[4px] blur-[4px] bg-gradient-to-r from-transparent via-destructive to-transparent" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[4px] blur-[4px] bg-gradient-to-r from-transparent via-primary to-transparent" />
 
-            {/* Red orb */}
-            <div className="absolute top-10 -right-10 w-40 h-40 rounded-full bg-destructive/15 blur-[80px] pointer-events-none" />
+            {/* Gold orb */}
+            <div className="absolute top-10 -right-10 w-40 h-40 rounded-full bg-primary/15 blur-[80px] pointer-events-none" />
 
             {/* Header */}
             <div className="flex items-center justify-between px-6 pt-6 pb-2">
