@@ -52,7 +52,7 @@ const App = () => (
                 <Route path="*" element={<NotFound />} />
               </Routes>
               <TutorialOverlay />
-              <OnboardingOverlay />
+              {/* OnboardingOverlay removed — entry flow handled by intro video + section selector */}
               <CommercialOverlay />
             </TutorialProvider>
             </AppFlowProvider>
