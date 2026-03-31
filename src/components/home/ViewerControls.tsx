@@ -66,7 +66,7 @@ export function ViewerControls({ timeOfDay, weather, onTimeChange, onWeatherChan
   // Compact: single-row layout for interior HUD
   if (compact) {
     return (
-      <GlassCard variant="strong" className="p-3" data-tutorial="viewer-controls-compact">
+      <div className="p-3 rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20" data-tutorial="viewer-controls-compact">
         <div className="flex items-center gap-4">
           {/* Time slider */}
           <div className="flex items-center gap-3 min-w-[200px]">
