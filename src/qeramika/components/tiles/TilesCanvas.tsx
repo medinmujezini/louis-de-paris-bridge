@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
-import type { Point, Wall, Tile } from '@/types/floorPlan';
-import { TILE_LIBRARY, isWallCurved, isWallSloped, isTileSuitableForCurve, getRecommendedTileSize } from '@/types/floorPlan';
-import { renderWallTiles } from '@/utils/tileRenderer';
-import { getArcPoints, calculateArcInfo } from '@/utils/arcUtils';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
+import type { Point, Wall, Tile } from '@/qeramika/types/floorPlan';
+import { TILE_LIBRARY, isWallCurved, isWallSloped, isTileSuitableForCurve, getRecommendedTileSize } from '@/qeramika/types/floorPlan';
+import { renderWallTiles } from '@/qeramika/utils/tileRenderer';
+import { getArcPoints, calculateArcInfo } from '@/qeramika/utils/arcUtils';
 
 interface TilesCanvasProps {
   selectedTile: Tile | null;

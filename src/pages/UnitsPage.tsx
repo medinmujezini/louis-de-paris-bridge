@@ -1,13 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { UnitsBrowser } from "@/components/units/UnitsBrowser";
 import { useSelectedUnit, SelectedUnitProvider } from "@/contexts/SelectedUnitContext";
-import { useThreeDMode } from "@/contexts/ThreeDModeContext";
 import { Eye, Box } from "lucide-react";
 import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
 
 function ViewDetailsButton() {
   const { selectedUnit, openDetail } = useSelectedUnit();
-  const { enter } = useThreeDMode();
   const navigate = useNavigate();
 
   if (!selectedUnit) return null;
@@ -16,8 +14,8 @@ function ViewDetailsButton() {
 
   const handleEnter3D = () => {
     if (isSold) return;
-    enter(selectedUnit);
-    navigate("/interioredit");
+    sendToUnreal(UEEvents.ENTER_INTERIOR_EDIT, { unitId: selectedUnit.id });
+    navigate(`/unit/${selectedUnit.id}/interior`);
   };
 
   const ctaButtonClass = "group relative px-8 py-3 rounded-xl overflow-visible flex items-center gap-3 text-base font-bold text-foreground transition-all duration-300 border border-white/10 hover:border-white/20 hover:scale-105";
@@ -76,19 +74,13 @@ function ViewDetailsButton() {
 }
 
 function UnitsPageContent() {
-  const threeDMode = useThreeDMode();
-  const isInterior = threeDMode.active;
 
   return (
     <div className="relative w-full h-[calc(100vh-6rem)]">
-      {/* View Details CTA - hidden in interior */}
-      {!isInterior && <ViewDetailsButton />}
-      {/* Floating strip on the right - hidden in interior */}
-      {!isInterior && (
-        <div className="absolute right-3 top-0 bottom-3 w-[340px] max-w-[85vw] z-10">
-          <UnitsBrowser />
-        </div>
-      )}
+      <ViewDetailsButton />
+      <div className="absolute right-3 top-0 bottom-3 w-[340px] max-w-[85vw] z-10">
+        <UnitsBrowser />
+      </div>
     </div>
   );
 }

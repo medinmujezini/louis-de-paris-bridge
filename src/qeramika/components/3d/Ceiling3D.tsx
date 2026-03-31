@@ -5,7 +5,7 @@
 
 import React, { useMemo } from 'react';
 import * as THREE from 'three';
-import type { FloorPlan, RoomLight } from '@/types/floorPlan';
+import type { FloorPlan, RoomLight } from '@/qeramika/types/floorPlan';
 
 const SCALE = 0.01; // cm to meters
 

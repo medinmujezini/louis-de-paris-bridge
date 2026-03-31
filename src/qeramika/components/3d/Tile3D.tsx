@@ -6,7 +6,7 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import type { PBRTextureProps } from '@/utils/textureUtils';
+import type { PBRTextureProps } from '@/qeramika/utils/textureUtils';
 
 interface Tile3DProps {
   position: [number, number, number];

@@ -17,8 +17,8 @@ import {
   Search, Grid3X3, Square, Hexagon, Circle, 
   Loader2, DollarSign
 } from 'lucide-react';
-import { useTilesByMaterial, type TileTemplate } from '@/hooks/useTemplatesFromDB';
-import type { Tile } from '@/types/floorPlan';
+import { useTilesByMaterial, type TileTemplate } from '@/qeramika/hooks/useTemplatesFromDB';
+import type { Tile } from '@/qeramika/types/floorPlan';
 
 // Map DB template to legacy Tile format for compatibility
 function templateToTile(template: TileTemplate): Tile {

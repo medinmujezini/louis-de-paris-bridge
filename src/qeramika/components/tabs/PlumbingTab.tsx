@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useCallback, useMemo } from 'react';
-import { autoRouteAllFixturesStackCentric } from '@/utils/mepStackRouting';
+import { autoRouteAllFixturesStackCentric } from '@/qeramika/utils/mepStackRouting';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -22,19 +22,19 @@ import {
   Crosshair,
   Loader2,
 } from 'lucide-react';
-import { SYSTEM_COLORS, type MEPRoute, type MEPSystemType } from '@/types/mep';
+import { SYSTEM_COLORS, type MEPRoute, type MEPSystemType } from '@/qeramika/types/mep';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { MEPCanvas } from '@/components/mep/MEPCanvas';
-import { AutoRoutingPanel } from '@/components/mep/AutoRoutingPanel';
-import { RiserDiagramView } from '@/components/mep/RiserDiagramView';
-import { IsometricMEPView } from '@/components/mep/IsometricMEPView';
-import { FixturePropertiesPanel } from '@/components/mep/FixturePropertiesPanel';
-import { NodePropertiesPanel } from '@/components/mep/NodePropertiesPanel';
-import { InstallationGuidePanel } from '@/components/mep/InstallationGuidePanel';
-import { InstallationChatbot } from '@/components/mep/InstallationChatbot';
-import { InstallationChatProvider } from '@/contexts/InstallationChatContext';
-import { useMEPContext } from '@/contexts/MEPContext';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
+import { MEPCanvas } from '@/qeramika/components/mep/MEPCanvas';
+import { AutoRoutingPanel } from '@/qeramika/components/mep/AutoRoutingPanel';
+import { RiserDiagramView } from '@/qeramika/components/mep/RiserDiagramView';
+import { IsometricMEPView } from '@/qeramika/components/mep/IsometricMEPView';
+import { FixturePropertiesPanel } from '@/qeramika/components/mep/FixturePropertiesPanel';
+import { NodePropertiesPanel } from '@/qeramika/components/mep/NodePropertiesPanel';
+import { InstallationGuidePanel } from '@/qeramika/components/mep/InstallationGuidePanel';
+import { InstallationChatbot } from '@/qeramika/components/mep/InstallationChatbot';
+import { InstallationChatProvider } from '@/qeramika/contexts/InstallationChatContext';
+import { useMEPContext } from '@/qeramika/contexts/MEPContext';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
 
 // =============================================================================
 // SUB-VIEW SELECTOR
@@ -123,7 +123,7 @@ const LayerControls: React.FC<LayerControlsProps> = ({ layers, onToggleLayer }) 
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ChevronDown } from 'lucide-react';
-import type { ValidationError, ValidationWarning } from '@/types/mep';
+import type { ValidationError, ValidationWarning } from '@/qeramika/types/mep';
 
 interface ValidationPanelProps {
   errors: ValidationError[];

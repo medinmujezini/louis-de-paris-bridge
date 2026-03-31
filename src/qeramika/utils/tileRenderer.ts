@@ -1,6 +1,6 @@
 // Tile rendering utilities for 2D canvas visualization
 
-import type { Tile, Wall, Point, WallTileSection } from '@/types/floorPlan';
+import type { Tile, Wall, Point, WallTileSection } from '@/qeramika/types/floorPlan';
 import { calculateTileLayout } from './tileCalculator';
 
 // ---- Async bitmap cache for PBR albedo textures ----

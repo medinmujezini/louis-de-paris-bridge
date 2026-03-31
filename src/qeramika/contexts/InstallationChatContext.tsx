@@ -5,8 +5,8 @@
  */
 
 import React, { createContext, useContext, useState, useCallback, useRef, ReactNode } from 'react';
-import type { MEPFixture, MEPNode, MEPRoute } from '@/types/mep';
-import { generateInstallationGuide, formatGuideForAI } from '@/utils/installationGuideGenerator';
+import type { MEPFixture, MEPNode, MEPRoute } from '@/qeramika/types/mep';
+import { generateInstallationGuide, formatGuideForAI } from '@/qeramika/utils/installationGuideGenerator';
 
 // =============================================================================
 // TYPES

@@ -7,9 +7,9 @@
  */
 
 import { useState, useCallback, useMemo, useRef } from 'react';
-import type { FurnitureItem, FurnitureTemplate } from '@/data/furnitureLibrary';
-import { createFurnitureFromTemplate } from '@/data/furnitureLibrary';
-import { isPositionValid, findValidPositionSpiral } from '@/utils/furnitureCollision';
+import type { FurnitureItem, FurnitureTemplate } from '@/qeramika/data/furnitureLibrary';
+import { createFurnitureFromTemplate } from '@/qeramika/data/furnitureLibrary';
+import { isPositionValid, findValidPositionSpiral } from '@/qeramika/utils/furnitureCollision';
 
 // Rotation increments to try when primary rotation causes collision
 const ROTATION_CANDIDATES = [45, 90, 135, 180, 225, 270, 315];

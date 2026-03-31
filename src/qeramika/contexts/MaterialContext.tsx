@@ -49,14 +49,14 @@ export const MaterialProvider = ({ children }: { children: ReactNode }) => {
   const refreshMaterials = useCallback(async () => {
     setLoading(true);
     try {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('materials')
         .select('*')
         .order('created_at', { ascending: false });
 
       if (error) throw error;
 
-      setMaterials((data || []).map(m => ({
+      setMaterials((data || []).map((m: any) => ({
         id: m.id,
         name: m.name,
         albedo: m.albedo_url || undefined,
@@ -155,7 +155,7 @@ export const MaterialProvider = ({ children }: { children: ReactNode }) => {
         material.height ? uploadTexture(material.height, 'height', material.name) : null,
       ]);
 
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('materials')
         .insert({
           name: material.name,
@@ -201,7 +201,7 @@ export const MaterialProvider = ({ children }: { children: ReactNode }) => {
 
       const [albedo, normal, roughness, metallic, ao, arm, height] = results;
 
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('materials')
         .insert({
           name: material.name,
@@ -226,7 +226,7 @@ export const MaterialProvider = ({ children }: { children: ReactNode }) => {
 
   const removeMaterial = useCallback(async (id: string) => {
     try {
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('materials')
         .delete()
         .eq('id', id);
@@ -258,7 +258,7 @@ export const MaterialProvider = ({ children }: { children: ReactNode }) => {
       if (updates.arm !== undefined) dbUpdates.arm_url = updates.arm || null;
       if (updates.height !== undefined) dbUpdates.height_url = updates.height || null;
 
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('materials')
         .update(dbUpdates)
         .eq('id', id);

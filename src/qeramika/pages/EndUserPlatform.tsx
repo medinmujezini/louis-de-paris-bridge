@@ -2,11 +2,11 @@ import React, { useState, useCallback } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { AuthProvider } from '@/contexts/AuthContext';
-import { FloorPlanTab } from '@/components/tabs/FloorPlanTab';
-import { TilesTab } from '@/components/tabs/TilesTab';
-import { DesignTab } from '@/components/tabs/DesignTab';
-import { BackToHome } from '@/components/home/BackToHome';
+import { AuthProvider } from '@/qeramika/contexts/AuthContext';
+import { FloorPlanTab } from '@/qeramika/components/tabs/FloorPlanTab';
+import { TilesTab } from '@/qeramika/components/tabs/TilesTab';
+import { DesignTab } from '@/qeramika/components/tabs/DesignTab';
+import { BackToHome } from '@/qeramika/components/home/BackToHome';
 import { 
   PenTool, 
   Grid2X2, 
@@ -14,7 +14,7 @@ import {
   ShoppingCart,
   Sparkles,
 } from 'lucide-react';
-import type { WallTileSection } from '@/types/floorPlan';
+import type { WallTileSection } from '@/qeramika/types/floorPlan';
 
 const EndUserPlatform = () => {
   const [activeTab, setActiveTab] = useState('floor-plan');

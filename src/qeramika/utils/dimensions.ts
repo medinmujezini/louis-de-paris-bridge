@@ -5,8 +5,8 @@
  * Single source of truth for 2D ↔ 3D conversions.
  */
 
-import { CM_TO_METERS, METERS_TO_CM } from '@/constants/units';
-import type { Point2D, Point3D, Dimensions, Dimensions2D } from '@/types/geometry';
+import { CM_TO_METERS, METERS_TO_CM } from '@/qeramika/constants/units';
+import type { Point2D, Point3D, Dimensions, Dimensions2D } from '@/qeramika/types/geometry';
 
 // =============================================================================
 // 2D TO 3D CONVERSIONS

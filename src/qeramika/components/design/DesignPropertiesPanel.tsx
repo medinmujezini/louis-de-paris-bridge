@@ -14,8 +14,8 @@ import {
   RotateCw, Trash2, Move, Palette, Info,
   Armchair, Box, Droplets, ArrowRight
 } from 'lucide-react';
-import { useMEPContext } from '@/contexts/MEPContext';
-import type { FurnitureItem } from '@/data/furnitureLibrary';
+import { useMEPContext } from '@/qeramika/contexts/MEPContext';
+import type { FurnitureItem } from '@/qeramika/data/furnitureLibrary';
 import { Link } from 'react-router-dom';
 
 interface DesignPropertiesPanelProps {

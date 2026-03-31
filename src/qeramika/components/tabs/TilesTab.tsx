@@ -4,15 +4,15 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
-import { Tile, WallTileSection, isWallCurved, isWallSloped, isTileSuitableForCurve, getRecommendedTileSize, TILE_LIBRARY, TilePattern } from '@/types/floorPlan';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
+import { Tile, WallTileSection, isWallCurved, isWallSloped, isTileSuitableForCurve, getRecommendedTileSize, TILE_LIBRARY, TilePattern } from '@/qeramika/types/floorPlan';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { TilesCanvas } from '@/components/tiles/TilesCanvas';
-import { WallElevationViewer } from '@/components/tiles/WallElevationViewer';
-import { TileLibraryPanel } from '@/components/tiles/TileLibraryPanel';
-import { GroutColorPicker } from '@/components/tiles/GroutColorPicker';
+import { TilesCanvas } from '@/qeramika/components/tiles/TilesCanvas';
+import { WallElevationViewer } from '@/qeramika/components/tiles/WallElevationViewer';
+import { TileLibraryPanel } from '@/qeramika/components/tiles/TileLibraryPanel';
+import { GroutColorPicker } from '@/qeramika/components/tiles/GroutColorPicker';
 
 import { 
   calculateWallDimensions, 
@@ -21,12 +21,12 @@ import {
   calculateFullTileEstimate,
   calculateProjectFromSections,
   CutOptimizationResult
-} from '@/utils/tileCalculator';
-import { generateCutListPDF } from '@/utils/pdfExport';
-import { calculateArcInfo } from '@/utils/arcUtils';
-import { useTileTemplates } from '@/hooks/useTemplatesFromDB';
+} from '@/qeramika/utils/tileCalculator';
+import { generateCutListPDF } from '@/qeramika/utils/pdfExport';
+import { calculateArcInfo } from '@/qeramika/utils/arcUtils';
+import { useTileTemplates } from '@/qeramika/hooks/useTemplatesFromDB';
 import { Grid3X3, Paintbrush, Check, Calculator, ChevronRight, Scissors, Recycle, AlertTriangle, Waves, TrendingUp, FileDown, Loader2, ArrowLeft, Eye, EyeOff, X } from 'lucide-react';
-import { TileCalculationsPanel } from '@/components/tiles/TileCalculationsPanel';
+import { TileCalculationsPanel } from '@/qeramika/components/tiles/TileCalculationsPanel';
 
 interface TilesTabProps {
   pendingWallId?: string | null;

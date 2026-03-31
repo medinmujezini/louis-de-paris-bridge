@@ -12,7 +12,7 @@ import type {
   FixtureCategory,
   FixtureConnection,
   Dimensions 
-} from '@/types/mep';
+} from '@/qeramika/types/mep';
 import { DFU_TABLE, GPM_TABLE } from './plumbingCodes';
 import { v4 as uuidv4 } from 'uuid';
 

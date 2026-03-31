@@ -6,7 +6,7 @@
 import React, { useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { X, Camera, Map } from 'lucide-react';
-import type { FloorPlan, Point, Wall } from '@/types/floorPlan';
+import type { FloorPlan, Point, Wall } from '@/qeramika/types/floorPlan';
 import type { SpawnPoint } from './SpawnPointMarker';
 
 interface WalkthroughOverlayProps {

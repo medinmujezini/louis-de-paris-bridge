@@ -5,16 +5,16 @@
  * Works with unified fixture types.
  */
 
-import type { UnifiedFixture } from '@/types/fixture';
-import type { Point2D, Dimensions, FloorPlanPoint } from '@/types/geometry';
-import type { FurnitureItem } from '@/data/furnitureLibrary';
+import type { UnifiedFixture } from '@/qeramika/types/fixture';
+import type { Point2D, Dimensions, FloorPlanPoint } from '@/qeramika/types/geometry';
+import type { FurnitureItem } from '@/qeramika/data/furnitureLibrary';
 import { 
   createOrientedRect, 
   checkOrientedRectOverlap, 
   checkAABBOverlap,
   type PlaceableObject
-} from '@/utils/collision';
-import { calculateBoundingBox } from '@/utils/dimensions';
+} from '@/qeramika/utils/collision';
+import { calculateBoundingBox } from '@/qeramika/utils/dimensions';
 
 interface Point {
   x: number;

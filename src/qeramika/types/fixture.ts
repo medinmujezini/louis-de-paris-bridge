@@ -11,7 +11,7 @@
  * - Connection types are unified
  */
 
-import type { Point2D, Point3D, Dimensions, SimpleClearance } from '@/types/geometry';
+import type { Point2D, Point3D, Dimensions, SimpleClearance } from '@/qeramika/types/geometry';
 
 // =============================================================================
 // FIXTURE CATEGORIES & TYPES

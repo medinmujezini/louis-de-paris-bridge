@@ -9,14 +9,14 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Popover, PopoverContent } from '@/components/ui/popover';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import type { Wall, Tile, TileOrientation, TilePattern, WallTileSection, Point } from '@/types/floorPlan';
-import { isWallSloped, isWallCurved, getWallSlopeAngle, isTileSuitableForCurve, getRecommendedTileSize } from '@/types/floorPlan';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
-import { useMaterialContext } from '@/contexts/MaterialContext';
-import { calculateTileLayout, TilePosition } from '@/utils/tileCalculator';
-import { requestBitmap } from '@/utils/tileRenderer';
-import { calculateWallElevationShape, WallElevationShape } from '@/utils/wallHeightUtils';
-import { arcLength as calcArcLength } from '@/utils/arcUtils';
+import type { Wall, Tile, TileOrientation, TilePattern, WallTileSection, Point } from '@/qeramika/types/floorPlan';
+import { isWallSloped, isWallCurved, getWallSlopeAngle, isTileSuitableForCurve, getRecommendedTileSize } from '@/qeramika/types/floorPlan';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
+import { useMaterialContext } from '@/qeramika/contexts/MaterialContext';
+import { calculateTileLayout, TilePosition } from '@/qeramika/utils/tileCalculator';
+import { requestBitmap } from '@/qeramika/utils/tileRenderer';
+import { calculateWallElevationShape, WallElevationShape } from '@/qeramika/utils/wallHeightUtils';
+import { arcLength as calcArcLength } from '@/qeramika/utils/arcUtils';
 import { 
   RectangleHorizontal, RectangleVertical, Grid3X3, Layers, Paintbrush, Check, 
   Scissors, SplitSquareHorizontal, SplitSquareVertical, LayoutTemplate, Trash2, 

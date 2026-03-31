@@ -16,10 +16,10 @@ import type {
   ValidationResult,
   ValidationError,
   ValidationWarning
-} from '@/types/mep';
-import { createFixtureFromTemplate, type FixtureTemplate } from '@/data/fixtureLibrary';
-import { validateMEPSystem } from '@/utils/mepValidation';
-import { detectClashes } from '@/utils/mepClashDetection';
+} from '@/qeramika/types/mep';
+import { createFixtureFromTemplate, type FixtureTemplate } from '@/qeramika/data/fixtureLibrary';
+import { validateMEPSystem } from '@/qeramika/utils/mepValidation';
+import { detectClashes } from '@/qeramika/utils/mepClashDetection';
 
 // =============================================================================
 // INITIAL STATE

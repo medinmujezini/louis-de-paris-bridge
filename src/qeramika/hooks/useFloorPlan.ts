@@ -5,21 +5,21 @@ import type {
   PlumbingRoute, ElectricalRoute, WallTileSection,
   WallMaterial, DoorType, WindowType, FixtureType, ColumnShape,
   MainConnectionPoints, CeilingPlane, WallHeightMode, RoomLight
-} from '@/types/floorPlan';
-import { createDefaultFloorPlan, DEFAULT_CEILING_PLANE } from '@/types/floorPlan';
-import { splitArc } from '@/utils/arcUtils';
+} from '@/qeramika/types/floorPlan';
+import { createDefaultFloorPlan, DEFAULT_CEILING_PLANE } from '@/qeramika/types/floorPlan';
+import { splitArc } from '@/qeramika/utils/arcUtils';
 import { 
   adjustCeilingPlaneForHeight, 
   recomputeAllWallHeights,
   getEffectiveWallHeights
-} from '@/utils/ceilingUtils';
+} from '@/qeramika/utils/ceilingUtils';
 import { 
   DEFAULT_WALL_HEIGHT, 
   DEFAULT_WALL_THICKNESS,
   DEFAULT_DOOR_WIDTH,
   DEFAULT_DOOR_HEIGHT,
   DEFAULT_WINDOW_SILL_HEIGHT
-} from '@/constants/units';
+} from '@/qeramika/constants/units';
 
 export const useFloorPlan = () => {
   const [floorPlan, setFloorPlan] = useState<FloorPlan>(createDefaultFloorPlan());
@@ -1132,7 +1132,7 @@ export const useFloorPlan = () => {
   }, [saveToHistory]);
 
   // Camera views
-  const addCameraView = useCallback((view: import('@/types/floorPlan').SavedCameraView) => {
+  const addCameraView = useCallback((view: import('@/qeramika/types/floorPlan').SavedCameraView) => {
     setFloorPlan(prev => {
       const updated = { ...prev, savedCameraViews: [...(prev.savedCameraViews ?? []), view] };
       saveToHistory(updated);
