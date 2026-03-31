@@ -25,6 +25,8 @@ export function UnitCard({
   onHover,
   onToggleCompare,
 }: UnitCardProps) {
+  const navigate = useNavigate();
+
   const handleCompareToggle = (e: React.MouseEvent) => {
     e.stopPropagation();
     onToggleCompare?.(unit);
@@ -33,6 +35,7 @@ export function UnitCard({
   const handleExploreInterior = (e: React.MouseEvent) => {
     e.stopPropagation();
     sendToUnreal(UEEvents.ENTER_INTERIOR_EDIT, { unitId: unit.id });
+    navigate('/unit/' + unit.id + '/interior');
   };
 
   return (
