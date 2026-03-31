@@ -154,8 +154,8 @@ export function AppLayout() {
                 )}
               </div>
 
-              <div className="glass-card glass-card--strong flex items-center gap-2 px-3 py-2 relative">
-                <div className="glass-card__light-bar glass-card__light-bar--strong" />
+              <div className="flex items-center gap-2 px-3 py-2 relative rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20">
+                <div className="absolute top-0 left-[25%] w-[50%] h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-60" />
                 <div data-tutorial="help-button">
                   <TutorialButton />
                 </div>

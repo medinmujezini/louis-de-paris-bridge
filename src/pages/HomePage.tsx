@@ -108,8 +108,8 @@ export default function HomePage() {
 
       {/* Bottom-right: Camera controls */}
       <div className="absolute bottom-6 right-4 z-10">
-        <div className="glass-card glass-card--strong flex flex-col gap-2 p-3 relative">
-          <div className="glass-card__light-bar glass-card__light-bar--strong" />
+        <div className="flex flex-col gap-2 p-3 relative rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20">
+          <div className="absolute top-0 left-[25%] w-[50%] h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-60" />
           <div data-tutorial="auto-rotate">
             <GlassButton
               variant={autoRotate ? "default" : "ghost"}

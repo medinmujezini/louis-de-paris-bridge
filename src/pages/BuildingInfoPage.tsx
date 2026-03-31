@@ -79,7 +79,7 @@ const BuildingInfoPage = () => {
       {/* Dark overlay backdrop */}
       <div className="fixed inset-0 bg-black/50 z-[5]" />
       <div className="absolute right-3 top-0 bottom-3 w-[630px] max-w-[90vw] z-10">
-        <GlassCard variant="strong" className="h-full flex flex-col overflow-hidden" style={{ background: "linear-gradient(90deg, hsl(0 0% 100% / 0.08), hsl(0 0% 100% / 0.02))" }}>
+        <div className="h-full flex flex-col overflow-hidden rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20">
           {/* Header */}
           <div className="p-5 pb-3">
             <div className="flex items-center gap-3 mb-1">
@@ -257,7 +257,7 @@ const BuildingInfoPage = () => {
               </Accordion>
             </div>
           </ScrollArea>
-        </GlassCard>
+        </div>
       </div>
     </div>
   );
