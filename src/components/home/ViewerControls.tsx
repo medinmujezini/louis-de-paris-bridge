@@ -118,7 +118,7 @@ export function ViewerControls({ timeOfDay, weather, onTimeChange, onWeatherChan
   return (
     <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col gap-3">
       {/* Time of Day Slider */}
-      <GlassCard variant="strong" className="p-3 min-w-[280px]" data-tutorial="time-controls">
+      <div className="p-3 min-w-[280px] rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20" data-tutorial="time-controls">
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-xs text-muted-foreground">{t.home.time.title}</span>
