@@ -5,7 +5,7 @@
  * from MEP data with product recommendations and cost estimates.
  */
 
-import type { MEPRoute, MEPFixture, MEPNode, MEPSystemType } from '@/types/mep';
+import type { MEPRoute, MEPFixture, MEPNode, MEPSystemType } from '@/qeramika/types/mep';
 import { v4 as uuidv4 } from 'uuid';
 
 // =============================================================================

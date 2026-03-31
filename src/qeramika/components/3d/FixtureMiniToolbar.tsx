@@ -11,11 +11,11 @@ import { Html } from '@react-three/drei';
 import { RotateCw, Trash2, X, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-import type { UnifiedFixture } from '@/types/fixture';
-import type { FurnitureItem } from '@/data/furnitureLibrary';
-import type { FloorPlan } from '@/types/floorPlan';
-import { CM_TO_METERS } from '@/constants/units';
-import { isFixturePositionValid } from '@/utils/fixtureCollision';
+import type { UnifiedFixture } from '@/qeramika/types/fixture';
+import type { FurnitureItem } from '@/qeramika/data/furnitureLibrary';
+import type { FloorPlan } from '@/qeramika/types/floorPlan';
+import { CM_TO_METERS } from '@/qeramika/constants/units';
+import { isFixturePositionValid } from '@/qeramika/utils/fixtureCollision';
 import { toast } from 'sonner';
 
 interface FixtureMiniToolbarProps {

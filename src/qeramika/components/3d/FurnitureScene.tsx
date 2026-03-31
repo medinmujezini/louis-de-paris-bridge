@@ -14,15 +14,15 @@
 import React, { useCallback, useState, useRef } from 'react';
 import { ThreeEvent, useFrame } from '@react-three/fiber';
 import { Line } from '@react-three/drei';
-import { useFurnitureContext } from '@/contexts/FurnitureContext';
+import { useFurnitureContext } from '@/qeramika/contexts/FurnitureContext';
 import { Furniture3D } from './Furniture3D';
 import { FurnitureMiniToolbar } from './FurnitureMiniToolbar';
 import { FurnitureDragPlane } from './FurnitureDragPlane';
-import { isPositionValid } from '@/utils/furnitureCollision';
-import type { FurnitureItem } from '@/data/furnitureLibrary';
-import type { FloorPlan } from '@/types/floorPlan';
+import { isPositionValid } from '@/qeramika/utils/furnitureCollision';
+import type { FurnitureItem } from '@/qeramika/data/furnitureLibrary';
+import type { FloorPlan } from '@/qeramika/types/floorPlan';
 import * as THREE from 'three';
-import { CM_TO_METERS } from '@/utils/modelLoader';
+import { CM_TO_METERS } from '@/qeramika/utils/modelLoader';
 import { toast } from 'sonner';
 
 interface FurnitureSceneProps {

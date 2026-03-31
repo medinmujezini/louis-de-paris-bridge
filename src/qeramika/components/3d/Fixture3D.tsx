@@ -13,7 +13,7 @@
 
 import React from 'react';
 import { ThreeEvent } from '@react-three/fiber';
-import type { UnifiedFixture } from '@/types/fixture';
+import type { UnifiedFixture } from '@/qeramika/types/fixture';
 import { BlueprintBoxFixture } from './BlueprintBoxFixture';
 
 interface Fixture3DProps {

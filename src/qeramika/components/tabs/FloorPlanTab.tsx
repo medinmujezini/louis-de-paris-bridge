@@ -6,12 +6,12 @@ import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
-import { BlueprintImportWizard, FloorPlanAnalysis } from '@/components/blueprint/BlueprintImportWizard';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
+import { BlueprintImportWizard, FloorPlanAnalysis } from '@/qeramika/components/blueprint/BlueprintImportWizard';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toast } from 'sonner';
-import { generateRectangleRoom, generateLShapeRoom } from '@/utils/roomTemplates';
+import { generateRectangleRoom, generateLShapeRoom } from '@/qeramika/utils/roomTemplates';
 
 type Tool = 'select' | 'wall' | 'door' | 'window' | 'pan' | 'column';
 

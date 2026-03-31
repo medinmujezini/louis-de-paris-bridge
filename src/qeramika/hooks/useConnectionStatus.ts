@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import type { FloorPlan, ConnectionStatus, Fixture } from '@/types/floorPlan';
+import type { FloorPlan, ConnectionStatus, Fixture } from '@/qeramika/types/floorPlan';
 
 // Thresholds for connection status (in cm)
 const CONNECTED_MAX_LENGTH = 500; // Under 5m is "connected" (green)

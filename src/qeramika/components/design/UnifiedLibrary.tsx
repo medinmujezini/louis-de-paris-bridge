@@ -16,14 +16,14 @@ import {
   Briefcase, Package, Droplets, Zap, GripVertical,
   Loader2, Sparkles, Lightbulb
 } from 'lucide-react';
-import { useFurnitureContext } from '@/contexts/FurnitureContext';
-import { useMEPContext } from '@/contexts/MEPContext';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
-import { useFurnitureByCategory, useFixturesByCategory } from '@/hooks/useTemplatesFromDB';
+import { useFurnitureContext } from '@/qeramika/contexts/FurnitureContext';
+import { useMEPContext } from '@/qeramika/contexts/MEPContext';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
+import { useFurnitureByCategory, useFixturesByCategory } from '@/qeramika/hooks/useTemplatesFromDB';
 import { toast } from 'sonner';
-import type { FurnitureTemplate, FurnitureCategory } from '@/data/furnitureLibrary';
-import type { FixtureCategory } from '@/types/mep';
-import type { FixtureTemplate } from '@/data/fixtureLibrary';
+import type { FurnitureTemplate, FurnitureCategory } from '@/qeramika/data/furnitureLibrary';
+import type { FixtureCategory } from '@/qeramika/types/mep';
+import type { FixtureTemplate } from '@/qeramika/data/fixtureLibrary';
 
 // Category icons for furniture
 const FURNITURE_CATEGORY_ICONS: Record<FurnitureCategory, React.ReactNode> = {

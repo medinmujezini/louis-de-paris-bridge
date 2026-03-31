@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '@/qeramika/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
 
 export type AppRole = 'admin' | 'moderator' | 'user';

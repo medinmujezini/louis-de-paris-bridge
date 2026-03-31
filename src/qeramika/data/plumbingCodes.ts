@@ -5,7 +5,7 @@
  * These values are used for automatic pipe sizing and slope calculations.
  */
 
-import type { FixtureType } from '@/types/mep';
+import type { FixtureType } from '@/qeramika/types/mep';
 
 // =============================================================================
 // DRAINAGE FIXTURE UNITS (DFU)

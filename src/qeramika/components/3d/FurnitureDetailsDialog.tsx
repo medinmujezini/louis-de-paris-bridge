@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { Ruler, MapPin, RotateCcw, DollarSign } from 'lucide-react';
-import type { FurnitureItem } from '@/data/furnitureLibrary';
+import type { FurnitureItem } from '@/qeramika/data/furnitureLibrary';
 
 interface FurnitureDetailsDialogProps {
   item: FurnitureItem;

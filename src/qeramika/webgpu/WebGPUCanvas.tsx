@@ -7,7 +7,7 @@ import { Canvas, CanvasProps, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { WebGPUProvider, useWebGPU } from './WebGPUContext';
 import { getRendererCapabilities, RendererCapabilities, recommendQualityTier } from './capabilities';
-import { GIQualityTier } from '@/gi/GIConfig';
+import { GIQualityTier } from '@/qeramika/gi/GIConfig';
 
 // Internal component to set renderer in context
 const RendererBridge: React.FC<{ onReady?: (renderer: THREE.WebGLRenderer) => void }> = ({ onReady }) => {

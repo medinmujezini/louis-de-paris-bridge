@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
+import { useAuth } from '@/qeramika/contexts/AuthContext';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
 import { supabase } from '@/integrations/supabase/client';
-import { AuthForm } from '@/components/auth/AuthForm';
+import { AuthForm } from '@/qeramika/components/auth/AuthForm';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -14,7 +14,7 @@ import {
   Save, FolderOpen, Plus, Trash2, LogOut, 
   User, Clock, FileJson, Loader2 
 } from 'lucide-react';
-import type { FloorPlan } from '@/types/floorPlan';
+import type { FloorPlan } from '@/qeramika/types/floorPlan';
 
 interface Project {
   id: string;

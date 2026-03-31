@@ -7,11 +7,11 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
-import type { FurnitureTemplate, FurnitureCategory, FurnitureType } from '@/data/furnitureLibrary';
-import type { FixtureCategory } from '@/types/mep';
-import type { FixtureTemplate } from '@/data/fixtureLibrary';
-import { FURNITURE_TEMPLATES } from '@/data/furnitureLibrary';
-import { FIXTURE_TEMPLATES } from '@/data/fixtureLibrary';
+import type { FurnitureTemplate, FurnitureCategory, FurnitureType } from '@/qeramika/data/furnitureLibrary';
+import type { FixtureCategory } from '@/qeramika/types/mep';
+import type { FixtureTemplate } from '@/qeramika/data/fixtureLibrary';
+import { FURNITURE_TEMPLATES } from '@/qeramika/data/furnitureLibrary';
+import { FIXTURE_TEMPLATES } from '@/qeramika/data/fixtureLibrary';
 import type { Json } from '@/integrations/supabase/types';
 
 // =============================================================================

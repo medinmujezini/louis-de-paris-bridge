@@ -1,5 +1,5 @@
-import type { Point, Wall, CeilingPlane, WallSlopeRelation, FloorPlan } from '@/types/floorPlan';
-import { DEFAULT_CEILING_PLANE } from '@/types/floorPlan';
+import type { Point, Wall, CeilingPlane, WallSlopeRelation, FloorPlan } from '@/qeramika/types/floorPlan';
+import { DEFAULT_CEILING_PLANE } from '@/qeramika/types/floorPlan';
 
 /**
  * Calculate height at any point based on ceiling plane

@@ -19,11 +19,11 @@ import {
   ArrowLeft, ArrowRight, Download, Printer, CheckCircle,
   AlertTriangle, Info, FileDown
 } from 'lucide-react';
-import { useMEPContext } from '@/contexts/MEPContext';
-import { useFurnitureContext } from '@/contexts/FurnitureContext';
-import { useFloorPlanContext } from '@/contexts/FloorPlanContext';
-import { generateBillOfMaterials, downloadBOMAsCSV, type BOMSummary } from '@/utils/mepBillOfMaterials';
-import { FURNITURE_TEMPLATES } from '@/data/furnitureLibrary';
+import { useMEPContext } from '@/qeramika/contexts/MEPContext';
+import { useFurnitureContext } from '@/qeramika/contexts/FurnitureContext';
+import { useFloorPlanContext } from '@/qeramika/contexts/FloorPlanContext';
+import { generateBillOfMaterials, downloadBOMAsCSV, type BOMSummary } from '@/qeramika/utils/mepBillOfMaterials';
+import { FURNITURE_TEMPLATES } from '@/qeramika/data/furnitureLibrary';
 
 // =============================================================================
 // TYPES

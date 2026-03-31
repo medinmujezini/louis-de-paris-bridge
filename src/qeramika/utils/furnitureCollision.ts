@@ -5,14 +5,14 @@
  * Uses centralized collision utilities for consistency.
  */
 
-import type { FurnitureItem } from '@/data/furnitureLibrary';
-import type { Point2D, FloorPlanPoint } from '@/types/geometry';
+import type { FurnitureItem } from '@/qeramika/data/furnitureLibrary';
+import type { Point2D, FloorPlanPoint } from '@/qeramika/types/geometry';
 import { 
   createOrientedRect, 
   checkOrientedRectOverlap,
   type PlaceableObject 
-} from '@/utils/collision';
-import { calculateBoundingBox } from '@/utils/dimensions';
+} from '@/qeramika/utils/collision';
+import { calculateBoundingBox } from '@/qeramika/utils/dimensions';
 
 interface Point {
   x: number;

@@ -19,12 +19,12 @@ import { Line } from '@react-three/drei';
 import { Fixture3D } from './Fixture3D';
 import { FixtureMiniToolbar } from './FixtureMiniToolbar';
 import { FurnitureDragPlane } from './FurnitureDragPlane';
-import { isFixturePositionValid } from '@/utils/fixtureCollision';
-import type { UnifiedFixture } from '@/types/fixture';
-import type { FurnitureItem } from '@/data/furnitureLibrary';
-import type { FloorPlan } from '@/types/floorPlan';
+import { isFixturePositionValid } from '@/qeramika/utils/fixtureCollision';
+import type { UnifiedFixture } from '@/qeramika/types/fixture';
+import type { FurnitureItem } from '@/qeramika/data/furnitureLibrary';
+import type { FloorPlan } from '@/qeramika/types/floorPlan';
 import * as THREE from 'three';
-import { CM_TO_METERS } from '@/constants/units';
+import { CM_TO_METERS } from '@/qeramika/constants/units';
 import { toast } from 'sonner';
 
 interface FixtureSceneProps {

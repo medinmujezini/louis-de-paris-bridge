@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import type { Door, Window as FloorPlanWindow } from '@/types/floorPlan';
+import type { Door, Window as FloorPlanWindow } from '@/qeramika/types/floorPlan';
 
 const EPSILON = 0.001;
 

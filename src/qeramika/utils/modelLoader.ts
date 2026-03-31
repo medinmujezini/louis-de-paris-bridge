@@ -7,8 +7,8 @@
 
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
-import { CM_TO_METERS as UNITS_CM_TO_METERS } from '@/constants/units';
-import { dimensionsCmToMeters, position2Dto3D as utilPosition2Dto3D } from '@/utils/dimensions';
+import { CM_TO_METERS as UNITS_CM_TO_METERS } from '@/qeramika/constants/units';
+import { dimensionsCmToMeters, position2Dto3D as utilPosition2Dto3D } from '@/qeramika/utils/dimensions';
 
 // Model cache to avoid reloading
 const modelCache = new Map<string, THREE.Group>();

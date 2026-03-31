@@ -4,7 +4,7 @@
 // - Emissive injection support
 
 import * as THREE from 'three';
-import { GIConfig } from '@/gi/GIConfig';
+import { GIConfig } from '@/qeramika/gi/GIConfig';
 
 export interface ProbeData {
   position: THREE.Vector3;

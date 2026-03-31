@@ -3,8 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ChevronDown, ChevronUp, GitBranch, HelpCircle } from 'lucide-react';
-import { CutOptimizationResult } from '@/utils/tileCalculator';
-import { Wall } from '@/types/floorPlan';
+import { CutOptimizationResult } from '@/qeramika/utils/tileCalculator';
+import { Wall } from '@/qeramika/types/floorPlan';
 
 interface LeftoverFlowDiagramProps {
   optimization: CutOptimizationResult;
