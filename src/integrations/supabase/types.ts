@@ -114,6 +114,7 @@ export type Database = {
           features: string[] | null
           floor: number
           id: string
+          is_demo: boolean
           name: string
           orientation: string
           price: number
@@ -134,6 +135,7 @@ export type Database = {
           features?: string[] | null
           floor: number
           id: string
+          is_demo?: boolean
           name: string
           orientation: string
           price: number
@@ -154,6 +156,7 @@ export type Database = {
           features?: string[] | null
           floor?: number
           id?: string
+          is_demo?: boolean
           name?: string
           orientation?: string
           price?: number
