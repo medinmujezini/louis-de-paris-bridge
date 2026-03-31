@@ -28,6 +28,7 @@ const MAX_COMPARE_UNITS = 6;
 export function UnitsBrowser({ onClose }: UnitsBrowserProps) {
   const { t } = useLanguage();
   const { data: dbUnits = [] } = useUnits();
+  const { selectedSection } = useAppFlow();
   const { selectedUnit, setSelectedUnit, detailOpen, setDetailOpen } = useSelectedUnit();
   const [units, setUnits] = useState<Unit[]>([]);
   const [filters, setFilters] = useState<UnitFilters>(defaultFilters);
