@@ -299,19 +299,19 @@ export function AppSidebar({ onNavigate, onDinoBotToggle, dinoBotActive }: AppSi
             <LanguageSwitcher />
           </div>
         )}
-        {/* DinoBot circular red button */}
+        {/* Assistant button — gold themed */}
         <div className="flex justify-center">
           <button
             onClick={() => onDinoBotToggle?.()}
             className={cn(
               "w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110",
               dinoBotActive
-                ? "bg-destructive shadow-[0_0_16px_hsl(var(--destructive)/0.5)]"
-                : "bg-destructive/80 hover:bg-destructive"
+                ? "bg-primary shadow-[0_0_16px_hsl(var(--primary)/0.5)]"
+                : "bg-primary/80 hover:bg-primary"
             )}
-            title="DinoBot"
+            title="Assistant"
           >
-            <Bot className="w-5 h-5 text-destructive-foreground" />
+            <Bot className="w-5 h-5 text-primary-foreground" />
           </button>
         </div>
 
