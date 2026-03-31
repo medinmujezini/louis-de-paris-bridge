@@ -49,14 +49,14 @@ export const MaterialProvider = ({ children }: { children: ReactNode }) => {
   const refreshMaterials = useCallback(async () => {
     setLoading(true);
     try {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('materials')
         .select('*')
         .order('created_at', { ascending: false });
 
       if (error) throw error;
 
-      setMaterials((data || []).map(m => ({
+      setMaterials((data || []).map((m: any) => ({
         id: m.id,
         name: m.name,
         albedo: m.albedo_url || undefined,
