@@ -12,7 +12,7 @@ export const sq: TranslationKeys = {
     buildingInfo: "Info Ndërtesa",
   },
   home: {
-    title: "Dino Residence",
+    title: "Louis de Paris",
     subtitle: "Vizualizim Ndërtimi 3D Interaktiv",
     residenceVisualization: "Vizualizim Rezidence",
     mockMode: "Modaliteti Test",
