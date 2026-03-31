@@ -104,26 +104,27 @@ export default function HomePage() {
         <div className="flex flex-col gap-2 p-3 relative rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20">
           <div className="absolute top-0 left-[25%] w-[50%] h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-60" />
           <div data-tutorial="auto-rotate">
-            <GlassButton
-              variant={autoRotate ? "default" : "ghost"}
-              size="sm"
+            <button
               onClick={handleAutoRotateToggle}
               title={t.home.controls.autoRotate}
+              className={cn(
+                "flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-colors",
+                autoRotate ? "bg-primary text-primary-foreground" : "text-primary hover:bg-primary/15"
+              )}
             >
-              <RotateCw className="w-4 h-4 mr-2" />
+              <RotateCw className="w-4 h-4" />
               {t.home.controls.autoRotate}
-            </GlassButton>
+            </button>
           </div>
           <div data-tutorial="reset-camera">
-            <GlassButton
-              variant="ghost"
-              size="sm"
+            <button
               onClick={handleResetCamera}
               title={t.home.controls.resetView}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium text-primary hover:bg-primary/15 transition-colors"
             >
-              <RotateCcw className="w-4 h-4 mr-2" />
+              <RotateCcw className="w-4 h-4" />
               {t.home.controls.resetView}
-            </GlassButton>
+            </button>
           </div>
         </div>
       </div>
