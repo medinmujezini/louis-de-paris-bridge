@@ -70,13 +70,6 @@ export default function HomePage() {
   return (
     <div className="relative w-full h-[calc(100vh-6rem)]">
 
-      {/* Back to sections */}
-      <div className="absolute top-4 left-4 z-10">
-        <GlassButton onClick={backToSections} className="gap-2" size="sm">
-          <ArrowLeft className="w-4 h-4" />
-          {t.common.back}
-        </GlassButton>
-      </div>
 
       {/* Top-right: Camera presets */}
       <div className="absolute top-4 right-4 z-10" data-tutorial="camera-views">
