@@ -297,7 +297,7 @@ export function DinoBot({ open, onClose }: DinoBotProps) {
             title="Voice input"
           >
             {isListening ? (
-              <MicOff className="w-4 h-4 text-red-400 animate-pulse" />
+              <MicOff className="w-4 h-4 text-primary animate-pulse" />
             ) : (
               <Mic className="w-4 h-4 text-primary" />
             )}
