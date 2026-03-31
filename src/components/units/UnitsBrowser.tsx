@@ -39,12 +39,13 @@ export function UnitsBrowser({ onClose }: UnitsBrowserProps) {
   const [showFilters, setShowFilters] = useState(false);
   const [filtersForceExpanded, setFiltersForceExpanded] = useState(false);
 
-  // Initialize units from database — only apartments
+  // Initialize units from database — filter by selected section type
   useEffect(() => {
     if (dbUnits.length > 0) {
-      setUnits(dbUnits.filter((u) => u.unitType === "apartment" || !u.unitType));
+      const sectionFilter = selectedSection || "apartment";
+      setUnits(dbUnits.filter((u) => u.unitType === sectionFilter || (!u.unitType && sectionFilter === "apartment")));
     }
-  }, [dbUnits]);
+  }, [dbUnits, selectedSection]);
 
   const floors = useMemo(() => [...new Set(units.map((u) => u.floor))].sort((a, b) => a - b), [units]);
   const priceRange = useMemo(() => {

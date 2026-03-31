@@ -264,6 +264,9 @@ const simulateMockResponse = (eventName: string, data: unknown) => {
           }
         }, 500);
         break;
+      case 'enterInteriorEdit':
+        console.log(`[Mock UE] Interior edit requested for unit:`, data);
+        break;
       case 'highlightUnit':
         console.log(`[Mock UE] Unit highlight toggled:`, data);
         break;
