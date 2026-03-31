@@ -257,7 +257,7 @@ const BuildingInfoPage = () => {
               </Accordion>
             </div>
           </ScrollArea>
-        </GlassCard>
+        </div>
       </div>
     </div>
   );
