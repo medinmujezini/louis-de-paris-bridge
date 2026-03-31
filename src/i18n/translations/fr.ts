@@ -12,7 +12,7 @@ export const fr: TranslationKeys = {
     buildingInfo: "Info Bâtiment",
   },
   home: {
-    title: "Dino Residence",
+    title: "Louis de Paris",
     subtitle: "Visualisation 3D Interactive du Bâtiment",
     residenceVisualization: "Visualisation de Résidence",
     mockMode: "Mode Test",

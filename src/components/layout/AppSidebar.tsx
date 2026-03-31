@@ -209,7 +209,7 @@ export function AppSidebar({ onNavigate, onDinoBotToggle, dinoBotActive }: AppSi
         <div className="flex items-center justify-between">
           {!collapsed && (
             <h1 className="text-lg font-semibold text-foreground">
-              Explorer
+              Louis de Paris
             </h1>
           )}
           <GlassButton

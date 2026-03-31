@@ -231,7 +231,7 @@ export const en = {
 
   // Tutorial - 20 steps
   tutorial: {
-    welcome: "Welcome to Dino Residence!",
+    welcome: "Welcome to Louis de Paris!",
     welcomeDesc: "Let me show you around! This quick tour will help you discover all the features.",
     startTour: "Start Tour",
     letsGo: "Let's Explore!",
