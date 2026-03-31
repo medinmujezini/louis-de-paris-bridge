@@ -28,12 +28,15 @@ export function SectionSelector() {
 
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center">
-      <div className="text-center space-y-10">
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      <div className="relative z-10 text-center space-y-10">
         <div>
-          <h1 className="text-4xl font-bold tracking-tight text-foreground">
+          <h1 className="text-5xl font-bold tracking-tight text-foreground drop-shadow-lg">
             Louis de Paris
           </h1>
-          <p className="text-muted-foreground mt-2 text-lg">
+          <p className="text-muted-foreground mt-3 text-lg tracking-wide">
             Select a property type to explore
           </p>
         </div>
@@ -46,22 +49,26 @@ export function SectionSelector() {
                 key={s.id}
                 onClick={() => handleSelect(s.id)}
                 className={cn(
-                  "glass-card glass-card--strong group relative w-72 p-8 text-left transition-all duration-300",
-                  "hover:scale-[1.03] hover:shadow-[0_0_40px_hsl(43,50%,54%,0.15)]"
+                  "group relative w-80 rounded-2xl text-left transition-all duration-300 overflow-hidden",
+                  "bg-black/60 backdrop-blur-xl border border-white/20",
+                  "shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)]",
+                  "hover:scale-[1.03] hover:border-primary/40 hover:shadow-[0_0_40px_hsl(43,50%,54%,0.2)]"
                 )}
               >
-                <div className="glass-card__light-bar glass-card__light-bar--strong" />
-                <div className="relative z-10 space-y-4">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                {/* Top gold accent bar */}
+                <div className="absolute top-0 left-[20%] w-[60%] h-[2px] bg-primary/60 group-hover:bg-primary transition-colors" />
+
+                <div className="p-8 space-y-5">
+                  <div className="w-14 h-14 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center group-hover:bg-primary/25 transition-colors">
                     <Icon className="w-7 h-7 text-primary" />
                   </div>
                   <div>
                     <h2 className="text-xl font-semibold text-foreground">{s.title}</h2>
-                    <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">
+                    <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
                       {s.description}
                     </p>
                   </div>
-                  <div className="text-xs text-primary font-medium tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="text-xs text-primary font-medium tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity pt-2">
                     Explore →
                   </div>
                 </div>
