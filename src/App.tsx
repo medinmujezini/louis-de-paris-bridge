@@ -35,6 +35,7 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <ThreeDModeProvider>
+            <AppFlowProvider>
             <TutorialProvider>
               <Routes>
                 <Route element={<AppLayout />}>
