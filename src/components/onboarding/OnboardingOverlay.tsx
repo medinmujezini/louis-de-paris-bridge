@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useAppFlow } from "@/contexts/AppFlowContext";
 import { Home, Building2, Car, Store, Trees, Info, X, Mouse, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
