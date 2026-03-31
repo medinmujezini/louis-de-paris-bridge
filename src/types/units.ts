@@ -1,5 +1,5 @@
 export type Orientation = "north" | "south" | "east" | "west";
-export type UnitType = "apartment" | "commercial" | "garage" | "storage";
+export type UnitType = "apartment" | "villa" | "commercial" | "garage" | "storage";
 
 export interface Unit {
   id: string;
