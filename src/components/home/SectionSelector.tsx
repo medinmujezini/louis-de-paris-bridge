@@ -1,6 +1,7 @@
 import { Building2, TreePine } from "lucide-react";
 import { useAppFlow } from "@/contexts/AppFlowContext";
 import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { cn } from "@/lib/utils";
 
 const sections = [
@@ -30,6 +31,11 @@ export function SectionSelector() {
     <div className="fixed inset-0 z-40 flex items-center justify-center">
       {/* Dark overlay for readability */}
       <div className="absolute inset-0 bg-black/50" />
+
+      {/* Language selector top-right */}
+      <div className="absolute top-6 right-6 z-20">
+        <LanguageSwitcher />
+      </div>
 
       <div className="relative z-10 text-center space-y-10">
         <div>
