@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { RoyalDivider } from "@/components/ui/royal-divider";
 import { Unit } from "@/types/units";
 import {
   Sheet,
@@ -170,6 +171,8 @@ export function UnitDetailDrawer({
               </GlassCard>
             </SheetHeader>
 
+            <RoyalDivider variant="subtle" className="mx-2" />
+
             {/* Tabs */}
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
               <TabsList className="w-full bg-white/5 border border-white/10">
@@ -339,7 +342,7 @@ export function UnitDetailDrawer({
               </button>
 
               {/* Divider */}
-              <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent my-2" />
+              <RoyalDivider variant="line" className="my-2" />
 
               {/* Ask for Quote */}
               <button
@@ -402,6 +405,8 @@ export function UnitDetailDrawer({
                 <X className="w-4 h-4 text-muted-foreground" />
               </button>
             </div>
+
+            <RoyalDivider variant="ornament" className="px-4" />
 
             {/* Form */}
             <div className="px-6 pb-6 pt-2">

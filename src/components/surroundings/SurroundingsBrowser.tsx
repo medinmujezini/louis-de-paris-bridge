@@ -6,6 +6,7 @@ import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { GlassInput } from "@/components/ui/glass-input";
 import { GlassButton } from "@/components/ui/glass-button";
+import { RoyalDivider } from "@/components/ui/royal-divider";
 import { cn } from "@/lib/utils";
 
 const CATEGORY_ICONS: Record<POICategory, typeof Landmark> = {
@@ -91,7 +92,7 @@ export function SurroundingsBrowser({ activeCategories, onOpenMap, onClose, onSe
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-white/[0.08] mx-3" />
+        <RoyalDivider variant="subtle" className="mx-3" />
 
         {/* POI list */}
         <ScrollArea className="flex-1 min-h-0">
@@ -142,7 +143,7 @@ export function SurroundingsBrowser({ activeCategories, onOpenMap, onClose, onSe
 
         {/* Detailed Map button */}
         <div className="p-3 pt-0">
-          <div className="h-px bg-white/[0.08] mb-3" />
+          <RoyalDivider variant="subtle" className="mb-3" />
           <GlassButton
             size="sm"
             variant="secondary"
