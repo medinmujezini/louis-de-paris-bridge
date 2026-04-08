@@ -17,6 +17,7 @@ import { registerHandler, sendToUnreal, UEEvents } from "@/lib/ue-bridge";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { toast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
+import { RoyalDivider } from "@/components/ui/royal-divider";
 import { useSelectedUnit } from "@/contexts/SelectedUnitContext";
 
 interface UnitsBrowserProps {

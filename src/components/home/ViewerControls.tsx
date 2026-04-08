@@ -1,5 +1,6 @@
 import { GlassCard } from "@/components/ui/glass-card";
 import { Slider } from "@/components/ui/slider";
+import { RoyalDivider } from "@/components/ui/royal-divider";
 import { cn } from "@/lib/utils";
 import { Sun, Cloud, CloudRain, CloudFog, Sunrise, Moon } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -142,6 +143,8 @@ export function ViewerControls({ timeOfDay, weather, onTimeChange, onWeatherChan
           </div>
         </div>
       </div>
+
+      <RoyalDivider variant="subtle" className="mx-4" />
 
       {/* Weather Controls */}
       <div className="p-2 rounded-xl bg-[hsl(0,0%,4%)] border border-primary/20" data-tutorial="weather-controls">
