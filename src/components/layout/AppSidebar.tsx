@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { GlassPanel } from "@/components/ui/glass-panel";
 import { GlassButton } from "@/components/ui/glass-button";
+import { RoyalDivider } from "@/components/ui/royal-divider";
 import { cn } from "@/lib/utils";
 import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -209,10 +210,11 @@ export function AppSidebar({ onNavigate, onDinoBotToggle, dinoBotActive }: AppSi
       {/* Gold accent bar */}
       <div className="h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-60" aria-hidden="true" />
       {/* Header */}
-      <div className="p-4 border-b border-white/10">
+      <div className="p-4">
         <div className="flex items-center justify-between">
           {!collapsed && (
-            <h1 className="text-lg font-semibold text-foreground">
+            <h1 className="text-lg font-semibold royal-text flex items-center gap-1.5">
+              <Crown className="w-4 h-4 text-primary" />
               Louis de Paris
             </h1>
           )}
@@ -230,6 +232,7 @@ export function AppSidebar({ onNavigate, onDinoBotToggle, dinoBotActive }: AppSi
           </GlassButton>
         </div>
       </div>
+      <RoyalDivider variant="ornament" />
 
       {/* Navigation */}
       <nav className="flex-1 p-3 space-y-1 overflow-y-auto" data-tutorial="sidebar-nav">
@@ -237,7 +240,8 @@ export function AppSidebar({ onNavigate, onDinoBotToggle, dinoBotActive }: AppSi
       </nav>
 
       {/* Footer - User Profile, Language Switcher & UE Connection Status */}
-      <div className="p-3 border-t border-white/10 space-y-2">
+      <RoyalDivider variant="ornament" />
+      <div className="p-3 space-y-2">
         {/* User Profile Dropdown */}
         {user && !collapsed && (
           <DropdownMenu>

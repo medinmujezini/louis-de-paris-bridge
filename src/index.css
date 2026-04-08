@@ -321,6 +321,49 @@
   }
 }
 
+/* ── Royal UI utilities ── */
+
+.royal-corner {
+  position: relative;
+}
+.royal-corner::before,
+.royal-corner::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  z-index: 2;
+}
+.royal-corner::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid hsl(43 50% 54% / 0.5);
+  border-left: 2px solid hsl(43 50% 54% / 0.5);
+  border-top-left-radius: inherit;
+}
+.royal-corner::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid hsl(43 50% 54% / 0.5);
+  border-right: 2px solid hsl(43 50% 54% / 0.5);
+  border-bottom-right-radius: inherit;
+}
+
+.royal-glow {
+  transition: box-shadow 0.3s ease;
+}
+.royal-glow:hover {
+  box-shadow: 0 0 20px hsl(43 50% 54% / 0.15);
+}
+
+.royal-text {
+  background: linear-gradient(135deg, hsl(43 50% 64%), hsl(43 50% 44%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Simple UI mode - hide secondary elements and simplify */
 @layer utilities {
   .ui-simple .hide-in-simple {

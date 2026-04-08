@@ -278,7 +278,7 @@ export function UnitsBrowser({ onClose }: UnitsBrowserProps) {
           </div>
 
           {/* ── Divider ── */}
-          <div className="h-px bg-primary/10 mx-3" />
+          <RoyalDivider variant="line" className="my-1" />
 
           {/* ── Scrollable unit list ── */}
           <ScrollArea className="flex-1 min-h-0">

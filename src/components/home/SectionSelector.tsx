@@ -1,7 +1,8 @@
-import { Building2, TreePine } from "lucide-react";
+import { Building2, TreePine, Crown } from "lucide-react";
 import { useAppFlow } from "@/contexts/AppFlowContext";
 import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { RoyalDivider } from "@/components/ui/royal-divider";
 import { cn } from "@/lib/utils";
 
 const sections = [
@@ -38,14 +39,17 @@ export function SectionSelector() {
       </div>
 
       <div className="relative z-10 text-center space-y-10">
-        <div>
-          <h1 className="text-5xl font-bold tracking-tight text-foreground drop-shadow-lg">
+        <div className="space-y-2">
+          <Crown className="w-8 h-8 text-primary mx-auto" />
+          <h1 className="text-5xl font-bold tracking-tight royal-text drop-shadow-lg">
             Louis de Paris
           </h1>
           <p className="text-muted-foreground mt-3 text-lg tracking-wide">
             Select a property type to explore
           </p>
         </div>
+
+        <RoyalDivider variant="ornament" className="max-w-md mx-auto" />
 
         <div className="flex gap-8">
           {sections.map((s) => {
@@ -55,7 +59,7 @@ export function SectionSelector() {
                 key={s.id}
                 onClick={() => handleSelect(s.id)}
                 className={cn(
-                  "group relative w-80 rounded-2xl text-left transition-all duration-300 overflow-hidden",
+                  "group relative w-80 rounded-2xl text-left transition-all duration-300 overflow-hidden royal-corner royal-glow",
                   "bg-black/60 backdrop-blur-xl border border-white/20",
                   "shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)]",
                   "hover:scale-[1.03] hover:border-primary/40 hover:shadow-[0_0_40px_hsl(43,50%,54%,0.2)]"
