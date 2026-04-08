@@ -1,6 +1,7 @@
 import { Building2, TreePine } from "lucide-react";
 import { useAppFlow } from "@/contexts/AppFlowContext";
 import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { cn } from "@/lib/utils";
 
 const sections = [
