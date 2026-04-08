@@ -1,60 +1,36 @@
 
 
-# Add Royal Dividers & Luxury UI Embellishments
+# Spread Royal Dividers Across More Components
 
 ## Overview
-Add decorative royal dividers and upgrade UI elements across key components to feel more regal and luxurious — using gold gradients, fleur-de-lis SVG ornaments, and refined separator patterns.
+Add `RoyalDivider` to 6 more locations where plain `border` or `h-px` separators currently exist, giving the entire app a consistent luxury feel.
 
-## Step 1: Create a `RoyalDivider` Component
-**New file:** `src/components/ui/royal-divider.tsx`
+## Changes
 
-A reusable decorative divider with three variants:
-- **`line`** — Gold gradient line with a centered diamond/fleur-de-lis ornament
-- **`ornament`** — Wider decorative separator with dual lines and a centered gold motif (small SVG crown or fleur-de-lis)
-- **`subtle`** — Thin gold-to-transparent gradient (already used in sidebar/chatbot, but standardized)
+### 1. `src/components/units/UnitDetailDrawer.tsx`
+- Replace the plain gradient divider between action buttons (line 342: `h-px w-full bg-gradient-to-r...`) with `<RoyalDivider variant="line" />`
+- Add `<RoyalDivider variant="subtle" />` between the header/price banner and the tabs section (after line 171)
+- Add `<RoyalDivider variant="ornament" />` in the quote modal between the header and the form (after line 403)
 
-Props: `variant`, `className`. Pure CSS + inline SVG, no dependencies.
+### 2. `src/components/surroundings/SurroundingsBrowser.tsx`
+- Replace the `h-px bg-white/[0.08]` divider between search and POI list (line 94) with `<RoyalDivider variant="subtle" />`
+- Replace the `h-px bg-white/[0.08]` divider above the "Detailed Map" button (line 145) with `<RoyalDivider variant="subtle" />`
 
-## Step 2: Apply Royal Dividers in Key Locations
+### 3. `src/components/parking/ParkingBrowser.tsx`
+- Replace `border-t border-white/[0.06]` on the filters section (line 145) with a `<RoyalDivider variant="subtle" />` placed above it
 
-### Sidebar (`AppSidebar.tsx`)
-- Replace the plain `border-b border-white/10` header divider with `<RoyalDivider variant="ornament" />`
-- Replace the footer `border-t border-white/10` with `<RoyalDivider variant="ornament" />`
-- Add subtle gold separators between nav item groups (after "Home", before "Admin")
+### 4. `src/components/lokale/LokaleBrowser.tsx`
+- Replace `border-t border-white/[0.06]` on the filters section (line 128) with a `<RoyalDivider variant="subtle" />` placed above it
 
-### Units Browser (`UnitsBrowser.tsx`)
-- Replace the `h-px bg-primary/10` divider (line 281) with `<RoyalDivider variant="line" />`
-- Add a `<RoyalDivider variant="subtle" />` between the header and search area
+### 5. `src/components/units/ComparePanel.tsx`
+- Replace the `<Separator>` import with `<RoyalDivider variant="line" />` between comparison table sections
+- Add `<RoyalDivider variant="ornament" />` between the dialog header and the comparison grid
 
-### Section Selector (`SectionSelector.tsx`)
-- Add a `<RoyalDivider variant="ornament" />` between the title block and the cards
-- Add decorative corner flourishes (CSS pseudo-elements) to the section cards
-
-### DinoBot (`DinoBot.tsx`)
-- Already has gold ornaments — add `<RoyalDivider variant="line" />` between message area and input
-
-### Viewer Controls (`ViewerControls.tsx`)
-- Add a `<RoyalDivider variant="subtle" />` between the time slider and weather controls
-
-## Step 3: Add Royal CSS Utilities to `index.css`
-
-Add utility classes:
-- `.royal-corner` — CSS pseudo-element adding small gold corner flourishes (top-left + bottom-right L-shaped gold lines)
-- `.royal-glow` — Subtle gold box-shadow on hover (`0 0 20px hsl(43 50% 54% / 0.15)`)
-- `.royal-text` — Gold gradient text effect for headings using `background-clip: text`
-
-## Step 4: Upgrade Section Selector Cards
-- Add `.royal-corner` pseudo-elements to each card
-- Apply `.royal-text` to the "Louis de Paris" heading
-- Add a small crown SVG above the main title
-
-## Step 5: Upgrade Sidebar Header
-- Apply `.royal-text` gradient to "Louis de Paris" title text
-- Add a tiny crown icon inline before the text when expanded
+### 6. `src/pages/BuildingInfoPage.tsx`
+- Replace the inline gradient `h-px` dividers between accordion sections (line 53-57) with `<RoyalDivider variant="line" />`
 
 ## Summary
-- 1 new component (`RoyalDivider`)
-- 3 new CSS utility classes
-- 6 files updated with divider placements and royal styling
-- No structural or logic changes — purely visual enhancement
+- 6 files updated
+- ~12 plain dividers replaced with `RoyalDivider` variants
+- No logic changes — purely visual consistency
 
