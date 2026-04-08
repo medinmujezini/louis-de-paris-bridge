@@ -12,7 +12,7 @@ import {
   User,
   Car,
   Store,
-  Bot,
+  Crown,
   Info,
   ArrowLeft
 } from "lucide-react";
@@ -303,19 +303,19 @@ export function AppSidebar({ onNavigate, onDinoBotToggle, dinoBotActive }: AppSi
             <LanguageSwitcher />
           </div>
         )}
-        {/* Assistant button — gold themed */}
+        {/* Royal concierge button */}
         <div className="flex justify-center">
           <button
             onClick={() => onDinoBotToggle?.()}
             className={cn(
-              "w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110",
+              "relative w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border-2",
               dinoBotActive
-                ? "bg-primary shadow-[0_0_16px_hsl(var(--primary)/0.5)]"
-                : "bg-primary/80 hover:bg-primary"
+                ? "bg-primary border-primary shadow-[0_0_20px_hsl(var(--primary)/0.5)]"
+                : "bg-primary/80 border-primary/50 hover:bg-primary hover:border-primary hover:shadow-[0_0_16px_hsl(var(--primary)/0.3)]"
             )}
-            title="Assistant"
+            title="Louis de Paris — Concierge"
           >
-            <Bot className="w-5 h-5 text-primary-foreground" />
+            <Crown className="w-5 h-5 text-primary-foreground" />
           </button>
         </div>
 
