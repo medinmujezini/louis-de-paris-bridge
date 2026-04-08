@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import { X, Send, Bot, Mic, MicOff } from "lucide-react";
+import { X, Send, Mic, MicOff, Crown, Sparkles } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -9,7 +9,7 @@ type Msg = { role: "user" | "assistant"; content: string };
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/dinobot-chat`;
 
-const GREETING = "Mirë se vini! 👋 Unë jam DinoBot, asistenti juaj virtual i Dino Residence. Si mund t'ju ndihmoj sot?";
+const GREETING = "Bienvenue! 👑 Unë jam asistenti juaj personal i Louis de Paris. Si mund t'ju ndihmoj sot?";
 
 const ACTION_REGEX = /:::ACTION(\{.*?\}):::/gs;
 
@@ -189,30 +189,34 @@ export function DinoBot({ open, onClose }: DinoBotProps) {
   if (!open) return null;
 
   return (
-    <div className="fixed bottom-6 left-24 z-50 w-80 h-[28rem] flex flex-col rounded-2xl overflow-hidden bg-[hsl(0,0%,4%)] border border-primary/20">
-      {/* Gold accent bar */}
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-60" />
+    <div className="fixed bottom-6 left-24 z-50 w-80 h-[28rem] flex flex-col rounded-2xl overflow-hidden bg-[hsl(0,0%,4%)] border border-primary/30 shadow-[0_0_40px_hsl(var(--primary)/0.08)]">
+      {/* Royal top ornament */}
+      <div className="relative h-[3px]">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary to-transparent opacity-80" />
+        <div className="absolute left-1/2 -translate-x-1/2 -top-[2px] w-8 h-[5px] bg-primary/40 rounded-full blur-sm" />
+      </div>
 
-      {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.06]">
-        <div className="flex items-center gap-2">
+      {/* Header with royal styling */}
+      <div className="flex items-center justify-between px-4 py-3 border-b border-primary/10 bg-gradient-to-r from-primary/[0.04] via-transparent to-primary/[0.04]">
+        <div className="flex items-center gap-2.5">
           <div
-            className="w-8 h-8 rounded-full flex items-center justify-center"
-            style={{ background: "hsl(var(--primary) / 0.25)" }}
+            className="relative w-9 h-9 rounded-full flex items-center justify-center border border-primary/30"
+            style={{ background: "linear-gradient(135deg, hsl(var(--primary) / 0.3), hsl(var(--primary) / 0.1))" }}
           >
-            <Bot className="w-4 h-4 text-primary" />
+            <Crown className="w-4.5 h-4.5 text-primary" />
+            <Sparkles className="absolute -top-1 -right-1 w-3 h-3 text-primary/70" />
           </div>
           <div>
-            <span className="text-sm font-semibold text-foreground">DinoBot</span>
+            <span className="text-sm font-semibold text-foreground tracking-wide">Louis de Paris</span>
             <div className="flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-              <span className="text-[10px] text-muted-foreground">Online</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              <span className="text-[10px] text-primary/60 uppercase tracking-widest">Concierge</span>
             </div>
           </div>
         </div>
         <button
           onClick={onClose}
-          className="p-1.5 rounded-full hover:bg-white/10 transition-colors"
+          className="p-1.5 rounded-full hover:bg-primary/10 transition-colors border border-transparent hover:border-primary/20"
         >
           <X className="w-4 h-4 text-muted-foreground" />
         </button>
@@ -264,8 +268,11 @@ export function DinoBot({ open, onClose }: DinoBotProps) {
         )}
       </div>
 
+      {/* Royal bottom ornament */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
       {/* Input */}
-      <div className="px-3 py-3 border-t border-border/20">
+      <div className="px-3 py-3 bg-gradient-to-t from-primary/[0.03] to-transparent">
         <form
           id="dinobot-form"
           onSubmit={(e) => {
@@ -279,7 +286,7 @@ export function DinoBot({ open, onClose }: DinoBotProps) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Shkruani ose flisni…"
-            className="flex-1 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/40 transition-colors"
+            className="flex-1 bg-white/5 border border-primary/15 rounded-xl px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/40 transition-colors"
             disabled={isLoading}
           />
           <button
@@ -287,13 +294,11 @@ export function DinoBot({ open, onClose }: DinoBotProps) {
             onClick={toggleVoice}
             disabled={isLoading}
             className={cn(
-              "p-2 rounded-xl transition-all",
-              isListening ? "bg-primary/30 border border-primary/50" : ""
+              "p-2 rounded-xl transition-all border",
+              isListening
+                ? "bg-primary/30 border-primary/50 shadow-[0_0_12px_hsl(var(--primary)/0.3)]"
+                : "bg-primary/10 border-primary/20 hover:bg-primary/20"
             )}
-            style={!isListening ? {
-              background: "hsl(var(--primary) / 0.15)",
-              border: "1px solid hsl(var(--primary) / 0.2)",
-            } : undefined}
             title="Voice input"
           >
             {isListening ? (
@@ -305,11 +310,7 @@ export function DinoBot({ open, onClose }: DinoBotProps) {
           <button
             type="submit"
             disabled={isLoading || !input.trim()}
-            className="p-2 rounded-xl transition-all disabled:opacity-30"
-            style={{
-              background: "hsl(var(--primary) / 0.2)",
-              border: "1px solid hsl(var(--primary) / 0.3)",
-            }}
+            className="p-2 rounded-xl transition-all disabled:opacity-30 bg-primary/20 border border-primary/30 hover:bg-primary/30"
           >
             <Send className="w-4 h-4 text-primary" />
           </button>
