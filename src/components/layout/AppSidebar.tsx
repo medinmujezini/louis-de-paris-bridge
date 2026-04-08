@@ -213,7 +213,7 @@ export function AppSidebar({ onNavigate, onDinoBotToggle, dinoBotActive }: AppSi
       <div className="p-4">
         <div className="flex items-center justify-between">
           {!collapsed && (
-            <h1 className="text-lg font-semibold royal-text flex items-center gap-1.5">
+            <h1 className="text-lg font-semibold royal-text flex items-center gap-1.5 font-display">
               <Crown className="w-4 h-4 text-primary" />
               Louis de Paris
             </h1>
