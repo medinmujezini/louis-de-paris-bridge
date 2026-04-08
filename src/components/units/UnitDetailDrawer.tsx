@@ -171,6 +171,8 @@ export function UnitDetailDrawer({
               </GlassCard>
             </SheetHeader>
 
+            <RoyalDivider variant="subtle" className="mx-2" />
+
             {/* Tabs */}
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
               <TabsList className="w-full bg-white/5 border border-white/10">
@@ -340,7 +342,7 @@ export function UnitDetailDrawer({
               </button>
 
               {/* Divider */}
-              <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent my-2" />
+              <RoyalDivider variant="line" className="my-2" />
 
               {/* Ask for Quote */}
               <button
