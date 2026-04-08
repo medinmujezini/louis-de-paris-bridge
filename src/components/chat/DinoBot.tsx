@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { X, Send, Mic, MicOff, Crown, Sparkles } from "lucide-react";
+import { RoyalDivider } from "@/components/ui/royal-divider";
 import ReactMarkdown from "react-markdown";
 import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -269,7 +270,7 @@ export function DinoBot({ open, onClose }: DinoBotProps) {
       </div>
 
       {/* Royal bottom ornament */}
-      <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <RoyalDivider variant="line" className="mx-2" />
 
       {/* Input */}
       <div className="px-3 py-3 bg-gradient-to-t from-primary/[0.03] to-transparent">

@@ -17,6 +17,7 @@ import { registerHandler, sendToUnreal, UEEvents } from "@/lib/ue-bridge";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { toast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
+import { RoyalDivider } from "@/components/ui/royal-divider";
 import { useSelectedUnit } from "@/contexts/SelectedUnitContext";
 
 interface UnitsBrowserProps {
@@ -278,7 +279,7 @@ export function UnitsBrowser({ onClose }: UnitsBrowserProps) {
           </div>
 
           {/* ── Divider ── */}
-          <div className="h-px bg-primary/10 mx-3" />
+          <RoyalDivider variant="line" className="my-1" />
 
           {/* ── Scrollable unit list ── */}
           <ScrollArea className="flex-1 min-h-0">
