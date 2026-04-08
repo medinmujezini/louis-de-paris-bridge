@@ -1,73 +1,60 @@
 
 
-# Fix Import Paths in Qeramika Floor Plan Components
+# Add Royal Dividers & Luxury UI Embellishments
 
-## Problem
-The newly added `Canvas2D.tsx`, `PropertiesPanel.tsx`, `FloorPlanToolbar.tsx`, `Toolbar.tsx`, `CeilingPlanePanel.tsx`, `DigitizedPlanEditor.tsx`, `ScaleCalibrator.tsx`, and `DesignToolbar.tsx` all use old `@/` imports that need `@/qeramika/` prefixes. Additionally, two utility modules referenced by Canvas2D don't exist and need stub files.
+## Overview
+Add decorative royal dividers and upgrade UI elements across key components to feel more regal and luxurious — using gold gradients, fleur-de-lis SVG ornaments, and refined separator patterns.
 
-## Files to Fix (import path updates only)
+## Step 1: Create a `RoyalDivider` Component
+**New file:** `src/components/ui/royal-divider.tsx`
 
-### 1. `src/qeramika/components/floor-plan/Canvas2D.tsx`
-| Old import | New import |
-|---|---|
-| `@/contexts/FloorPlanContext` | `@/qeramika/contexts/FloorPlanContext` |
-| `@/types/floorPlan` (×2) | `@/qeramika/types/floorPlan` |
-| `@/utils/collisionDetection` | `@/qeramika/utils/fixtureCollision` (see note below) |
-| `@/hooks/useConnectionStatus` | `@/qeramika/hooks/useConnectionStatus` |
-| `@/utils/arcUtils` | `@/qeramika/utils/arcUtils` |
+A reusable decorative divider with three variants:
+- **`line`** — Gold gradient line with a centered diamond/fleur-de-lis ornament
+- **`ornament`** — Wider decorative separator with dual lines and a centered gold motif (small SVG crown or fleur-de-lis)
+- **`subtle`** — Thin gold-to-transparent gradient (already used in sidebar/chatbot, but standardized)
 
-**Note:** `collisionDetection.ts` doesn't exist. The exports `checkFixtureCollisions` and `getClearanceZone` don't exist anywhere in the codebase. `FIXTURE_CLEARANCES` exists in `plumbingCodes.ts` but with a different shape. A stub `src/qeramika/utils/collisionDetection.ts` will be created exporting no-op functions so the file compiles.
+Props: `variant`, `className`. Pure CSS + inline SVG, no dependencies.
 
-### 2. `src/qeramika/components/floor-plan/PropertiesPanel.tsx`
-| Old import | New import |
-|---|---|
-| `@/contexts/FloorPlanContext` | `@/qeramika/contexts/FloorPlanContext` |
-| `@/types/floorPlan` | `@/qeramika/types/floorPlan` |
-| `@/utils/wallHeightUtils` | `@/qeramika/utils/wallHeightUtils` |
-| `@/utils/ceilingUtils` | `@/qeramika/utils/ceilingUtils` |
+## Step 2: Apply Royal Dividers in Key Locations
 
-### 3. `src/qeramika/components/floor-plan/CeilingPlanePanel.tsx`
-| Old import | New import |
-|---|---|
-| `@/contexts/FloorPlanContext` | `@/qeramika/contexts/FloorPlanContext` |
-| `@/utils/ceilingUtils` | `@/qeramika/utils/ceilingUtils` |
+### Sidebar (`AppSidebar.tsx`)
+- Replace the plain `border-b border-white/10` header divider with `<RoyalDivider variant="ornament" />`
+- Replace the footer `border-t border-white/10` with `<RoyalDivider variant="ornament" />`
+- Add subtle gold separators between nav item groups (after "Home", before "Admin")
 
-### 4. `src/qeramika/components/floor-plan/Toolbar.tsx`
-| Old import | New import |
-|---|---|
-| `@/contexts/FloorPlanContext` | `@/qeramika/contexts/FloorPlanContext` |
+### Units Browser (`UnitsBrowser.tsx`)
+- Replace the `h-px bg-primary/10` divider (line 281) with `<RoyalDivider variant="line" />`
+- Add a `<RoyalDivider variant="subtle" />` between the header and search area
 
-### 5. `src/qeramika/components/toolbars/FloorPlanToolbar.tsx`
-| Old import | New import |
-|---|---|
-| `@/contexts/FloorPlanContext` | `@/qeramika/contexts/FloorPlanContext` |
+### Section Selector (`SectionSelector.tsx`)
+- Add a `<RoyalDivider variant="ornament" />` between the title block and the cards
+- Add decorative corner flourishes (CSS pseudo-elements) to the section cards
 
-### 6. `src/qeramika/components/toolbars/DesignToolbar.tsx`
-| Old import | New import |
-|---|---|
-| `@/components/design/QualitySettingsPanel` | `@/qeramika/components/design/QualitySettingsPanel` |
+### DinoBot (`DinoBot.tsx`)
+- Already has gold ornaments — add `<RoyalDivider variant="line" />` between message area and input
 
-### 7. `src/qeramika/components/floor-plan/DigitizedPlanEditor.tsx`
-| Old import | New import |
-|---|---|
-| `@/types/floorPlanDigitizer` | `@/qeramika/types/floorPlanDigitizer` |
-| `@/utils/scaleCalibration` | See note below |
+### Viewer Controls (`ViewerControls.tsx`)
+- Add a `<RoyalDivider variant="subtle" />` between the time slider and weather controls
 
-### 8. `src/qeramika/components/floor-plan/ScaleCalibrator.tsx`
-| Old import | New import |
-|---|---|
-| `@/types/floorPlanDigitizer` | `@/qeramika/types/floorPlanDigitizer` |
-| `@/utils/scaleCalibration` | See note below |
+## Step 3: Add Royal CSS Utilities to `index.css`
 
-## Missing Utility Files (create stubs)
+Add utility classes:
+- `.royal-corner` — CSS pseudo-element adding small gold corner flourishes (top-left + bottom-right L-shaped gold lines)
+- `.royal-glow` — Subtle gold box-shadow on hover (`0 0 20px hsl(43 50% 54% / 0.15)`)
+- `.royal-text` — Gold gradient text effect for headings using `background-clip: text`
 
-### `src/qeramika/utils/scaleCalibration.ts`
-The functions `createScaleCalibration`, `calculatePixelDistance`, `validateCalibration`, and `pixelsToCm` are referenced. `pixelsToCm` exists in `dimensions.ts`. Create a stub that re-exports `pixelsToCm` from dimensions and adds no-op implementations for the other three.
+## Step 4: Upgrade Section Selector Cards
+- Add `.royal-corner` pseudo-elements to each card
+- Apply `.royal-text` to the "Louis de Paris" heading
+- Add a small crown SVG above the main title
 
-### `src/qeramika/utils/collisionDetection.ts`
-The functions `checkFixtureCollisions`, `getClearanceZone` and constant `FIXTURE_CLEARANCES` are referenced. Create a stub with no-op implementations that return safe defaults (empty arrays, null zones).
+## Step 5: Upgrade Sidebar Header
+- Apply `.royal-text` gradient to "Louis de Paris" title text
+- Add a tiny crown icon inline before the text when expanded
 
 ## Summary
-- 8 files get import path fixes (simple find-and-replace of `@/` to `@/qeramika/`)
-- 2 new stub utility files to prevent missing-module errors
-- No rebuilding of any component logic
+- 1 new component (`RoyalDivider`)
+- 3 new CSS utility classes
+- 6 files updated with divider placements and royal styling
+- No structural or logic changes — purely visual enhancement
+
