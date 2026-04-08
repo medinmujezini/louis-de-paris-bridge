@@ -1,4 +1,5 @@
 import { useLanguage } from "@/i18n/LanguageContext";
+import { RoyalDivider } from "@/components/ui/royal-divider";
 import { GlassCard } from "@/components/ui/glass-card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
@@ -49,13 +50,7 @@ const SectionCard = ({
   children: React.ReactNode;
 }) => (
   <AccordionItem value={title} className="border-b-0">
-    <div
-      className="h-px w-full"
-      style={{
-        background: "linear-gradient(90deg, transparent 2%, hsl(0 0% 100% / 0.18) 25%, hsl(0 0% 100% / 0.28) 50%, hsl(0 0% 100% / 0.18) 75%, transparent 98%)",
-      }}
-      aria-hidden="true"
-    />
+    <RoyalDivider variant="line" />
     <AccordionTrigger className="hover:no-underline py-4">
       <div className="flex items-center gap-3">
         <div className="w-9 h-9 rounded-lg bg-primary/15 flex items-center justify-center">
@@ -88,13 +83,7 @@ const BuildingInfoPage = () => {
             </div>
             <p className="text-sm text-muted-foreground">{b.subtitle}</p>
           </div>
-          <div
-            className="h-px w-full"
-            style={{
-              background: "linear-gradient(90deg, transparent 2%, hsl(0 0% 100% / 0.18) 25%, hsl(0 0% 100% / 0.28) 50%, hsl(0 0% 100% / 0.18) 75%, transparent 98%)",
-            }}
-            aria-hidden="true"
-          />
+          <RoyalDivider variant="ornament" />
 
           {/* Content */}
           <ScrollArea className="flex-1">

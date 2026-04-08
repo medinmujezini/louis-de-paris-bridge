@@ -17,6 +17,7 @@ import {
 import { Store, Search, SlidersHorizontal, X } from "lucide-react";
 import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
 import { cn } from "@/lib/utils";
+import { RoyalDivider } from "@/components/ui/royal-divider";
 
 interface LokaleBrowserProps {
   selectedUnit: Unit | null;
@@ -125,7 +126,8 @@ export function LokaleBrowser({
           </div>
 
           {/* Filters */}
-          <div className="px-3 py-2 space-y-2 border-t border-white/[0.06]">
+          <RoyalDivider variant="subtle" className="mx-3" />
+          <div className="px-3 py-2 space-y-2">
             <div className="flex flex-wrap items-center gap-1.5">
               <div className="flex items-center gap-1">
                 <Switch

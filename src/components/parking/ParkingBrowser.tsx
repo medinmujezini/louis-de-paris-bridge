@@ -17,6 +17,7 @@ import {
 import { Car, Search, SlidersHorizontal, X, ArrowLeft, Save } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
+import { RoyalDivider } from "@/components/ui/royal-divider";
 import { useThreeDMode } from "@/contexts/ThreeDModeContext";
 import { CompareFloatingBar } from "@/components/units/CompareFloatingBar";
 import { ComparePanel } from "@/components/units/ComparePanel";
@@ -142,7 +143,8 @@ export function ParkingBrowser({ onBack }: ParkingBrowserProps) {
           </div>
 
           {/* Filters */}
-          <div className="px-3 py-2 space-y-2 border-t border-white/[0.06]">
+          <RoyalDivider variant="subtle" className="mx-3" />
+          <div className="px-3 py-2 space-y-2">
             <div className="flex flex-wrap items-center gap-1.5">
               <div className="flex items-center gap-1">
                 <Switch

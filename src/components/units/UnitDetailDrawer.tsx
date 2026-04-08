@@ -406,6 +406,8 @@ export function UnitDetailDrawer({
               </button>
             </div>
 
+            <RoyalDivider variant="ornament" className="px-4" />
+
             {/* Form */}
             <div className="px-6 pb-6 pt-2">
               <UnitContactForm unitId={unit.id} unitName={unit.name} />

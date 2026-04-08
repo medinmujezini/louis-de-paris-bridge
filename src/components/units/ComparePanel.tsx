@@ -10,6 +10,7 @@ import {
 import { GlassButton } from "@/components/ui/glass-button";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { RoyalDivider } from "@/components/ui/royal-divider";
 import { Separator } from "@/components/ui/separator";
 import {
   Bed,
@@ -153,7 +154,7 @@ export function ComparePanel({
               ))}
             </div>
 
-            <div className="h-px my-6" style={{ background: "linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.15), hsl(0 0% 100% / 0.25), hsl(0 0% 100% / 0.15), transparent)" }} />
+            <RoyalDivider variant="ornament" className="my-4" />
 
             {/* Specifications */}
             <div className="space-y-0">
@@ -185,7 +186,7 @@ export function ComparePanel({
                 ))}
               </CompareRow>
 
-              <div className="my-5" style={{ height: "2px", background: "linear-gradient(90deg, hsl(0 0% 100% / 0.35) 0%, hsl(0 0% 100% / 0.15) 40%, transparent 100%)", boxShadow: "0 0 6px 0 hsl(0 0% 100% / 0.06)" }} />
+              <RoyalDivider variant="line" className="my-3" />
 
               {/* Bathrooms */}
               <CompareRow
@@ -201,7 +202,7 @@ export function ComparePanel({
                 ))}
               </CompareRow>
 
-              <div className="my-5" style={{ height: "2px", background: "linear-gradient(90deg, hsl(0 0% 100% / 0.35) 0%, hsl(0 0% 100% / 0.15) 40%, transparent 100%)", boxShadow: "0 0 6px 0 hsl(0 0% 100% / 0.06)" }} />
+              <RoyalDivider variant="line" className="my-3" />
 
               {/* Surface */}
               <CompareRow
@@ -217,7 +218,7 @@ export function ComparePanel({
                 ))}
               </CompareRow>
 
-              <div className="my-5" style={{ height: "2px", background: "linear-gradient(90deg, hsl(0 0% 100% / 0.35) 0%, hsl(0 0% 100% / 0.15) 40%, transparent 100%)", boxShadow: "0 0 6px 0 hsl(0 0% 100% / 0.06)" }} />
+              <RoyalDivider variant="line" className="my-3" />
 
               {/* Orientation */}
               <CompareRow
@@ -231,7 +232,7 @@ export function ComparePanel({
             </div>
 
 
-            <div className="h-px my-6" style={{ background: "linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.15), hsl(0 0% 100% / 0.25), hsl(0 0% 100% / 0.15), transparent)" }} />
+            <RoyalDivider variant="ornament" className="my-4" />
 
             {/* Actions */}
             <div
