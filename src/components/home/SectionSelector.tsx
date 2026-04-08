@@ -32,6 +32,11 @@ export function SectionSelector() {
       {/* Dark overlay for readability */}
       <div className="absolute inset-0 bg-black/50" />
 
+      {/* Language selector top-right */}
+      <div className="absolute top-6 right-6 z-20">
+        <LanguageSwitcher />
+      </div>
+
       <div className="relative z-10 text-center space-y-10">
         <div>
           <h1 className="text-5xl font-bold tracking-tight text-foreground drop-shadow-lg">
