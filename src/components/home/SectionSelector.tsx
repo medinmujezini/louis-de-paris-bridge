@@ -1,4 +1,4 @@
-import { Building2, TreePine, Crown } from "lucide-react";
+import { Building2, TreePine } from "lucide-react";
 import { useAppFlow } from "@/contexts/AppFlowContext";
 import { sendToUnreal, UEEvents } from "@/lib/ue-bridge";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -40,7 +40,13 @@ export function SectionSelector() {
 
       <div className="relative z-10 text-center space-y-10">
         <div className="space-y-2">
-          <Crown className="w-8 h-8 text-primary mx-auto" />
+          <svg width="32" height="22" viewBox="0 0 20 14" fill="none" className="text-primary mx-auto">
+            <path d="M10 0C10 0 8 3 8 5C8 6.5 9 7 10 7C11 7 12 6.5 12 5C12 3 10 0 10 0Z" fill="currentColor" />
+            <path d="M4 4C4 4 6 5.5 7 7C7.5 8 7 9 6 9C5 9 4 8 4 7C4 5.5 4 4 4 4Z" fill="currentColor" />
+            <path d="M16 4C16 4 14 5.5 13 7C12.5 8 13 9 14 9C15 9 16 8 16 7C16 5.5 16 4 16 4Z" fill="currentColor" />
+            <path d="M10 7V12" stroke="currentColor" strokeWidth="1.2" />
+            <path d="M7 12H13" stroke="currentColor" strokeWidth="1" />
+          </svg>
           <h1 className="text-5xl font-bold tracking-tight royal-text drop-shadow-lg font-display">
             Louis de Paris
           </h1>
