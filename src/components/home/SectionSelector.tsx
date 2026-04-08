@@ -41,7 +41,7 @@ export function SectionSelector() {
       <div className="relative z-10 text-center space-y-10">
         <div className="space-y-2">
           <Crown className="w-8 h-8 text-primary mx-auto" />
-          <h1 className="text-5xl font-bold tracking-tight royal-text drop-shadow-lg">
+          <h1 className="text-5xl font-bold tracking-tight royal-text drop-shadow-lg font-display">
             Louis de Paris
           </h1>
           <p className="text-muted-foreground mt-3 text-lg tracking-wide">
