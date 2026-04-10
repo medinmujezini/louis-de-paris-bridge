@@ -145,7 +145,22 @@ export function DinoBot({ open, onClose }: DinoBotProps) {
         body: JSON.stringify({ messages: newMessages }),
       });
 
-      if (!resp.ok || !resp.body) {
+      if (!resp.ok) {
+        let errorMsg = "Failed to connect";
+        try {
+          const errData = await resp.json();
+          if (resp.status === 402) {
+            errorMsg = "Kreditet e AI janë shpenzuar. Ju lutem kontaktoni administratorin.";
+          } else if (resp.status === 429) {
+            errorMsg = "Shumë kërkesa, provo përsëri pas pak.";
+          } else if (errData?.error) {
+            errorMsg = errData.error;
+          }
+        } catch { /* ignore parse error */ }
+        throw new Error(errorMsg);
+      }
+
+      if (!resp.body) {
         throw new Error("Failed to connect");
       }
 
