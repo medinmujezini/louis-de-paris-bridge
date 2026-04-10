@@ -196,7 +196,8 @@ export function DinoBot({ open, onClose }: DinoBotProps) {
       executeActions(assistantSoFar);
     } catch (e) {
       console.error("DinoBot error:", e);
-      upsertAssistant("Na vjen keq, ndodhi një gabim. Provoni përsëri!");
+      const msg = e instanceof Error ? e.message : "Na vjen keq, ndodhi një gabim. Provoni përsëri!";
+      upsertAssistant(msg);
     } finally {
       setIsLoading(false);
     }
